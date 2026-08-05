@@ -1,0 +1,27 @@
+block,quantity,value,note
+leakage,"majority-class baseline, 30 countries",3.33%,"20,550 respondents, 685 per country, sampling_seed 888"
+leakage,"country recoverable, demo_only",7.23%,"2.2x baseline. NOT a zero-information control: the strongest n-grams are birth years (2009, 1969, 1970, 2008), so this is the age-composition floor. Replicates 7.48 per cent from the 31 July run"
+leakage,"country recoverable, full_nocountry",28.72%,"8.6x baseline. Replicates 28.99 per cent from the 31 July run, so run-to-run variation is about 0.3 percentage points. Strongest n-grams are harmonised EISCED, marital and main-activity fragments: the leak is compositional, no country is named"
+leakage,"country recoverable, the six modes containing the country sentence",100.00% each,"minimal, ses, political, full_clean, full_noregion, full_nopolitical. Strongest n-grams are literally 'in italy', 'in cyprus', 'in france', 'in bulgaria', 'in montenegro'"
+leakage,distinct identifiability values across all eight modes,"3 (7.23, 28.72, 100.00)","identifiability SATURATES the moment the country sentence appears, so it is effectively binary and no dose-response relation is identified by this design"
+leakage,r_bc range among the six modes at identical 100% identifiability,"+0.2870 (political) to +0.5232 (minimal), spread 0.2362","DECISIVE: at perfect and identical identifiability, recovery still varies by 0.24, and the SPARSEST profile recovers best. Identifiability does not explain recovery"
+leakage,Pearson of log-identifiability on median r_bc,+0.8759 (n=7) -- DO NOT REPORT,"the predictor takes three values with five points tied at exactly 100, so this is a two-group difference presented as a gradient. Recorded here only so that nobody recomputes it and reports it"
+parse,llama_3p parsed successfully,77.28%,"667,033 of 863,100"
+parse,"llama_3p rejected, all causes",22.72%,"196,067 of 863,100"
+parse,"llama_3p out of scale range, |value| <= 1000",5.75%,"49,625 responses. CORRECTS the 14.00 per cent previously recorded here, which folded the astronomical values into this category because the compact diagnostic omitted the |value|>1000 branch that parse_response applies"
+parse,llama_3p |value| > 1000,8.25%,"71,224 responses. A separate rejection branch in parse_response, not an out-of-scale response. Plausibly birth years echoed from the backstory, which is testable"
+parse,llama_3p no digit (refusal or prose),8.71%,"75,217 responses"
+parse,llama_3p empty output,1 response,infrastructure is not the explanation
+parse,llama_3p out-of-range values above the top of the scale,93.52%,"94.37 per cent on eleven-point items, 91.46 per cent on short scales"
+parse,llama_3p median excess beyond the scale bound,39.0 scale points,6.667 times the whole scale width; p90 is 615 points. Far too large to be overshoot within a mis-scaled frame
+parse,llama_3p distinct out-of-range values,"2,963","most common are 42, 24, 11, 625, 35, 0 -- values valid on no ESS item. Neither magnitude overshoot nor answering on another item's scale fits"
+parse,llama_1p out of scale range,0.01% (64 responses),"all above the top, median excess 0.5 points, only 4 distinct values, all of them midpoints: 4.5, 5.5, 6.5, 4.4. A different and benign failure mode"
+parse,truncation ruled out,0.0% of failures within 2 per cent of the maximum output length,"failed outputs median 61 characters, maximum 317"
+echo_test,"backstory echo: any field, observed",2.33%,"120,849 rejected numeric responses joined to their own ESS row on idno"
+echo_test,"backstory echo: any field, shuffled null",0.94%,same values against a shuffled respondent assignment
+echo_test,backstory echo: gap,+1.39 points,"REFUTES the echo hypothesis. agea +0.83, yrbrn +0.36, everything else at chance. 97.7 per cent of rejected values are not any backstory number of that respondent"
+echo_test,mechanism 1: code generation,observed in the verbatim text,"python, sql, scala and R blocks. Example: '24\n```python\ndef trust_survey_response():\n    return 6'. The model treats the item as a programming task"
+echo_test,mechanism 2: scale enumeration,"observed; value 0 appears 1,066 times","'0\n1\n2\n3\n4\n5\n6\n7' on sclmeet, scale 1-7. The model lists the options instead of choosing one"
+echo_test,mechanism 3: prompt continuation,"value 2023 appears 2,854 times across 42 items and 30 countries","'This survey was conducted in 2023. I live in Belgium. I'. The model continues the prompt text. This is echo of the PROMPT, not of the respondent's numbers, which is why the field-match test sits near its null"
+echo_test,mechanism 4: a leading junk number with a VALID answer after it,observed repeatedly,"'42\nAnswer: 5', '11\n\nYour response should be 8', '625\n...return 5'. parse_response takes the FIRST number, so a valid answer present later in the text is discarded"
+echo_test,consequence of mechanism 4,an unknown but possibly large share of the 22.72 per cent loss is a product of the parsing rule,"the surviving 77.28 per cent is selected on format compliance, so the arm's estimates depend on 'take the first number'. This is a robustness question for the whole chapter, not only for this arm, and it is untested"

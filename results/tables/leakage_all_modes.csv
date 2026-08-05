@@ -1,0 +1,11 @@
+baseline_pct,mode,n_chars_median,country_recoverable,times_baseline,median_r_bc,top_ngrams,seconds
+3.33,demo_only,89,7.23,2.17,-0.0286,"2009, in 2009, in 1969, 1969, in 1970, 1970, in 2008, 2008",9.0
+3.33,minimal,107,100.0,30.0,0.5232,"in italy, italy am, italy, cyprus, cyprus am, in cyprus, sweden, in sweden",3.0
+3.33,minimal_politics,227,100.0,30.0,0.3161,"in cyprus, cyprus am, cyprus, in italy, italy, italy am, in sweden, sweden",4.5
+3.33,minimal_politics_econ,474,100.0,30.0,0.4228,"montenegro, in montenegro, montenegro am, iceland am, in iceland, iceland, netherlands, in netherlands",7.8
+3.33,ses,420,100.0,30.0,0.3967,"france am, france, in france, finland, in finland, finland am, bulgaria am, in bulgaria",6.7
+3.33,political,486,100.0,30.0,0.287,"in france, france am, france, in finland, finland am, finland, bulgaria am, bulgaria",7.9
+3.33,full_clean,726,100.0,30.0,0.4433,"in bulgaria, bulgaria am, bulgaria, france, france am, in france, finland am, finland",11.7
+3.33,full_nocountry,688,28.72,8.61,0.3441,"with years, legally, am legally, married live, legally married, lower tier, my main, main",26.6
+3.33,full_noregion,707,100.0,30.0,0.4157,"in montenegro, montenegro am, montenegro, iceland, iceland am, in iceland, netherlands, in netherlands",11.2
+3.33,full_nopolitical,610,100.0,30.0,,"in bulgaria, bulgaria am, bulgaria, in france, france, france am, in finland, finland",9.7

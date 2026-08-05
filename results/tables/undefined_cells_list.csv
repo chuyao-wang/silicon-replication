@@ -1,0 +1,2 @@
+condition,variable,cntry,n_valid,human_sd,silicon_sd,reason
+qwen_1p_anchored,hmsfmlsh,CH,658,0.906969269437028,0.0,constant silicon response

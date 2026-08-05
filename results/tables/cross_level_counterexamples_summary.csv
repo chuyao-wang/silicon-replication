@@ -1,0 +1,5 @@
+quantity,value
+country pairs in total,435
+pairs whose aggregate and individual ordering disagree,232
+share of pairs that invert,0.5333333333333333
+sharpest inversion,CH vs IL: profile r 0.905 vs 0.755 but within-country r 0.0143 vs 0.0774

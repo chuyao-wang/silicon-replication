@@ -1,0 +1,29 @@
+quantity,value,token
+"country add, forward",0.730704,+0.73
+"country add, reverse",-0.438966,-0.44
+"membership add, forward",0.092006,+0.09
+"membership remove, forward",0.077208,+0.08
+"internet single add, forward",0.134664,+0.13
+"union single add, forward",0.062684,+0.06
+"politics add, forward",-0.122217,-0.12
+"SES add, forward",-0.128693,-0.13
+"SES remove, forward",-0.061187,-0.06
+"income remove, forward",-0.05508,-0.055
+"SES remove, forward (3dp)",-0.061187,-0.061
+"Llama label remove, forward",0.250935,+0.25
+"Llama label remove, reverse",-0.197598,-0.20
+country_only median r_bc,0.518499,0.52
+"swap vs true country, forward",0.340324,0.34
+"no-label arm, forward",0.402873,0.40
+"true-label arm, forward",0.560921,0.56
+"swap vs labeled country, forward",0.395671,0.40
+permutation baseline (labeled vs true human),-0.070603,-0.07
+pooled r after item centering,0.514639,0.515
+item-mean share of pooled covariance,0.964996,96.5%
+human split-half median r_bc (unweighted),0.981766,0.98
+noise share of the replicate arm's within-country variance,0.953999,95%
+"replicate pair, median |delta r_bc|",0.028909,0.029
+"replicate pair, max |delta r_bc|",0.241991,0.242
+"r_bc vs normalized human between-SD, r",0.458559,0.46
+its p value,0.012354,0.012
+"response attempts, all 41 arms",33743100.0,"33,743,100"

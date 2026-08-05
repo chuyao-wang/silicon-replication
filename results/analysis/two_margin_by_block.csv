@@ -1,0 +1,20 @@
+block,margin,with_arm,base_arm,fwd_median_dz,rev_median_dz,fwd_improved,n_fwd,rev_improved,n_rev,n_beyond_noise,with_median_rbc,base_median_rbc
+country label,add,qwen_1p_minimal,qwen_1p_demo_only,0.730704,-0.438966,28,29,1,13,39,0.523243,-0.028606
+country label,remove,qwen_1p_full_noregion,qwen_1p_full_nocountry,0.196699,-0.176161,27,29,1,13,35,0.415688,0.344078
+NUTS region code,add,qwen_1p_minimal_region,qwen_1p_minimal,-0.026453,0.029682,9,29,7,13,19,0.500499,0.523243
+NUTS region code,remove,qwen_1p,qwen_1p_full_noregion,0.032464,-0.016844,21,29,4,13,21,0.443303,0.415688
+political identity,add,qwen_1p_minimal_politics,qwen_1p_minimal,-0.122217,0.039104,9,29,9,13,33,0.316149,0.523243
+political identity,remove,qwen_1p,qwen_1p_full_nopolitical,-0.004624,0.060983,13,29,11,13,25,0.443303,0.523087
+ascriptive,remove,qwen_1p,qwen_1p_full_noascriptive,0.021439,-0.086408,18,29,4,13,21,0.443303,0.471605
+"education, activity, income",add,qwen_1p_minimal_ses,qwen_1p_minimal,-0.128693,0.103582,4,29,10,13,35,0.34311,0.523243
+"education, activity, income",remove,qwen_1p,qwen_1p_full_nosocioecon,-0.061187,0.086673,10,29,8,13,32,0.443303,0.461234
+"union, internet use",add,qwen_1p_minimal_membership,qwen_1p_minimal,0.092006,0.032221,23,29,8,13,31,0.571429,0.523243
+"union, internet use",remove,qwen_1p,qwen_1p_full_nomembership,0.077208,-0.065156,26,29,3,13,27,0.443303,0.381129
+household,add,qwen_1p_minimal_household,qwen_1p_minimal,0.012056,0.038811,15,29,8,13,19,0.497943,0.523243
+household,remove,qwen_1p,qwen_1p_full_nohousehold,-0.025839,-0.039376,10,29,5,13,22,0.443303,0.47326
+"migration, citizenship",add,qwen_1p_minimal_civic,qwen_1p_minimal,0.047981,0.070434,21,29,8,13,25,0.528187,0.523243
+"migration, citizenship",remove,qwen_1p,qwen_1p_full_nocivic,-0.002903,-0.063867,14,29,4,13,22,0.443303,0.491038
+minority status,add,qwen_1p_minimal_minority,qwen_1p_minimal,-0.064572,0.122429,12,29,8,13,35,0.434623,0.523243
+minority status,remove,qwen_1p,qwen_1p_full_nominority,0.023235,-0.045078,22,29,5,13,21,0.443303,0.498514
+domicile,add,qwen_1p_minimal_domicil,qwen_1p_minimal,0.031134,0.116759,21,29,8,13,29,0.537759,0.523243
+domicile,remove,qwen_1p,qwen_1p_full_nodomicil,0.021387,-0.017494,16,29,6,13,19,0.443303,0.434486

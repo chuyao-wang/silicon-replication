@@ -1,0 +1,10 @@
+manuscript_figure,file,producer,note
+1,fig1_pipeline.pdf,code/figures/fig_pipeline.py,
+2,fig2_recovery.pdf,code/figures/fig2_recovery.py,
+3,fig3_levels_shared_scale.pdf,code/figures/fig3_levels.py,"panel (c) carries the country-profile strip that was manuscript Figure 4 until 2 Aug 2026"
+4,fig4_backstory_ladder.pdf,code/figures/fig_ladder.py,"the file name says 4; since 5 Aug 2026 it is the two-margin block figure (per-item label contrast + both margins). Producer: cloud_analysis/fig_two_margin.py, figstyle-based; move it to code/figures/ and repoint this column on the Mac"
+5,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,
+6,fig7_crosslevel_ranks.pdf,code/figures/fig_crosslevel.py,"the file name says 7; the manuscript numbers it 6. Use this table, not the file name."
+A1,figA1_item_country_recovery.pdf,code/figures/fig_appendix.py,
+A2,figA2_best_worst_scatter.pdf,code/figures/fig_appendix.py,
+A3,figA3_item_individual_recovery.pdf,code/figures/fig_appendix.py,

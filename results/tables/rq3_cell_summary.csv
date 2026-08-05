@@ -1,0 +1,2 @@
+condition,n_cells,mean_r_wc,sd_r_wc,median_r_wc,n_positive,n_p_lt_05,n_items_negative_mean,best_item,best_r,worst_item,worst_r
+qwen_1p,1260,0.02714824959817679,0.07919907933831337,0.0283388389839045,826,453,11,stflife,0.1459586545867279,hincfel,-0.148470971921238

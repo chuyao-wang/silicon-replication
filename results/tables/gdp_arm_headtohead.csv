@@ -1,0 +1,17 @@
+deflator,sample,comparator,n_items,model_wins_on_r,model_wins_on_nmae,r_comparable
+USD,n=30 (primary),model_debiased,42,8,1,True
+USD,n=30 (primary),region_mean_loo,42,18,1,True
+USD,n=30 (primary),gdp_plus_region_loo,42,13,0,True
+USD,n=30 (primary),grand_mean_insample,42,31,2,True
+USD,n=29 (excluding IL),model_debiased,42,6,1,True
+USD,n=29 (excluding IL),region_mean_loo,42,17,1,True
+USD,n=29 (excluding IL),gdp_plus_region_loo,42,13,1,True
+USD,n=29 (excluding IL),grand_mean_insample,42,31,2,True
+PPP,n=30 (primary),model_debiased,42,8,1,True
+PPP,n=30 (primary),region_mean_loo,42,18,1,True
+PPP,n=30 (primary),gdp_plus_region_loo,42,14,0,True
+PPP,n=30 (primary),grand_mean_insample,42,31,2,True
+PPP,n=29 (excluding IL),model_debiased,42,6,1,True
+PPP,n=29 (excluding IL),region_mean_loo,42,17,1,True
+PPP,n=29 (excluding IL),gdp_plus_region_loo,42,15,2,True
+PPP,n=29 (excluding IL),grand_mean_insample,42,31,2,True

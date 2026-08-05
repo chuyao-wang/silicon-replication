@@ -1,0 +1,7 @@
+deflator,specification,median_r,median_nmae,beats_region_mean_arm_on_r
+USD,region dummies only,0.5532177619346226,0.05580566611113337,False
+USD,log GDP only,0.588826705822268,0.06043024183709318,True
+USD,log GDP + region dummies,0.6177435260870564,0.05221687963692738,True
+PPP,region dummies only,0.5532177619346226,0.05580566611113337,False
+PPP,log GDP only,0.5449829515871302,0.06173476048334988,False
+PPP,log GDP + region dummies,0.6316767864781354,0.05272205014520216,True

@@ -1,0 +1,4 @@
+block,with_arm,without_arm,fwd_median_dr,rev_median_dr,fwd_median_dz,rev_median_dz,fwd_improved,n_fwd,rev_improved,n_rev,fwd_wilcoxon_p,rev_wilcoxon_p,verdict
+country label,qwen_1p_full_noregion,qwen_1p_full_nocountry,0.13518355374039698,-0.17556434441393726,0.19669905930602594,-0.17616084830120923,27,29,1,13,2.384185791015625e-06,0.000732421875,HELPS forward items
+NUTS region code,qwen_1p,qwen_1p_full_noregion,0.019820801456267634,-0.007101400832826232,0.032464434366765965,-0.01684384301676234,21,29,4,13,0.038631681352853775,0.786865234375,HELPS forward items
+political identity,qwen_1p,qwen_1p_full_nopolitical,-0.002903827311010465,0.04151897283010775,-0.004624172143638083,0.060982620495114825,13,29,11,13,0.46793800592422485,0.026611328125,NO detectable effect on forward items

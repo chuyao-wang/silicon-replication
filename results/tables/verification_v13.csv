@@ -1,0 +1,252 @@
+section,check,recomputed,released,diff,status
+structure,llama_1p: rq3 rows,1260.0,1260.0,0.0,pass
+structure,llama_1p: scatter rows,1260.0,1260.0,0.0,pass
+structure,llama_1p: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,llama_1p: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,llama_1p: country means outside the item range,0.0,0.0,0.0,pass
+structure,llama_1p: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,llama_3p: rq3 rows,1260.0,1260.0,0.0,pass
+structure,llama_3p: scatter rows,1260.0,1260.0,0.0,pass
+structure,llama_3p: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,llama_3p: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,llama_3p: country means outside the item range,0.0,0.0,0.0,pass
+structure,llama_3p: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_anchored: rq3 rows,660.0,660.0,0.0,pass
+structure,qwen_1p_anchored: scatter rows,660.0,660.0,0.0,pass
+structure,qwen_1p_anchored: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_anchored: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_anchored: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_anchored: undefined individual-level r (zero-variance cells),1.0,0.0,1.0,FAIL
+structure,qwen_1p_demo_only: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_demo_only: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_demo_only: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_demo_only: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_demo_only: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_demo_only: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_nocountry: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_nocountry: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: rq3 rows,660.0,660.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: scatter rows,660.0,660.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nocountry_anchored: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_full_nopolitical: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_nopolitical: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_nopolitical: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nopolitical: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nopolitical: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_full_nopolitical: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_noregion: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_full_noregion: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: rq3 rows,660.0,660.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: scatter rows,660.0,660.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_full_noregion_anchored: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_minimal: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal_politics: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal_politics: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_minimal_politics_econ: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_political: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_political: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_political: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_political: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_political: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_political: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_rep: rq3 rows,660.0,660.0,0.0,pass
+structure,qwen_1p_rep: scatter rows,660.0,660.0,0.0,pass
+structure,qwen_1p_rep: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_rep: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_rep: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_rep: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_1p_ses: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_ses: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_1p_ses: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_1p_ses: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_1p_ses: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_1p_ses: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+structure,qwen_3p: rq3 rows,1260.0,1260.0,0.0,pass
+structure,qwen_3p: scatter rows,1260.0,1260.0,0.0,pass
+structure,qwen_3p: duplicate item x country cells,0.0,0.0,0.0,pass
+structure,qwen_3p: n_valid never exceeds n per country,0.0,0.0,0.0,pass
+structure,qwen_3p: country means outside the item range,0.0,0.0,0.0,pass
+structure,qwen_3p: undefined individual-level r (zero-variance cells),0.0,0.0,0.0,pass
+condition_summary,llama_1p: median r_bc,0.34863359870536736,0.3486335987053673,5.551115123125783e-17,pass
+condition_summary,llama_1p: items r_bc > 0.50,13.0,13.0,0.0,pass
+condition_summary,llama_1p: items r_bc > 0.70,2.0,2.0,0.0,pass
+condition_summary,llama_1p: items r_bc < 0,15.0,15.0,0.0,pass
+condition_summary,llama_1p: within-country SD ratio (mean),0.833475285695488,0.833475285695488,0.0,pass
+condition_summary,llama_1p: between-country SD ratio (median),0.1674257636421807,0.1674257636421807,0.0,pass
+condition_summary,llama_3p: median r_bc,0.1728877273051982,0.1728877273051982,0.0,pass
+condition_summary,llama_3p: items r_bc > 0.50,3.0,3.0,0.0,pass
+condition_summary,llama_3p: items r_bc > 0.70,1.0,1.0,0.0,pass
+condition_summary,llama_3p: items r_bc < 0,15.0,15.0,0.0,pass
+condition_summary,llama_3p: within-country SD ratio (mean),1.4061928401636081,1.406192840163608,2.220446049250313e-16,pass
+condition_summary,llama_3p: between-country SD ratio (median),0.6000034989014327,0.6000034989014328,-1.1102230246251565e-16,pass
+condition_summary,qwen_1p: median r_bc,0.44330308573014837,0.4433030857301483,5.551115123125783e-17,pass
+condition_summary,qwen_1p: items r_bc > 0.50,20.0,20.0,0.0,pass
+condition_summary,qwen_1p: items r_bc > 0.70,9.0,9.0,0.0,pass
+condition_summary,qwen_1p: items r_bc < 0,11.0,11.0,0.0,pass
+condition_summary,qwen_1p: within-country SD ratio (mean),0.6052410634456243,0.6052410634456243,0.0,pass
+condition_summary,qwen_1p: between-country SD ratio (median),0.28208052178282067,0.2820805217828207,-5.551115123125783e-17,pass
+condition_summary,qwen_1p_anchored: median r_bc,0.6500657297648764,0.6500657297648764,0.0,pass
+condition_summary,qwen_1p_anchored: items r_bc > 0.50,14.0,14.0,0.0,pass
+condition_summary,qwen_1p_anchored: items r_bc > 0.70,9.0,9.0,0.0,pass
+condition_summary,qwen_1p_anchored: items r_bc < 0,0.0,0.0,0.0,pass
+condition_summary,qwen_1p_anchored: within-country SD ratio (mean),0.4910534629212951,0.4910534629212951,0.0,pass
+condition_summary,qwen_1p_anchored: between-country SD ratio (median),0.3197225171647987,0.3197225171647987,0.0,pass
+condition_summary,qwen_1p_demo_only: median r_bc,-0.028606178617098986,-0.0286061786170989,-8.673617379884035e-17,pass
+condition_summary,qwen_1p_demo_only: items r_bc > 0.50,0.0,0.0,0.0,pass
+condition_summary,qwen_1p_demo_only: items r_bc > 0.70,0.0,0.0,0.0,pass
+condition_summary,qwen_1p_demo_only: items r_bc < 0,25.0,25.0,0.0,pass
+condition_summary,qwen_1p_demo_only: within-country SD ratio (mean),0.499740201529576,0.499740201529576,0.0,pass
+condition_summary,qwen_1p_demo_only: between-country SD ratio (median),0.04606869385360617,0.0460686938536062,-2.7755575615628914e-17,pass
+condition_summary,qwen_1p_full_nocountry: median r_bc,0.34407777613638846,0.3440777761363884,5.551115123125783e-17,pass
+condition_summary,qwen_1p_full_nocountry: items r_bc > 0.50,13.0,13.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry: items r_bc > 0.70,1.0,1.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry: items r_bc < 0,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry: within-country SD ratio (mean),0.6069134229483731,0.6069134229483731,0.0,pass
+condition_summary,qwen_1p_full_nocountry: between-country SD ratio (median),0.20432973345798572,0.2043297334579857,2.7755575615628914e-17,pass
+condition_summary,qwen_1p_full_nocountry_anchored: median r_bc,0.3890657567703878,0.3890657567703878,0.0,pass
+condition_summary,qwen_1p_full_nocountry_anchored: items r_bc > 0.50,9.0,9.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry_anchored: items r_bc > 0.70,2.0,2.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry_anchored: items r_bc < 0,1.0,1.0,0.0,pass
+condition_summary,qwen_1p_full_nocountry_anchored: within-country SD ratio (mean),0.5033333792670789,0.5033333792670789,0.0,pass
+condition_summary,qwen_1p_full_nocountry_anchored: between-country SD ratio (median),0.21021475180740673,0.2102147518074068,-8.326672684688674e-17,pass
+condition_summary,qwen_1p_full_nopolitical: median r_bc,0.5230873677092931,0.5230873677092931,0.0,pass
+condition_summary,qwen_1p_full_nopolitical: items r_bc > 0.50,22.0,22.0,0.0,pass
+condition_summary,qwen_1p_full_nopolitical: items r_bc > 0.70,11.0,11.0,0.0,pass
+condition_summary,qwen_1p_full_nopolitical: items r_bc < 0,11.0,11.0,0.0,pass
+condition_summary,qwen_1p_full_nopolitical: within-country SD ratio (mean),0.5884444738547393,0.5884444738547393,0.0,pass
+condition_summary,qwen_1p_full_nopolitical: between-country SD ratio (median),0.3129483059044579,0.3129483059044577,1.6653345369377348e-16,pass
+condition_summary,qwen_1p_full_noregion: median r_bc,0.41568846604464527,0.4156884660446452,5.551115123125783e-17,pass
+condition_summary,qwen_1p_full_noregion: items r_bc > 0.50,18.0,18.0,0.0,pass
+condition_summary,qwen_1p_full_noregion: items r_bc > 0.70,8.0,8.0,0.0,pass
+condition_summary,qwen_1p_full_noregion: items r_bc < 0,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_full_noregion: within-country SD ratio (mean),0.6020322997641119,0.6020322997641119,0.0,pass
+condition_summary,qwen_1p_full_noregion: between-country SD ratio (median),0.24623075375735415,0.2462307537573543,-1.3877787807814457e-16,pass
+condition_summary,qwen_1p_full_noregion_anchored: median r_bc,0.636892242151291,0.636892242151291,0.0,pass
+condition_summary,qwen_1p_full_noregion_anchored: items r_bc > 0.50,15.0,15.0,0.0,pass
+condition_summary,qwen_1p_full_noregion_anchored: items r_bc > 0.70,9.0,9.0,0.0,pass
+condition_summary,qwen_1p_full_noregion_anchored: items r_bc < 0,1.0,1.0,0.0,pass
+condition_summary,qwen_1p_full_noregion_anchored: within-country SD ratio (mean),0.48821618272847933,0.4882161827284793,5.551115123125783e-17,pass
+condition_summary,qwen_1p_full_noregion_anchored: between-country SD ratio (median),0.2984873342263302,0.2984873342263303,-5.551115123125783e-17,pass
+condition_summary,qwen_1p_minimal: median r_bc,0.5232431078756588,0.5232431078756588,0.0,pass
+condition_summary,qwen_1p_minimal: items r_bc > 0.50,21.0,21.0,0.0,pass
+condition_summary,qwen_1p_minimal: items r_bc > 0.70,7.0,7.0,0.0,pass
+condition_summary,qwen_1p_minimal: items r_bc < 0,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_minimal: within-country SD ratio (mean),0.5242385219261334,0.5242385219261334,0.0,pass
+condition_summary,qwen_1p_minimal: between-country SD ratio (median),0.2220632733155249,0.2220632733155249,0.0,pass
+condition_summary,qwen_1p_minimal_politics: median r_bc,0.31614892573077513,0.3161489257307751,5.551115123125783e-17,pass
+condition_summary,qwen_1p_minimal_politics: items r_bc > 0.50,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics: items r_bc > 0.70,6.0,6.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics: items r_bc < 0,13.0,13.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics: within-country SD ratio (mean),0.5750139739753063,0.5750139739753063,0.0,pass
+condition_summary,qwen_1p_minimal_politics: between-country SD ratio (median),0.18726678077878323,0.1872667807787831,1.3877787807814457e-16,pass
+condition_summary,qwen_1p_minimal_politics_econ: median r_bc,0.42277168674059773,0.4227716867405977,5.551115123125783e-17,pass
+condition_summary,qwen_1p_minimal_politics_econ: items r_bc > 0.50,17.0,17.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics_econ: items r_bc > 0.70,8.0,8.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics_econ: items r_bc < 0,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_minimal_politics_econ: within-country SD ratio (mean),0.5985019305907887,0.5985019305907887,0.0,pass
+condition_summary,qwen_1p_minimal_politics_econ: between-country SD ratio (median),0.2659580802026261,0.2659580802026262,-5.551115123125783e-17,pass
+condition_summary,qwen_1p_political: median r_bc,0.28695004951779013,0.2869500495177901,5.551115123125783e-17,pass
+condition_summary,qwen_1p_political: items r_bc > 0.50,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_political: items r_bc > 0.70,4.0,4.0,0.0,pass
+condition_summary,qwen_1p_political: items r_bc < 0,14.0,14.0,0.0,pass
+condition_summary,qwen_1p_political: within-country SD ratio (mean),0.6176850119754592,0.6176850119754592,0.0,pass
+condition_summary,qwen_1p_political: between-country SD ratio (median),0.2737113122588647,0.2737113122588646,1.1102230246251565e-16,pass
+condition_summary,qwen_1p_rep: median r_bc,0.32491479842048004,0.32491479842048,5.551115123125783e-17,pass
+condition_summary,qwen_1p_rep: items r_bc > 0.50,9.0,9.0,0.0,pass
+condition_summary,qwen_1p_rep: items r_bc > 0.70,5.0,5.0,0.0,pass
+condition_summary,qwen_1p_rep: items r_bc < 0,9.0,9.0,0.0,pass
+condition_summary,qwen_1p_rep: within-country SD ratio (mean),0.5938238318499606,0.5938238318499606,0.0,pass
+condition_summary,qwen_1p_rep: between-country SD ratio (median),0.23317270099930532,0.233172700999305,3.0531133177191805e-16,pass
+condition_summary,qwen_1p_ses: median r_bc,0.3967139616070948,0.3967139616070948,0.0,pass
+condition_summary,qwen_1p_ses: items r_bc > 0.50,17.0,17.0,0.0,pass
+condition_summary,qwen_1p_ses: items r_bc > 0.70,5.0,5.0,0.0,pass
+condition_summary,qwen_1p_ses: items r_bc < 0,12.0,12.0,0.0,pass
+condition_summary,qwen_1p_ses: within-country SD ratio (mean),0.6100310811140948,0.6100310811140948,0.0,pass
+condition_summary,qwen_1p_ses: between-country SD ratio (median),0.3644386279002536,0.3644386279002537,-1.1102230246251565e-16,pass
+condition_summary,qwen_3p: median r_bc,0.44256727373028687,0.4425672737302868,5.551115123125783e-17,pass
+condition_summary,qwen_3p: items r_bc > 0.50,17.0,17.0,0.0,pass
+condition_summary,qwen_3p: items r_bc > 0.70,5.0,5.0,0.0,pass
+condition_summary,qwen_3p: items r_bc < 0,13.0,13.0,0.0,pass
+condition_summary,qwen_3p: within-country SD ratio (mean),0.5559314850328837,0.5559314850328837,0.0,pass
+condition_summary,qwen_3p: between-country SD ratio (median),0.26290907329564633,0.262909073295646,3.3306690738754696e-16,pass
+direction,item table r_bc equals recomputed (max abs deviation),8.326672684688674e-17,0.0,8.326672684688674e-17,pass
+direction,reverse flags agree with the frozen direction table,0.0,0.0,0.0,pass
+direction,forward mean r_bc,0.5508875700728239,0.5509,-1.2429927176094147e-05,pass
+direction,reverse mean r_bc,-0.29790416236003825,-0.2979,-4.162360038251212e-06,pass
+direction,R^2 of r_bc on direction,0.657634226970378,0.6576,3.4226970378026245e-05,pass
+direction,sign-aligned median r_bc,0.5353025131396244,0.5353,2.5131396244049142e-06,pass
+direction,R^2 excluding the three uninterpretable items,0.745458897997158,0.7455,-4.110200284201948e-05,pass
+pooled inflation,qwen_1p: r_pool,0.8217409520386467,0.8217409520386467,0.0,pass
+pooled inflation,qwen_3p: r_pool,0.8019808485874149,0.8019808485874149,0.0,pass
+pooled inflation,llama_1p: r_pool,0.8333159726772608,0.8333159726772608,0.0,pass
+pooled inflation,llama_3p: r_pool,0.6424487097024371,0.6424487097024371,0.0,pass
+individual,r_pw reconstructed from rq3 moments (max abs deviation),9.71445146547012e-17,0.0,9.71445146547012e-17,pass
+individual,r_ind reconstructed from rq3 moments (max abs deviation),1.1102230246251565e-16,0.0,1.1102230246251565e-16,pass
+individual,"cross-level agreement, as-coded, against r_pw",0.8539817216376675,0.8539817216376677,-2.220446049250313e-16,pass
+individual,"cross-level agreement, forward-coded only, against r_pw",0.4899033696911624,0.4899033696911622,1.6653345369377348e-16,pass
+individual,"cross-level agreement, sign-aligned, against r_pw",0.632647147175148,0.6326471471751483,-2.220446049250313e-16,pass
+country contrast,forward median raw dr,0.13518355374039698,0.1351835537403969,8.326672684688674e-17,pass
+country contrast,reverse median raw dr,-0.17556434441393726,-0.1755643444139372,-5.551115123125783e-17,pass
+country contrast,forward Wilcoxon p,2.384185791015625e-06,2.384185791015625e-06,0.0,pass
+country contrast,forward median Fisher-z dr (contrasts_by_direction),0.19669905930602594,0.1966990593060259,2.7755575615628914e-17,pass
+country contrast,forward median Fisher-z dr (clean_ablations),0.19669905930602594,0.1966990593060259,2.7755575615628914e-17,pass
+2x2,triple difference [all reverse items in batch (n=12)],0.49120012618116493,0.4912001261811651,-1.6653345369377348e-16,pass
+2x2,cells reconstruct the triple difference [all reverse items in batch (n=12)],0.49120012618116493,0.4912001261811649,5.551115123125783e-17,pass
+2x2,"triple difference [analysable reverse items, pre-declared exclusions (n=10)]",0.42299597789762244,0.4229959778976226,-1.6653345369377348e-16,pass
+2x2,"cells reconstruct the triple difference [analysable reverse items, pre-declared exclusions (n=10)]",0.42299597789762244,0.4229959778976224,5.551115123125783e-17,pass
+2x2,triple difference [further excluding freehms and hmsacld (n=8)],0.16364585649338853,0.1636458564933886,-5.551115123125783e-17,pass
+2x2,cells reconstruct the triple difference [further excluding freehms and hmsacld (n=8)],0.16364585649338853,0.16364585649338848,5.551115123125783e-17,pass
+anchoring,"empirical noise floor, median |r_A - r_B|",0.0601875127966571,0.0602,-1.2487203342896602e-05,pass
+anchoring,"empirical noise floor, max |r_A - r_B|",0.18541125902063105,0.1854,1.1259020631038119e-05,pass
+anchoring,"raw-scale DiD, 42-item baseline, 10 reverse minus 6 coarse controls",0.8457793713704698,0.8458,-2.062862953022826e-05,pass
+anchoring,Fisher-z DiD [main_qwen_1p (42-item batch) | pre-declared exclusions],0.9675130356586906,0.9675130356586906,0.0,pass
+anchoring,placebo mean z [main_qwen_1p (42-item batch)],0.03558141734140213,0.0355814173414021,3.469446951953614e-17,pass
+anchoring,Fisher-z DiD [main_qwen_1p (42-item batch) | all 12 reverse items],0.8007133216460709,0.8007133216460709,0.0,pass
+anchoring,placebo mean z [main_qwen_1p (42-item batch)],0.03558141734140213,0.0355814173414021,3.469446951953614e-17,pass
+anchoring,"Fisher-z DiD [replicate (22-item batch, matches anchored) | pre-declared exclusions]",1.0068892124446671,1.0068892124446671,0.0,pass
+anchoring,"placebo mean z [replicate (22-item batch, matches anchored)]",0.028881412948204205,0.0288814129482042,3.469446951953614e-18,pass
+anchoring,"Fisher-z DiD [replicate (22-item batch, matches anchored) | all 12 reverse items]",0.8498814204652715,0.8498814204652715,0.0,pass
+anchoring,"placebo mean z [replicate (22-item batch, matches anchored)]",0.028881412948204205,0.0288814129482042,3.469446951953614e-18,pass
+benchmark,leave-one-out regional r (max abs deviation),9.367506770274758e-17,0.0,9.367506770274758e-17,pass
+benchmark,leave-one-out regional nMAE (max abs deviation),1.1102230246251565e-16,0.0,1.1102230246251565e-16,pass
+benchmark,grand-mean nMAE is IN-SAMPLE (max abs deviation),1.1102230246251565e-16,0.0,1.1102230246251565e-16,pass
+benchmark,model nMAE equals the released mae_model column (max abs deviation),1.1102230246251565e-16,0.0,1.1102230246251565e-16,pass
+benchmark,achieved individual recovery as a share of the ceiling,0.20415995133179396,0.204,0.0001599513317939727,pass
+concordance,CCC equals r x Cb (max abs deviation),1.6653345369377348e-16,0.0,1.6653345369377348e-16,pass
+concordance,median CCC,0.03566204694525725,0.0357,-3.795305474275229e-05,pass
+concordance,median Cb,0.1318757087424262,0.1319,-2.429125757377748e-05,pass
+concordance,median absolute bias,1.1267996570867647,1.1268,-3.4291323536272955e-07,pass

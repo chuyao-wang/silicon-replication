@@ -1,0 +1,6 @@
+arm,subset,n,pct_above_top,median_excess_points,median_excess_rel_width,p90_excess_points,n_distinct_values,top5_values
+llama_3p,all out-of-range,49625,93.52,39.0,6.6667,615.0,2963,"42 x1,671; 24 x1,655; 11 x1,599; 625 x1,170; 35 x1,114"
+llama_3p,eleven-point items,35134,94.37,55.5,5.55,615.0,2720,"11 x1,335; 24 x1,063; 95 x809; 42 x778; 85 x762"
+llama_3p,short-scale items,14491,91.46,35.0,9.0,548.0,710,"0 x1,065; 42 x893; 24 x592; 9 x514; 625 x467"
+llama_1p,all out-of-range,64,100.0,0.5,0.1667,0.5,4,4.5 x47; 5.5 x14; 6.5 x2; 4.4 x1
+llama_1p,short-scale items,64,100.0,0.5,0.1667,0.5,4,4.5 x47; 5.5 x14; 6.5 x2; 4.4 x1
