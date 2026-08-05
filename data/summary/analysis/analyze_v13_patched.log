@@ -1,0 +1,191 @@
+==============================================================================
+0. ENVIRONMENT / METHODS METADATA
+==============================================================================
+  ESS file:        ESS11e04_1.csv
+  pandas / numpy:  3.0.0 / 2.2.6
+  vLLM:            0.15.0
+  missing_rule:    {'range'}
+  human_weight:    {'pspwght'}
+  gen_seed by condition (None = independent unseeded run):
+    qwen_1p                      None
+    qwen_3p                      None
+    llama_1p                     None
+    llama_3p                     None
+    qwen_1p_demo_only            None
+    qwen_1p_minimal              None
+    qwen_1p_ses                  None
+    qwen_1p_political            None
+    qwen_1p_full_noregion        None
+    qwen_1p_full_nocountry       None
+    qwen_1p_full_nopolitical     None
+    qwen_1p_anchored             None
+    qwen_1p_rep                  None
+    qwen_1p_full_noregion_anchored None
+    qwen_1p_full_nocountry_anchored None
+  -> ALL conditions unseeded: main_qwen_1p and replicate are a genuine
+     repeated-run pair (see section 8 below), not a simulated estimate.
+
+==============================================================================
+1. CONDITION SUMMARY
+==============================================================================
+condition                         median r  >.5  >.7  neg     wSD     bSD
+-------------------------------------------------------------------------
+main_qwen_1p (full_clean, top rung)   +0.4433   20    9   11  0.6052  0.2821
+main_qwen_3p                       +0.4426   17    5   13  0.5559  0.2629
+main_llama_1p                      +0.3486   13    2   15  0.8335  0.1674
+main_llama_3p                      +0.1729    3    1   15  1.4062  0.6000
+rung: demo_only                    -0.0286    0    0   25  0.4997  0.0461
+rung: minimal                      +0.5232   21    7   12  0.5242  0.2221
+rung: ses                          +0.3967   17    5   12  0.6100  0.3644
+rung: political                    +0.2870   12    4   14  0.6177  0.2737
+contrast: full_noregion            +0.4157   18    8   12  0.6020  0.2462
+contrast: full_nocountry           +0.3441   13    1   12  0.6069  0.2043
+LOGO: full_nopolitical             +0.5231   22   11   11  0.5884  0.3129
+anchored (22 items)                +0.6501   14    9    0  0.4911  0.3197
+replicate (22 items, numeric)      +0.3249    9    5    9  0.5938  0.2332
+2x2: full_noregion + anchored      +0.6369   15    9    1  0.4882  0.2985
+2x2: full_nocountry + anchored     +0.3891    9    2    1  0.5033  0.2102
+
+==============================================================================
+2. ITEM-LEVEL DIRECTION DECOMPOSITION — qwen_1p (full_clean)
+==============================================================================
+  forward mean r_bc:  +0.5509  (n=29)
+  reverse mean r_bc:  -0.2979  (n=13)
+  R^2 (r_bc ~ reverse):  0.6576
+  sign-aligned median:  +0.5353
+
+  negative items (11), most severe first:
+    freehms    -0.8203  [reverse]
+    hmsacld    -0.7257  [reverse]
+    polintr    -0.6841  [reverse]
+    hincfel    -0.6726  [reverse]
+    aesfdrk    -0.4579  [reverse]
+    imdfetn    -0.3585  [reverse]
+    impcntr    -0.3574  [reverse]
+    health     -0.3323  [reverse]
+    imsmetn    -0.2549  [reverse]
+    euftf      -0.2314  [FORWARD (unexplained by direction)]
+    vote       -0.1499  [reverse]
+
+==============================================================================
+3. PRIMARY CONTRAST — country label effect (full_noregion vs full_nocountry)
+==============================================================================
+  n items compared: 42
+  median country-label effect (r_with - r_without): +0.0912
+  mean:  +0.0305   items where delta > 0: 28/42
+
+  top 5 items most helped by the country label:
+    atcherp    with=+0.345  without=-0.044  delta=+0.388
+    pplfair    with=+0.495  without=+0.189  delta=+0.305
+    trstprl    with=+0.784  without=+0.506  delta=+0.278
+    atchctr    with=+0.203  without=-0.052  delta=+0.256
+    imueclt    with=+0.564  without=+0.343  delta=+0.221
+
+  bottom 5 (country label helps least / hurts):
+    gincdif    with=+0.230  without=+0.470  delta=-0.240
+    hmsfmlsh   with=-0.016  without=+0.252  delta=-0.267
+    rlgatnd    with=+0.377  without=+0.713  delta=-0.335
+    hmsacld    with=-0.661  without=-0.185  delta=-0.476
+    freehms    with=-0.815  without=-0.270  delta=-0.544
+
+  NOTE: both arms share seed 888 and n=685, drawing the SAME respondents,
+  so delta reflects only the silicon side (paired design).
+
+==============================================================================
+4. CUMULATIVE LADDER (revision plan Figure 4 / section 3.5)
+==============================================================================
+  rung           k  median r  between-SD ratio
+  demo_only      3   -0.0286            0.0461
+  minimal        4   +0.5232            0.2221
+  ses           13   +0.3967            0.3644
+  political     14   +0.2870            0.2737
+  full_clean    20   +0.4433            0.2821
+
+==============================================================================
+5. LOGO — full_nopolitical vs full_clean
+==============================================================================
+  median |delta| removing political-identity group: 0.0498
+  mean delta (full - nopolitical): +0.0081
+
+==============================================================================
+6. CROSS-LEVEL AGREEMENT — qwen_1p (revision plan 3.3)
+==============================================================================
+  specification                    r_ind  pooled-within
+  -----------------------------------------------------
+  as-coded                       +0.9368        +0.8540
+  forward-coded only             +0.7745        +0.4899
+  sign-aligned                   +0.8355        +0.6326
+
+  between-country share of r_ind's covariance: median 35.9%  IQR [26.1%, 57.0%]
+
+  The r_ind column shares a component with r_bc and is therefore inflated. Lead
+  with the pooled-within column. Its forward-coded-only value is the most
+  conservative specification available -- it removes both the direction confound
+  and the shared component -- and it is roughly half the as-coded headline. The
+  agreement is real and significant at that level, but it should be described as
+  moderate rather than strong.
+
+==============================================================================
+7. RELIABILITY / ATTENUATION at n=685
+==============================================================================
+  respondents per country (manifest):        685
+  median n_valid per item-country cell:      675
+  median pooled N per item (30 countries):   20156
+
+  median country-mean reliability, human:    0.9897
+  median country-mean reliability, silicon:  0.9416
+  median attenuation factor on r_bc:         0.9667  (3.3% attenuation)
+  items with silicon-side reliability < .50: 2  ['hmsfmlsh', 'rlgatnd']
+  items with human-side reliability < .50:   0
+
+  r detectable at 80% power, WITHIN one country (n=675): 0.1077
+  r detectable at 80% power, POOLED within-country (N=20156): 0.0197
+  observed mean r_wc (per country-item cell):  +0.0271  (SD 0.0792)
+  observed median r_pw (pooled within-country): +0.0429
+  -> ABOVE the pooled threshold: the near-zero is estimated precisely, not merely undetected
+
+  REPORTING RULE. The within-country figure alone cannot support a
+  'genuine near-zero' claim, because the observed value lies below its
+  own detection threshold. Quote the pooled comparison for that claim,
+  and quote the within-country threshold only to say that no single
+  country's estimate is individually informative. Note also that a
+  larger sample cannot rescue the aggregate conclusions: the median
+  attenuation on r_bc is only a few per cent.
+
+==============================================================================
+8. ANCHORED SCALE EXPERIMENT — using REAL repeated-run noise
+==============================================================================
+  n items with all three arms present: 22
+  item       grp        r_A(num)  r_B(num) r_T(anch)   noise   signal
+  aesfdrk    reverse      -0.458    -0.521    +0.346   0.063   +0.804
+  freehms    reverse      -0.820    -0.808    +0.634   0.012   +1.454
+  gincdif    reverse      +0.346    +0.258    +0.182   0.088   -0.164
+  health     reverse      -0.332    -0.275    +0.250   0.058   +0.582
+  hincfel    reverse      -0.673    -0.577    +0.785   0.096   +1.457
+  hmsacld    reverse      -0.726    -0.631    +0.753   0.095   +1.479
+  hmsfmlsh   reverse      +0.248    +0.063    +0.053   0.185   -0.195  <-- excluded (noise-dominated)
+  imdfetn    reverse      -0.359    -0.442    +0.478   0.083   +0.836
+  impcntr    reverse      -0.357    -0.269    +0.418   0.089   +0.776
+  imsmetn    reverse      -0.255    -0.224    +0.384   0.030   +0.639
+  polintr    reverse      -0.684    -0.659    +0.777   0.025   +1.461
+  rlgatnd    reverse      +0.347    +0.463    +0.666   0.116   +0.319  <-- excluded (noise-dominated)
+  actrolga   ctrl         +0.624    +0.737    +0.737   0.114   +0.113  <-- |signal|<noise
+  cptppola   ctrl         +0.504    +0.501    +0.531   0.003   +0.028
+  inprdsc    ctrl         +0.427    +0.542    +0.724   0.114   +0.297
+  psppipla   ctrl         +0.707    +0.667    +0.798   0.040   +0.091
+  psppsgva   ctrl         +0.548    +0.576    +0.576   0.028   +0.028
+  sclmeet    ctrl         +0.295    +0.392    +0.259   0.096   -0.036  <-- |signal|<noise
+  happy      placebo      +0.691    +0.712    +0.698   0.021   +0.007  <-- |signal|<noise
+  stfdem     placebo      +0.732    +0.725    +0.749   0.007   +0.017
+  stflife    placebo      +0.775    +0.788    +0.777   0.013   +0.003  <-- |signal|<noise
+  trstplc    placebo      +0.819    +0.807    +0.845   0.012   +0.026
+
+  PRE-REGISTERED PRIMARY RESULT (revision plan section 4):
+    DiD (reverse minus forward-control mean signal): +0.8458
+    95% bootstrap CI: [+0.4990, +1.1504]  excludes 0
+    reverse items moving upward: 9/10  (success criterion: >= 8/10)
+    VERDICT: SUCCESS — report as primary experimental result
+
+==============================================================================
+All tables written to /home/cwang/Winston_Code/results/analysis/
+==============================================================================

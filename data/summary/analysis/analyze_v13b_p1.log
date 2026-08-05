@@ -1,0 +1,79 @@
+==============================================================================
+A. ANCHORED DiD ON FISHER-z SCALE (primary specification)
+==============================================================================
+
+  baseline = main_qwen_1p (42-item batch)
+    [pre-declared exclusions] DiD(z) = +0.9675  95% CI [+0.5052, +1.3984]  excludes 0  up 9/10
+      placebo mean signal(z) = +0.0356   (should be ~0 if anchoring per se does not inflate)
+    [all 12 reverse items] DiD(z) = +0.8007  95% CI [+0.3692, +1.2408]  excludes 0  up 10/12
+      placebo mean signal(z) = +0.0356   (should be ~0 if anchoring per se does not inflate)
+
+  baseline = replicate (22-item batch, matches anchored)
+    [pre-declared exclusions] DiD(z) = +1.0069  95% CI [+0.5788, +1.4114]  excludes 0  up 9/10
+      placebo mean signal(z) = +0.0289   (should be ~0 if anchoring per se does not inflate)
+    [all 12 reverse items] DiD(z) = +0.8499  95% CI [+0.4562, +1.2441]  excludes 0  up 10/12
+      placebo mean signal(z) = +0.0289   (should be ~0 if anchoring per se does not inflate)
+
+  Interpretation note: report the Fisher-z DiD as primary and the
+  raw-correlation DiD as descriptive. The raw-scale magnitude is inflated
+  by the reverse items' 3x greater headroom to the +1 bound.
+
+==============================================================================
+B. PRIMARY CONTRAST AND LOGO, SPLIT BY RESPONSE DIRECTION
+==============================================================================
+
+  country label effect (rich baseline): qwen_1p_full_noregion minus qwen_1p_full_nocountry
+    all items      median +0.0912  mean +0.0305  n=42  improved 28/42
+    FORWARD items  median +0.1352  mean +0.1345  n=29  improved 27/29
+    REVERSE items  median -0.1756  mean -0.2014  n=13  improved 1/13
+    forward-only Wilcoxon signed-rank p = 2.384e-06
+    Fisher-z: all +0.1304 | forward +0.1967 | reverse -0.1762
+
+  country label effect (sparse baseline): qwen_1p_minimal minus qwen_1p_demo_only
+    all items      median +0.5373  mean +0.2833  n=42  improved 29/42
+    FORWARD items  median +0.6402  mean +0.5769  n=29  improved 28/29
+    REVERSE items  median -0.3570  mean -0.3715  n=13  improved 1/13
+    forward-only Wilcoxon signed-rank p = 1.118e-08
+    Fisher-z: all +0.6601 | forward +0.7307 | reverse -0.4390
+
+  political-identity variables (full minus nopolitical): qwen_1p minus qwen_1p_full_nopolitical
+    all items      median +0.0128  mean +0.0081  n=42  improved 24/42
+    FORWARD items  median -0.0029  mean -0.0153  n=29  improved 13/29
+    REVERSE items  median +0.0415  mean +0.0603  n=13  improved 11/13
+    forward-only Wilcoxon signed-rank p = 0.4679
+    Fisher-z: all +0.0248 | forward -0.0046 | reverse +0.0610
+
+  all enrichment beyond country (full minus minimal): qwen_1p minus qwen_1p_minimal
+    all items      median +0.0072  mean +0.0255  n=42  improved 22/42
+    FORWARD items  median -0.0225  mean -0.0103  n=29  improved 14/29
+    REVERSE items  median +0.0626  mean +0.1053  n=13  improved 8/13
+    forward-only Wilcoxon signed-rank p = 0.6545
+    Fisher-z: all +0.0084 | forward -0.0249 | reverse +0.1632
+
+==============================================================================
+C. COVERAGE AND PARSE RATES BY CONDITION
+==============================================================================
+  condition                            rows  silicon ok   human ok     both
+  llama_1p                          863,100     99.99%    97.81%  97.81%
+  llama_3p                          863,100     77.28%    97.81%  75.71%
+      LOW COVERAGE — worst 5 items:   stflife 49.9%, trstun 52.4%, stfeco 54.0%, trstep 55.4%, stfgov 55.6%
+      worst 5 countries: UA 72.0%, LT 72.2%, EE 73.4%, LV 73.8%, HU 74.4%
+  qwen_1p_anchored_pilotanch            132    100.00%   100.00% 100.00%
+  qwen_1p_anchored                  452,100     99.99%    98.32%  98.31%
+  qwen_1p_demo_only                 863,100     99.27%    97.81%  97.10%
+  qwen_1p_full_nocountry_anchored    452,100     99.98%    98.32%  98.31%
+  qwen_1p_full_nocountry            863,100     99.95%    97.81%  97.77%
+  qwen_1p_full_nopolitical          863,100     99.91%    97.81%  97.72%
+  qwen_1p_full_noregion_anchored    452,100     99.99%    98.32%  98.31%
+  qwen_1p_full_noregion             863,100     99.92%    97.81%  97.74%
+  qwen_1p_minimal                   863,100     98.76%    97.81%  96.61%
+  qwen_1p_pilotnum                      132    100.00%   100.00% 100.00%
+  qwen_1p_political                 863,100     99.85%    97.81%  97.67%
+  qwen_1p_rep                       452,100     99.99%    98.32%  98.31%
+  qwen_1p                           863,100     99.93%    97.81%  97.74%
+  qwen_1p_ses                       863,100     99.80%    97.81%  97.62%
+  qwen_3p                           863,100     99.99%    97.81%  97.80%
+
+==============================================================================
+Tables written to /home/cwang/Winston_Code/results/analysis/
+==============================================================================

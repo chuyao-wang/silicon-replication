@@ -1,0 +1,15 @@
+quantity,value
+"median r, model",0.44330308573014837
+"median r, leave-one-out regional average",0.5542364427613875
+items on which the regional average outranks the model,24.0
+"median nMAE, model",0.1796066367313927
+"median nMAE, leave-one-out regional average",0.0559499731843909
+items on which the regional average beats the model on nMAE,41.0
+"median nMAE, grand mean (in-sample, as released)",0.07152083692904126
+"median nMAE, grand mean (leave-one-out, matched)",0.0739870726852151
+items on which the model beats the in-sample grand mean on nMAE,2.0
+items on which the model beats the leave-one-out grand mean on nMAE,3.0
+"offset reduction, ratio of medians (as released, 64.2%)",0.6415477975242696
+"offset reduction, ratio of means",0.6290319600860153
+"offset reduction, MEDIAN of the per-item reductions (recommended)",0.5989612508948295
+"offset reduction, mean of the per-item reductions",0.5372961808491042

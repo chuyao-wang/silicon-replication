@@ -1,0 +1,21 @@
+deflator,sample,arm,n_items,median_r,median_nmae,n_undefined_r
+USD,n=30 (primary),model,42,0.44330308573014837,0.1796066367313927,0
+USD,n=30 (primary),model_debiased,42,0.4433030857301484,0.06438039451562615,0
+USD,n=30 (primary),region_mean_loo,42,0.5542364427613875,0.0559499731843909,0
+USD,n=30 (primary),gdp_plus_region_loo,42,0.6177435260870564,0.05221687963692738,0
+USD,n=30 (primary),grand_mean_insample,42,0.0,0.07152083692904126,0
+USD,n=29 (excluding IL),model,42,0.4975013840148256,0.17830416919783365,0
+USD,n=29 (excluding IL),model_debiased,42,0.4975013840148256,0.06278741330928546,0
+USD,n=29 (excluding IL),region_mean_loo,42,0.5543433328156945,0.05681471207663624,0
+USD,n=29 (excluding IL),gdp_plus_region_loo,42,0.6741255854356889,0.05237354249247152,0
+USD,n=29 (excluding IL),grand_mean_insample,42,0.0,0.07288261431785789,0
+PPP,n=30 (primary),model,42,0.44330308573014837,0.1796066367313927,0
+PPP,n=30 (primary),model_debiased,42,0.4433030857301484,0.06438039451562615,0
+PPP,n=30 (primary),region_mean_loo,42,0.5542364427613875,0.0559499731843909,0
+PPP,n=30 (primary),gdp_plus_region_loo,42,0.6316767864781354,0.05272205014520216,0
+PPP,n=30 (primary),grand_mean_insample,42,0.0,0.07152083692904126,0
+PPP,n=29 (excluding IL),model,42,0.4975013840148256,0.17830416919783365,0
+PPP,n=29 (excluding IL),model_debiased,42,0.4975013840148256,0.06278741330928546,0
+PPP,n=29 (excluding IL),region_mean_loo,42,0.5543433328156945,0.05681471207663624,0
+PPP,n=29 (excluding IL),gdp_plus_region_loo,42,0.640923186499107,0.053871359526509725,0
+PPP,n=29 (excluding IL),grand_mean_insample,42,0.0,0.07288261431785789,0

@@ -1,0 +1,7 @@
+estimator,value
+ratio of medians (as released),0.6415477975242696
+ratio of means,0.6290319600860153
+MEDIAN of the per-item reductions (recommended),0.5989612508948294
+mean of the per-item reductions,0.5372961808491042
+items where removing the offset helps,41.0
+items where removing the offset hurts,1.0

@@ -1,0 +1,26 @@
+E3  log GDP per capita plus region dummies, as the aggregate comparator that
+    needs no survey data from other countries.
+
+STATUS: blocked. benchmark_v13.py --gdp is coded but was never run because the
+input file does not exist. This is the only comparator that speaks to a
+researcher holding no survey data at all, which is the silicon-sampling use
+case, so the gap is currently acknowledged in the memo rather than closed.
+
+REQUIRED INPUT: gdp_per_capita.csv, two columns, thirty rows.
+    cntry   ISO-2 code, matching country_bloc_assignment.csv exactly
+    gdp_pc  GDP per capita, current US dollars, one reference year
+
+Round 11 fieldwork ran across 2023 and 2024, so use a single year and record
+it. World Bank NY.GDP.PCAP.CD covers twenty-nine of the thirty; Montenegro is
+present, so no substitution is needed. Do not mix sources across countries.
+
+SPECIFICATION once the file exists, per item:
+    regress the human country mean on log(gdp_pc) and bloc dummies, thirty
+    observations, leave-one-out predicted values; report r against the human
+    mean and range-normalised MAE, on the same two axes as the model and the
+    regional average. Leave-one-out is required for comparability with the
+    regional arm; with five blocs and one covariate the in-sample fit would
+    otherwise carry six of thirty degrees of freedom.
+
+REPORTING: this comparator does not need survey data from other countries, so
+it is the only row of the benchmark table exempt from the mandatory caveat.

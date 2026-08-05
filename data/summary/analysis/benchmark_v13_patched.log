@@ -1,0 +1,111 @@
+==============================================================================
+1. AGGREGATE BENCHMARK — better than what alternative?
+==============================================================================
+  note: REGION contains ['CZ'], absent from this ESS edition; ignored
+  bloc assignment written to country_bloc_assignment.csv (required for reproducibility; Israel is a bloc of one and therefore falls back to the all-other-countries mean)
+
+
+  predictor                                                 median r  median nMAE
+  -------------------------------------------------------------------------------
+  the model, as produced                                     +0.4433       0.1796
+  the model, per-item bias removed (UPPER BOUND, needs truth)   +0.4433       0.0644
+  leave-one-out region mean (no model)                       +0.5542       0.0559
+  grand mean, IN-SAMPLE (no model, cannot rank at all)       +0.0000       0.0715
+  grand mean, leave-one-out (matched to the region arm)         +nan       0.0740
+
+  WARNING: undefined correlations by predictor: {'model': 0, 'debias': 0, 'region': 0, 'grand': 0, 'grand_loo': 42}
+  Head-to-head counts below exclude those items; investigate before
+  quoting the counts.
+
+  head-to-head, item by item (out of 42):
+    model beats leave-one-out region mean                    on r:  18   on nMAE:  1
+    debiased model beats                                       on nMAE: 13
+    model beats grand mean, IN-SAMPLE                        on r:  31   on nMAE:  2
+    debiased model beats                                       on nMAE: 30
+    model beats grand mean, leave-one-out                    on r:   n/a   on nMAE:  3
+    debiased model beats                                       on nMAE: 30
+
+  Removing a single per-item offset cuts the model's error by:
+     64.2%   ratio of medians (as released)
+     62.9%   ratio of means
+     59.9%   MEDIAN of the per-item reductions (recommended)
+     53.7%   mean of the per-item reductions
+  Report 59.9% and name the estimator. Quoting the ratio of
+  medians without naming it invites a reader who recomputes per item to
+  get a figure five points lower.
+  That is the quantitative form of 'the levels are displaced but the
+  country-to-country pattern is largely intact'. It also means the
+  headline error is dominated by a constant, not by country-specific
+  mistakes — which is what a group-level prior with a fixed offset
+  would produce, and is consistent with the compression and bias
+  results reported elsewhere.
+
+  IMPORTANT FRAMING: the region and grand-mean comparators both
+  require survey data from other countries. State that explicitly.
+  The comparison answers 'should a researcher who already holds real
+  data use the model to extend it', which is the realistic use case,
+  not 'is the model better than nothing'.
+
+==============================================================================
+2. LLAMA THIRD-PERSON COVERAGE SENSITIVITY
+==============================================================================
+  threshold              items kept  median r  median nMAE
+  --------------------------------------------------------
+  coverage >= 0.00              42   +0.1729       0.1412
+  coverage >= 0.60              33   +0.1456       0.1316
+  coverage >= 0.70              27   +0.0372       0.1358
+  coverage >= 0.80              19   -0.0009       0.1646
+  coverage >= 0.90              12   +0.0182       0.1591
+  coverage >= 0.95               7   +0.0372       0.1646
+
+  median r at no threshold:            +0.1729
+  median r at the 0.80 threshold ONLY: -0.0009
+  mean of the three tightest rows:     +0.0182
+  Note the series is NOT monotone: it falls to about zero and then
+  recovers slightly at the sparsest thresholds (n = 12 and n = 7).
+  Neither figure nor text may describe it as monotone.
+
+  The correlation FALLS as the threshold tightens. This is the opposite of a
+  parsing artefact: the items this condition parsed most reliably are the ones it
+  recovered WORST, so the poorly covered items were carrying what little signal
+  there was. The explanation is that the low-coverage items are the wide 0-10
+  scales, and those are precisely the items on which cross-national recovery is
+  otherwise strongest, so third-person framing fails to produce a parsable answer
+  on exactly the items that would have recovered best.
+
+  Two consequences for the write-up. First, better parsing would NOT rescue this
+  condition, so do not present the coverage problem as an excuse for the weak
+  result. Second, the usable subset is a BIASED subset, not a cleaner one, so the
+  full-sample estimate is the one to report, with the selection stated
+  explicitly.
+
+==============================================================================
+3. THE euftf ANOMALY — which construct does the model appear to answer?
+==============================================================================
+  the model's euftf country means correlate with HUMAN euftf at -0.2314
+
+  most positively correlated human items:
+    stflife    +0.6370
+    happy      +0.6057
+    hmsfmlsh   +0.5564
+    trstplc    +0.5422
+    trstlgl    +0.5343
+  most negatively correlated human items:
+    hincfel    -0.5726
+    freehms    -0.4859
+    health     -0.4548
+    hmsacld    -0.4266
+    polintr    -0.4013
+
+  Read this as a hypothesis generator, not a test. euftf is a
+  bipolar item whose numeric direction is a convention (0 = unification
+  has gone too far, 10 = should go further), so an inverted reading is
+  possible without the item being reverse-coded in the ESS sense. If the
+  model's euftf tracks a substantively adjacent human item more strongly
+  than it tracks human euftf, that is the substantive explanation the
+  revision plan asks for, and it should be stated as one item's
+  interpretation rather than generalised.
+
+==============================================================================
+Tables written to /home/cwang/Winston_Code/results/analysis/
+==============================================================================

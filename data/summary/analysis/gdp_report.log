@@ -1,0 +1,79 @@
+============================================================================================
+GDP ARM SUMMARY  (deflator x sample x arm)
+============================================================================================
+
+  USD, n=30 (primary)
+    arm                       median r  median nMAE
+    model                      +0.4433       0.1796
+    model_debiased             +0.4433       0.0644
+    region_mean_loo            +0.5542       0.0559
+    gdp_plus_region_loo        +0.6177       0.0522
+    grand_mean_insample        +0.0000       0.0715
+
+  USD, n=29 (excluding IL)
+    arm                       median r  median nMAE
+    model                      +0.4975       0.1783
+    model_debiased             +0.4975       0.0628
+    region_mean_loo            +0.5543       0.0568
+    gdp_plus_region_loo        +0.6741       0.0524
+    grand_mean_insample        +0.0000       0.0729
+
+  PPP, n=30 (primary)
+    arm                       median r  median nMAE
+    model                      +0.4433       0.1796
+    model_debiased             +0.4433       0.0644
+    region_mean_loo            +0.5542       0.0559
+    gdp_plus_region_loo        +0.6317       0.0527
+    grand_mean_insample        +0.0000       0.0715
+
+  PPP, n=29 (excluding IL)
+    arm                       median r  median nMAE
+    model                      +0.4975       0.1783
+    model_debiased             +0.4975       0.0628
+    region_mean_loo            +0.5543       0.0568
+    gdp_plus_region_loo        +0.6409       0.0539
+    grand_mean_insample        +0.0000       0.0729
+
+============================================================================================
+DECOMPOSITION  (does one public covariate suffice?)
+============================================================================================
+  reference: the leave-one-out regional MEAN arm reaches r = +0.5542
+
+  deflator  specification               median r  median nMAE  beats region mean
+  USD       region dummies only          +0.5532       0.0558  NO
+  USD       log GDP only                 +0.5888       0.0604  yes
+  USD       log GDP + region dummies     +0.6177       0.0522  yes
+  PPP       region dummies only          +0.5532       0.0558  NO
+  PPP       log GDP only                 +0.5450       0.0617  NO
+  PPP       log GDP + region dummies     +0.6317       0.0527  yes
+
+  covariate-alone verdict is deflator-dependent: YES
+  -> do NOT claim that a single macro covariate suffices. Report the
+     combined specification, which is stable, and report this flip as
+     the reason the stronger claim is not made.
+
+============================================================================================
+HEAD TO HEAD, item by item (the median is one point of a distribution)
+============================================================================================
+  USD, n=30 (primary)                   model wins on r 13/42   on nMAE  0/42
+  USD, n=29 (excluding IL)              model wins on r 13/42   on nMAE  1/42
+  PPP, n=30 (primary)                   model wins on r 14/42   on nMAE  0/42
+  PPP, n=29 (excluding IL)              model wins on r 15/42   on nMAE  2/42
+
+============================================================================================
+THE BLOC OF ONE
+============================================================================================
+  IL: bloc 'Other', size 1; dummy survives hold-out on 0/42 items
+     in-sample hat value: mean 1.0000 (a value of 1.000 means the fit passes exactly through it)
+     predicted as: CentralEast (reference category)
+     range-normalised error, regression arm  : median 0.0708
+     range-normalised error, region-mean arm : median 0.0443
+     the two arms apply DIFFERENT rules to the same edge case; both are
+     recorded in gdp_il_identification.csv and must be stated in the text.
+
+  highest-leverage countries (USD): IL 1.000, UA 0.495, NO 0.270, FI 0.266
+
+============================================================================================
+six rows written to results/analysis/gdp_numbers_block.csv in the manuscript_numbers schema
+tables written to results/analysis/: gdp_arm_summary, gdp_arm_decomposition, gdp_arm_headtohead, gdp_il_identification, gdp_influence, gdp_numbers_block
+============================================================================================

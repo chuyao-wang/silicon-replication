@@ -1,0 +1,64 @@
+########## analyze_v13b.py
+85:def fisher_z(r):
+87:    return np.arctanh(r)
+107:    dz = pd.Series(fisher_z(delta.values), index=delta.index)
+112:                all_median_z=dz.median(), all_mean_z=dz.mean(),
+113:                fwd_median_z=dz[~is_rev].median(), fwd_mean_z=dz[~is_rev].mean(),
+114:                rev_median_z=dz[is_rev].median(), rev_mean_z=dz[is_rev].mean(),
+135:        zBase, zT = fisher_z(rBase[common]), fisher_z(rT_all[common])
+138:        noise_z = pd.Series(np.abs(fisher_z(rA_all[common]) - fisher_z(rB_all[common])),
+161:                                 placebo_mean_z=sig_z[plc_items].mean()))
+162:    pd.DataFrame(did_rows).to_csv(os.path.join(OUT, "anchored_did_fisherz.csv"), index=False)
+194:    dz = pd.Series(fisher_z(ra[common]) - fisher_z(rb[common]), index=common)
+198:pd.DataFrame(split_rows).to_csv(os.path.join(OUT, "contrasts_by_direction.csv"), index=False)
+
+########## benchmark_v13.py
+17:     grand mean      predict every country's value on an item as the mean of
+139:    # Export the bloc assignment. Without it the comparator that carries the
+142:    # deliberately left Israel unclassified). Note that "Other" is a bloc of one,
+147:    # Every CentralEast row was therefore one too high. mae_region was always
+151:    _blocs = {c: REGION.get(c, "UNASSIGNED") for c in _in}
+152:    pd.DataFrame([dict(cntry=c, bloc=_blocs[c],
+154:                                             if _blocs[k] == _blocs[c] and k != c))
+156:                 ).to_csv(os.path.join(OUT, "country_bloc_assignment.csv"), index=False)
+161:    print("  bloc assignment written to country_bloc_assignment.csv "
+162:          "(required for reproducibility; Israel is a bloc of one and therefore "
+169:        # comparator A: grand mean
+170:        g["pred_grand"] = g.survey_mean.mean()
+181:        g["pred_debias"] = g.silicon_mean - (g.silicon_mean.mean() - g.survey_mean.mean())
+186:            for i in range(len(gg)):
+203:        for name in ["model", "debias", "region", "grand"] + (["gdp"] if gdp is not None else []):
+206:            rec[f"mae_{name}"] = float(((g.survey_mean - p).abs() / sp)[ok].mean())
+207:            # A constant predictor (the grand mean) has an undefined
+219:                # the head-to-head count against the grand-mean predictor.
+231:              ("debias", "the model, per-item bias removed (UPPER BOUND, needs truth)"),
+233:              ("grand", "grand mean (no model, cannot rank at all)")]
+241:        print(f"  {lab:56s} {rr:+9.4f} {d[f'mae_{k}'].median():12.4f}")
+252:              f"on nMAE: {int((d.mae_model < d[f'mae_{k}']).sum()):2d}")
+253:        print(f"    debiased model beats {' ' * 37} "
+254:              f"on nMAE: {int((d.mae_debias < d[f'mae_{k}']).sum()):2d}")
+256:    red = 1 - d.mae_debias.median() / d.mae_model.median()
+265:    print("\n  IMPORTANT FRAMING: the region and grand-mean comparators both")
+304:                         median_r=np.nanmedian(rs), median_nmae=np.nanmedian(ms)))
+
+########## analyze_v13c.py
+253:                        sd_ratio=(sy / sx if sx > 0 else np.nan)))
+257:          f"{p.sd_ratio.median():16.4f} {p.Cb.median():11.4f}")
+267:    print(f"    median SD ratio          {q.sd_ratio.median():.3f} (compression)")
+
+########## analyze_2x2.py
+20:v13 showed the country label helping forward-coded items (27/29 improved) while
+26:forward items.
+30:      and the forward/reverse gap in the country effect shrinks towards zero.
+37:effect produced by anchoring, contrasted between reverse and forward items.
+55:           "hmsfmlsh", "hmsacld", "health", "rlgatnd", "aesfdrk", "hincfel"}
+58:NOISE_DOMINATED = {"hmsfmlsh", "rlgatnd"}   # pre-declared in the revision plan
+110:paired per-item effects show it helping forward items. The paired estimates are
+129:    for grp, items in (("forward (ctrl+placebo)", sorted(CTRL | PLACEBO)),
+181:print(f"\n  forward-minus-reverse gap in the country effect (z):")
+197:# on R8 the forward-minus-reverse gap narrows from +0.271 to +0.107, i.e. by
+203:# N2 FIX: the anchored DiD family reports both the pre-declared-exclusion and the
+205:# is added because it makes no exclusions at all and is the STRONGER result,
+211:                  ("analysable reverse items, pre-declared exclusions (n=10)", rev),
+229:    _rows.append(dict(specification=_lab, n_reverse=len(_rv), n_forward=len(fwd),
+263:    overshoots under no exclusions, and under the most conservative specification

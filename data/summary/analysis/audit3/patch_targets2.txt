@@ -1,0 +1,120 @@
+########## benchmark_v13.py 160-270
+              f"ignored")
+    print("  bloc assignment written to country_bloc_assignment.csv "
+          "(required for reproducibility; Israel is a bloc of one and therefore "
+          "falls back to the all-other-countries mean)\n")
+
+    rows = []
+    for v, g in sc.groupby("variable"):
+        sp = RANGE[v][1] - RANGE[v][0]
+        g = g.copy()
+        # comparator A: grand mean
+        g["pred_grand"] = g.survey_mean.mean()
+        # comparator B: leave-one-out region mean
+        loo = []
+        for _, r in g.iterrows():
+            peers = g[(g.region == r.region) & (g.cntry != r.cntry)]
+            if len(peers) == 0:
+                peers = g[g.cntry != r.cntry]
+            loo.append(peers.survey_mean.mean())
+        g["pred_region"] = loo
+        # the model, and the model after removing its per-item mean offset
+        g["pred_model"] = g.silicon_mean
+        g["pred_debias"] = g.silicon_mean - (g.silicon_mean.mean() - g.survey_mean.mean())
+        # optional comparator C: log GDP per capita + region dummies, leave-one-out
+        if gdp is not None:
+            gg = g.merge(gdp[["cntry", "log_gdp"]], on="cntry", how="left")
+            preds = []
+            for i in range(len(gg)):
+                tr = gg.drop(gg.index[i]).dropna(subset=["log_gdp"])
+                te = gg.iloc[[i]]
+                if len(tr) < 8 or te.log_gdp.isna().all():
+                    preds.append(np.nan)
+                    continue
+                D = pd.get_dummies(tr.region, drop_first=True).astype(float)
+                X = np.column_stack([np.ones(len(tr)), tr.log_gdp.values, D.values])
+                beta, *_ = np.linalg.lstsq(X, tr.survey_mean.values, rcond=None)
+                dte = pd.get_dummies(te.region).reindex(columns=D.columns,
+                                                        fill_value=0).astype(float)
+                xte = np.concatenate([[1.0], [float(te.log_gdp.iloc[0])],
+                                      dte.values.ravel()])
+                preds.append(float(xte @ beta))
+            g["pred_gdp"] = preds
+
+        rec = dict(variable=v)
+        for name in ["model", "debias", "region", "grand"] + (["gdp"] if gdp is not None else []):
+            p = g[f"pred_{name}"]
+            ok = p.notna() & g.survey_mean.notna()
+            rec[f"mae_{name}"] = float(((g.survey_mean - p).abs() / sp)[ok].mean())
+            # A constant predictor (the grand mean) has an undefined
+            # correlation. Zero is the correct substantive reading: it has no
+            # cross-national discrimination whatsoever. Recording it as 0
+            # rather than NaN keeps the head-to-head counts meaningful.
+            if ok.sum() < 10:
+                rec[f"r_{name}"] = np.nan
+            elif p[ok].nunique() <= 1 or p[ok].std() < 1e-10:
+                # BUG FIX: testing std() == 0 exactly does not work. A column
+                # holding one repeated value returns a variance of order 1e-16
+                # rather than exactly zero, so the equality test failed, the
+                # constant array reached pearsonr, and the result was NaN. NaN
+                # then loses every ">" comparison silently, which understated
+                # the head-to-head count against the grand-mean predictor.
+                # nunique() is exact for this case; the tolerance covers
+                # near-constant predictors as well.
+                rec[f"r_{name}"] = 0.0
+            else:
+                rec[f"r_{name}"] = stats.pearsonr(g.survey_mean[ok], p[ok])[0]
+        rows.append(rec)
+
+    d = pd.DataFrame(rows)
+    d.to_csv(os.path.join(OUT, "aggregate_benchmark.csv"), index=False)
+
+    labels = [("model", "the model, as produced"),
+              ("debias", "the model, per-item bias removed (UPPER BOUND, needs truth)"),
+              ("region", "leave-one-out region mean (no model)"),
+              ("grand", "grand mean (no model, cannot rank at all)")]
+    if gdp is not None:
+        labels.insert(3, ("gdp", "log GDP per capita + region dummies (no model)"))
+
+    print(f"\n  {'predictor':56s} {'median r':>9s} {'median nMAE':>12s}")
+    print("  " + "-" * 79)
+    for k, lab in labels:
+        rr = d[f"r_{k}"].median()
+        print(f"  {lab:56s} {rr:+9.4f} {d[f'mae_{k}'].median():12.4f}")
+
+    n_nan = {k: int(d[f"r_{k}"].isna().sum()) for k, _ in labels}
+    if any(n_nan.values()):
+        print(f"\n  WARNING: undefined correlations by predictor: {n_nan}")
+        print("  Head-to-head counts below exclude those items; investigate before")
+        print("  quoting the counts.")
+    print(f"\n  head-to-head, item by item (out of {len(d)}):")
+    for k, lab in labels[2:]:
+        print(f"    model beats {lab.split(' (')[0]:44s} "
+              f"on r: {int((d.r_model > d[f'r_{k}']).sum()):2d}   "
+              f"on nMAE: {int((d.mae_model < d[f'mae_{k}']).sum()):2d}")
+        print(f"    debiased model beats {' ' * 37} "
+              f"on nMAE: {int((d.mae_debias < d[f'mae_{k}']).sum()):2d}")
+
+    red = 1 - d.mae_debias.median() / d.mae_model.median()
+    print(f"\n  Removing a single per-item offset cuts the model's error by "
+          f"{100*red:.0f}%.")
+    print("  That is the quantitative form of 'the levels are displaced but the")
+    print("  country-to-country pattern is largely intact'. It also means the")
+    print("  headline error is dominated by a constant, not by country-specific")
+    print("  mistakes — which is what a group-level prior with a fixed offset")
+    print("  would produce, and is consistent with the compression and bias")
+    print("  results reported elsewhere.")
+    print("\n  IMPORTANT FRAMING: the region and grand-mean comparators both")
+    print("  require survey data from other countries. State that explicitly.")
+    print("  The comparison answers 'should a researcher who already holds real")
+    print("  data use the model to extend it', which is the realistic use case,")
+    print("  not 'is the model better than nothing'.")
+
+
+########## analyze_v13.py: condition_summary / sd ratios
+23:  condition summary       -> revision plan 3.1/3.4, corrected_condition_summary
+161:    summary_rows.append(dict(condition=tag, label=label, median_r_bc=r.median(),
+163:                             n_negative=int((r < 0).sum()), within_sd_ratio=wsd,
+164:                             between_sd_ratio=bsd, n_items=len(r)))
+165:pd.DataFrame(summary_rows).to_csv(os.path.join(OUT, "condition_summary.csv"), index=False)
+240:        ladder_rows.append(dict(rung=name, k=k, median_r_bc=r.median(), between_sd_ratio=bsd))

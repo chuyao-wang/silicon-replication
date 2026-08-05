@@ -1,0 +1,13 @@
+quantity,value
+respondents per country (all arms),685.0
+"median country-mean reliability, human side",0.9897035595229421
+"median country-mean reliability, silicon side",0.9415502929020394
+median attenuation factor on r_bc,0.9667004577613465
+"implied median attenuation, per cent",3.32995422386535
+items with human-side reliability below 0.50,0.0
+items with silicon-side reliability below 0.50,2.0
+"detectable r, 80 per cent power, within one country (n=685)",0.10686858665853789
+"detectable r, 80 per cent power, at n=500 (the figure the plan quotes)",0.12501088494234194
+"detectable r, 80 per cent power, pooled within-country (N=20550)",0.01954223952877455
+observed mean within-country individual r,0.027148249598176744
+observed median r_pw,0.04293186647034555

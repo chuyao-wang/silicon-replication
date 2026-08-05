@@ -1,0 +1,14 @@
+reverse_set,forward_controls,n_reverse,triple_difference_z,shift_from_primary
+all reverse items in batch (n=12),all 10,12,0.49120012618116493,0.06820414828354249
+"pre-declared exclusions (n=10), PRIMARY",all 10,10,0.42299597789762244,0.0
+further excluding freehms and hmsacld (n=8),all 10,8,0.16364585649338853,-0.2593501214042339
+"pre-declared exclusions (n=10), PRIMARY",dropping actrolga (9 controls),10,0.4253936021040411,0.002397624206418647
+"pre-declared exclusions (n=10), PRIMARY",dropping cptppola (9 controls),10,0.40879047006278113,-0.014205507834841313
+"pre-declared exclusions (n=10), PRIMARY",dropping happy (9 controls),10,0.4029681777236328,-0.02002780017398964
+"pre-declared exclusions (n=10), PRIMARY",dropping inprdsc (9 controls),10,0.4225694044994688,-0.00042657339815366235
+"pre-declared exclusions (n=10), PRIMARY",dropping psppipla (9 controls),10,0.42446720071058364,0.0014712228129611926
+"pre-declared exclusions (n=10), PRIMARY",dropping psppsgva (9 controls),10,0.42376752037126963,0.000771542473647191
+"pre-declared exclusions (n=10), PRIMARY",dropping sclmeet (9 controls),10,0.4546257152787079,0.03162973738108543
+"pre-declared exclusions (n=10), PRIMARY",dropping stfdem (9 controls),10,0.4208400671067422,-0.0021559107908802333
+"pre-declared exclusions (n=10), PRIMARY",dropping stflife (9 controls),10,0.42485374316857494,0.0018577652709524939
+"pre-declared exclusions (n=10), PRIMARY",dropping trstplc (9 controls),10,0.4216838779504223,-0.0013120999472001627

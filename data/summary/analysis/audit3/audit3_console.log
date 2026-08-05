@@ -1,0 +1,105 @@
+============================================================================== 
+CORRECTIONS
+ ==============================================================================
+
+C1  Fisher-z columns, released against corrected
+                                             contrast   group  released_median_z  corrected_median_z  released_mean_z  corrected_mean_z  median_z_shift
+                 country label effect (rich baseline)     all             0.0915              0.1304           0.0288            0.0533          0.0389
+                 country label effect (rich baseline) forward             0.1360              0.1967           0.1368            0.1932          0.0607
+                 country label effect (rich baseline) reverse            -0.1774             -0.1762          -0.2121           -0.2586          0.0012
+               country label effect (sparse baseline)     all             0.6008              0.6601           0.4303            0.3281          0.0593
+               country label effect (sparse baseline) forward             0.7585              0.7307           0.8341            0.6844         -0.0278
+               country label effect (sparse baseline) reverse            -0.3734             -0.4390          -0.4706           -0.4668         -0.0656
+political-identity variables (full minus nopolitical)     all             0.0128              0.0248           0.0083            0.0038          0.0120
+political-identity variables (full minus nopolitical) forward            -0.0029             -0.0046          -0.0154           -0.0301         -0.0017
+political-identity variables (full minus nopolitical) reverse             0.0415              0.0610           0.0611            0.0795          0.0194
+   all enrichment beyond country (full minus minimal)     all             0.0072              0.0084           0.0291            0.0407          0.0012
+   all enrichment beyond country (full minus minimal) forward            -0.0225             -0.0249          -0.0105           -0.0009         -0.0023
+   all enrichment beyond country (full minus minimal) reverse             0.0627              0.1632           0.1176            0.1335          0.1005
+
+C2  dispersion-ratio estimators, main condition
+                                 2
+condition                  qwen_1p
+within_mean_of_ratios     0.605241
+within_median_of_ratios    0.57269
+within_ratio_of_means     0.585903
+within_iqr_lo             0.459302
+within_iqr_hi             0.708981
+between_median_of_ratios  0.282081
+between_mean_of_ratios    0.295173
+between_iqr_lo            0.211479
+between_iqr_hi            0.375209
+
+C3  aggregate benchmark under matched estimators
+                                                           quantity     value
+                                                    median r, model  0.443303
+                           median r, leave-one-out regional average  0.554236
+             items on which the regional average outranks the model 24.000000
+                                                 median nMAE, model  0.179607
+                        median nMAE, leave-one-out regional average  0.055950
+        items on which the regional average beats the model on nMAE 41.000000
+                   median nMAE, grand mean (in-sample, as released)  0.071521
+                   median nMAE, grand mean (leave-one-out, matched)  0.073987
+    items on which the model beats the in-sample grand mean on nMAE  2.000000
+items on which the model beats the leave-one-out grand mean on nMAE  3.000000
+            offset reduction, ratio of medians (as released, 64.2%)  0.641548
+                                   offset reduction, ratio of means  0.629032
+  offset reduction, MEDIAN of the per-item reductions (recommended)  0.598961
+                  offset reduction, mean of the per-item reductions  0.537296
+
+C4  undefined cells
+       condition variable cntry  n_valid  human_sd  silicon_sd                    reason
+qwen_1p_anchored hmsfmlsh    CH      658  0.906969         0.0 constant silicon response
+
+C5  2x2 forward-control robustness (largest three shifts)
+                                reverse_set              forward_controls  n_reverse  triple_difference_z  shift_from_primary
+further excluding freehms and hmsacld (n=8)                        all 10          8              0.16365            -0.25935
+          all reverse items in batch (n=12)                        all 10         12              0.49120             0.06820
+    pre-declared exclusions (n=10), PRIMARY dropping sclmeet (9 controls)         10              0.45463             0.03163
+    pre-declared exclusions (n=10), PRIMARY   dropping happy (9 controls)         10              0.40297            -0.02003
+
+============================================================================== 
+EXTENSIONS
+ ==============================================================================
+
+E1  framing manipulation, paired item-level
+model level   group  n  median_dr  mean_dr  median_dz  mean_dz  n_a_higher  wilcoxon_p  n_undefined
+ qwen  r_bc     all 42     0.0038   0.0602     0.0086   0.0744          23      0.1829            0
+ qwen  r_bc forward 29     0.0196   0.0547     0.0262   0.0719          19      0.0920            0
+ qwen  r_bc reverse 13    -0.0067   0.0725    -0.0077   0.0798           4      0.7869            0
+ qwen  r_pw     all 42    -0.0059  -0.0033    -0.0059  -0.0034          18      0.3393            0
+ qwen  r_pw forward 29    -0.0066  -0.0084    -0.0066  -0.0085          12      0.2214            0
+ qwen  r_pw reverse 13    -0.0001   0.0080    -0.0001   0.0080           6      0.8926            0
+llama  r_bc     all 42     0.1119   0.0505     0.1461   0.0699          26      0.1913            0
+llama  r_bc forward 29     0.1727   0.1675     0.2682   0.2053          23      0.0022            0
+llama  r_bc reverse 13    -0.1128  -0.2105    -0.1342  -0.2320           3      0.0061            0
+llama  r_pw     all 42     0.0047   0.0039     0.0047   0.0039          24      0.2911            0
+llama  r_pw forward 29     0.0130   0.0097     0.0131   0.0097          20      0.0065            0
+llama  r_pw reverse 13    -0.0137  -0.0089    -0.0137  -0.0089           4      0.0942            0
+
+E2  reliability, attenuation and power at n=685
+                                                              quantity      value
+                                    respondents per country (all arms) 685.000000
+                           median country-mean reliability, human side   0.989704
+                         median country-mean reliability, silicon side   0.941550
+                                     median attenuation factor on r_bc   0.966700
+                                  implied median attenuation, per cent   3.329954
+                          items with human-side reliability below 0.50   0.000000
+                        items with silicon-side reliability below 0.50   2.000000
+           detectable r, 80 per cent power, within one country (n=685)   0.106869
+detectable r, 80 per cent power, at n=500 (the figure the plan quotes)   0.125011
+      detectable r, 80 per cent power, pooled within-country (N=20550)   0.019542
+                             observed mean within-country individual r   0.027148
+                                                  observed median r_pw   0.042932
+
+E3  written to e3_gdp_comparator_spec.txt (blocked on gdp_per_capita.csv)
+
+E4  cross-level counterexamples
+                                              quantity                                                                    value
+                                country pairs in total                                                                      435
+pairs whose aggregate and individual ordering disagree                                                                      232
+                            share of pairs that invert                                                                 0.533333
+                                    sharpest inversion CH vs IL: profile r 0.905 vs 0.755 but within-country r 0.0143 vs 0.0774
+
+8 upstream patches specified in results/analysis/audit3/audit3_patch_spec.csv
+all tables written to results/analysis/audit3/
