@@ -709,3 +709,110 @@ Still outstanding, manuscript package only (`~/silicon_chapter`): merge
 cloud_analysis/*.csv into results/analysis, move fig_two_margin.py into
 code/figures/, repoint the FIGURE_MAP producer column, rerun rebuild.sh,
 reseal the manifest.
+
+### revise50: Figure 4 is backstory blocks only (5 Aug 2026)
+
+The per-item panel had SURVEY ITEMS on its y axis while the block panels had
+BACKSTORY VARIABLES, so one figure carried two different objects. The
+per-item panel becomes Appendix Figure A4 (new PNG
+figA4_country_item_contrast.png; FIGURE_MAP row added; selfcheck now expects
+10 figures). Figure 4 keeps the two block panels, retitled "none but this
+block" and "all but this block", and they now share ONE x scale: they did
+not before, which is the fault the supervisor found in Figure 3.
+
+New numeric tokens, all already traced elsewhere in the manuscript and
+recomputed by cloud_verify_revise42.py: 0.73 and 0.20 (the country label's
+two forward margins, now compared in one sentence explaining why the add
+margin exceeds the remove margin), plus section pointers 4 x2 and 5.4.
+Removed: one instance of 42. The new sentence makes a claim the data
+support and Section 5.4 already bounds: the full profile carries country
+information in the composition of its other variables (classifier recovers
+the country 28.7% of the time against a 3.3% baseline), so removing the
+label costs less than adding it gains.
+
+Also in this pass: 4.1's three defensive sentences about the direction
+coding move to 4.6, next to the direction row in Table A5; 3.3 goes back to
+one paragraph; four opening sentences that announced a count now state the
+finding.
+
+### revise51: the research questions regrouped; the swap arm gets a figure
+(5 Aug 2026)
+
+The supervisor asked for "a small number of well-motivated questions,
+analyses that directly answer those questions". Four questions were already
+there, but RQ1 and RQ2 each carried two, and Section 4.3 answered the tail
+of both, so no results section answered exactly one question. The count and
+the order are unchanged; each question loses its tail and the tails become a
+question of their own:
+
+  RQ1  how accurate, how uneven across items                  -> 4.1
+  RQ2  where the signal comes from, does richer help          -> 4.2
+  RQ3  country knowledge or response scale (NEW, from the
+       tails of the old RQ1 and RQ2)                          -> 4.3
+  RQ4  individual recovery, framing, and whether it tracks
+       the aggregate (old RQ3 + old RQ4)                      -> 4.4
+
+Sections 2.3 and 2.4 merge (both motivate RQ4); 4.4 and 4.5 merge (both
+answer it); 2.2 gains RQ3's ex ante prediction, which is what makes the
+scale account falsifiable before the 2x2 is run. The introduction's four
+tests now run in the order of the four questions.
+
+FIGURES RENUMBERED. The swapped-label arm gets Figure 5 (new,
+fig5_swap_country.png, producer cloud_analysis/fig_swap.py); the 2x2 becomes
+Figure 6 and the cross-level ranks Figure 7. FIGURE_MAP updated; selfcheck
+now expects 11 figures.
+
+New numeric tokens, all recomputed by cloud_verify_revise42.py and already
+in the text elsewhere: 0.56, 0.40 x2, 0.34 (the four swap conditions, now
+also in the Figure 5 note) and the figure numbers 5, 6, 7. Removed: the
+section numbers 2.4 and 4.5, which no longer exist as headings.
+verify_manuscript against the package snapshot: 528 tested, 528 traced, 11
+figures, 6 tables, PASS.
+
+### revise52: three questions, three results sections; the swap result read
+from the paired test (5 Aug 2026)
+
+RQ2 and RQ3 merge. The scale format supplies no cross-national signal of its
+own, so "label or scale" misdescribed the pair. What the 2x2 shows is that
+the label supplies the signal and the format decides the sign it takes: one
+mechanism, one question. RQ2's enrichment clause goes with it, because if
+the signal is the label then richer profiles not helping is the same finding
+from the other side, and Figure 4 still shows it. The old RQ4 becomes RQ3.
+
+  RQ1  how accurate, how uneven across items                  -> 4.1
+  RQ2  where the signal comes from, and what sets its sign    -> 4.2
+  RQ3  individual recovery, framing, tracking the aggregate   -> 4.3
+
+Sections 4.2 and 4.3 merge under "The country label supplies the signal; the
+response scale sets its sign"; 4.4 becomes 4.3 and 4.6 becomes 4.4. All
+cross-references follow. No table, figure, or result moves.
+
+SWAP RESULT CORRECTED. The old sentence read a transfer off the medians:
+scored against the named country 0.396, against the respondents' own country
+0.340, no label 0.403. Medians are not additive. The paired per-item test on
+the 29 forward items says:
+
+  swap-own minus no-label      -0.096  [-0.142, -0.003]   excludes zero
+  swap-named minus swap-own    +0.012  [-0.068, +0.122]   includes zero
+
+So the arm shows the label is read and read as a country: a wrong name costs
+the respondents' own country more than no name does. It does not show
+recovery handed to the country named. The text and the Figure 5 note now
+make the weaker claim, which is the one the data support and still separates
+the label account from a compositional one. The summing-up sentence in 4.2
+changes with it ("replacing the name degrades the placement it was
+carrying").
+
+NEW NUMERIC TOKENS: -0.096, -0.142, -0.003, +0.012, -0.068, +0.122. All six
+are recomputed from data/summary by cloud_verify_revise42.py (now 34
+quantities), bootstrap over items, seed 888, B = 10000. REMOVED: the section
+numbers 4.3 and 4.6, which no longer exist as headings, and repeated copies
+of 0.34/0.40/0.56 in the Figure 5 note.
+
+INTERVALS, 3.5. One sentence merged into the paragraph that defines the two
+correlations: the countries are the full ESS set and the items a fixed
+battery, so these correlations estimate no wider parameter and carry no
+interval; uncertainty is reported where it exists, in the sampling error
+inside each country mean and in the run-to-run variation of Section 4.4. No
+confidence intervals were added to Figures 4 or 5, by decision: the item set
+is fixed and the bars are not estimates of a population quantity.

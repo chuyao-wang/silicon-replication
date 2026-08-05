@@ -6,12 +6,16 @@ fig_two_margin.py -- Figure 4 after the two-margin integration (revise42).
     python3 fig_two_margin.py --data <scatter dir> --lib <figstyle dir> --figdir <out>
 
 Successor to the Figure 4 half of code/figures/fig_ladder.py; the ladder half
-is retired with Appendix Figure A4 (user decision, 5 Aug 2026). Panel (a) is
-unchanged: the identifying country-label contrast on all 42 items, computed
-from clean_ablations.csv exactly as before. Panels (b) and (c) replace the
-three-block summary with the two margins for every block of the 20-variable
-partition: added alone to the sparse base (b), removed alone from the full
-profile (c). The ascriptive base has no add margin, because it is the base.
+is retired with Appendix Figure A4 (user decision, 5 Aug 2026).
+
+The two panels put every block of the 20-variable partition on the y axis
+and its effect on aggregate recovery on the x axis, at the two margins that
+bound it: none but that block added to the sparse base (a), and all but that
+block, the full profile with it removed (b). The panels share one x scale.
+The per-item country-label contrast that used to be panel (a) is Appendix
+Figure A4 (figA4_country_item.py); its data still ships from here. Forward- and reverse-worded items are drawn as separate bars, because
+the effect reverses sign with wording. The ascriptive base has no add
+margin, because it is the base.
 
 Defaults match fig_ladder.py, the script this one replaces, so rebuild.sh
 can call it with no arguments: data in handoff_upload/, figures out to
@@ -47,15 +51,15 @@ import figstyle as fs  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 
 BLOCK_LABEL = {
-    "country label": "country\nlabel",
-    "NUTS region code": "NUTS\nregion code",
-    "political identity": "political\nidentity",
-    "ascriptive": "ascriptive\nbase",
-    "education, activity, income": "education,\nactivity, income",
-    "union, internet use": "union,\ninternet use",
-    "household": "household",
-    "migration, citizenship": "migration,\ncitizenship",
-    "minority status": "minority\nstatus",
+    "country label": "country label",
+    "NUTS region code": "NUTS region code",
+    "political identity": "political identity",
+    "ascriptive": "ascriptive base\n(gender, age, birth year)",
+    "education, activity, income": "education, activity,\nincome",
+    "union, internet use": "union membership,\ninternet use",
+    "household": "household composition",
+    "migration, citizenship": "migration, citizenship",
+    "minority status": "minority status",
     "domicile": "domicile",
 }
 ORDER = list(BLOCK_LABEL)
@@ -131,46 +135,19 @@ if a.margins:
     for k, r in piv.items():
         assert abs(ship.loc[k, "fwd_median_dz"] - r.fwd_median_dz) < 1e-5, k
 
-fig = plt.figure(figsize=(6.3, 9.6))
-gs = fig.add_gridspec(2, 2, height_ratios=[2.05, 1.0], hspace=0.15, wspace=0.16)
-axI = fig.add_subplot(gs[0, :])
-axAdd = fig.add_subplot(gs[1, 0])
-axRem = fig.add_subplot(gs[1, 1])
-fig.subplots_adjust(bottom=0.118, top=0.972, left=0.315, right=0.975)
+fig, (axAdd, axRem) = plt.subplots(1, 2, figsize=(6.3, 4.4))
+fig.subplots_adjust(left=0.29, right=0.985, top=0.885, bottom=0.255, wspace=0.08)
 
-# ------------------------------------------------ panel (a): item by item
+# The per-item panel that used to sit above these two is Appendix Figure A4
+# (code/figures/figA4_country_item.py); its data still ships from here.
 ordered = pd.concat([fwd_items, rev_items])
-ys = np.arange(len(ordered))[::-1]
-axI.axvspan(-0.060, 0.060, color=fs.GRID, alpha=0.55, zorder=0)
-axI.axvline(0, color=fs.INK, linewidth=0.9, zorder=2)
-for y, (v, dzv) in zip(ys, ordered.items()):
-    isrev = bool(rev42[v])
-    shade = fs.REV_SHADE if isrev else fs.FWD_SHADE
-    axI.plot([0, dzv], [y, y], color=shade, linewidth=1.0, zorder=3)
-    axI.plot([dzv], [y], marker=fs.REV_MARK if isrev else fs.FWD_MARK,
-             markersize=4.6, markerfacecolor=shade, markeredgecolor=shade,
-             zorder=4)
-div = ys[len(fwd_items) - 1] - 0.5
-axI.axhline(div, color=fs.MUTE, linewidth=0.7, linestyle=(0, (4, 3)))
-axI.set_yticks(ys)
-axI.set_yticklabels([fs.VLABEL.get(v, v) for v in ordered.index], fontsize=8)
-axI.set_ylim(-0.8, len(ordered) - 0.2)
-axI.annotate(f"forward-coded items:\n{n_fwd_up} of {len(fwd_items)} improve",
-             xy=(0.025, 0.990), xycoords="axes fraction", ha="left",
-             va="top", fontsize=fs.SZ_DENSE, color=fs.MUTE, bbox=fs.BOX)
-axI.annotate(f"reverse-coded items:\n{n_rev_up} of {len(rev_items)} improves",
-             xy=(0.980, (div + 0.3) / len(ordered)),
-             xycoords="axes fraction", ha="right", va="top",
-             fontsize=fs.SZ_DENSE, color=fs.MUTE, bbox=fs.BOX)
-axI.set_xlabel("country-label effect per item ($r_{bc}$, Fisher $z$): "
-               "with the label minus without", fontsize=fs.SZ_DENSE)
-axI.set_title("(a)  the country-label contrast, item by item", loc="left")
-fs.grid(axI, axis="x")
 
-# -------------------------------------- panels (b, c): the two margins
 bw = 0.34
-for ax, margin, ttl, xlim in ((axAdd, "add", "(b)  added to sparse base", (-0.62, 1.02)),
-                              (axRem, "remove", "(c)  removed from full profile", (-0.30, 0.34))):
+for ax, margin, ttl, sub in (
+        (axAdd, "add", "(a)  none but this block",
+         "a sparse profile, plus this block alone"),
+        (axRem, "remove", "(b)  all but this block",
+         "the full profile, minus this block alone")):
     yb = np.arange(len(ORDER))[::-1]
     ax.axvspan(-0.060, 0.060, color=fs.GRID, alpha=0.55, zorder=0)
     ax.axvline(0, color=fs.INK, linewidth=0.9, zorder=2)
@@ -181,32 +158,33 @@ for ax, margin, ttl, xlim in ((axAdd, "add", "(b)  added to sparse base", (-0.62
                         fontsize=fs.SZ_DENSE, color=fs.MUTE, bbox=fs.BOX)
             continue
         ax.barh(y + bw / 2, r.fwd_median_dz, height=bw, color=fs.FWD_SHADE,
-                edgecolor=fs.INK, linewidth=0.7, zorder=3,
-                label="forward-worded items (29)" if (y == yb[0] and margin == "add") else None)
+                edgecolor=fs.INK, linewidth=0.7, zorder=3)
         ax.barh(y - bw / 2, r.rev_median_dz, height=bw, color=fs.NEG_FILL,
-                edgecolor=fs.NEG_EDGE, linewidth=0.9, hatch=fs.NEG_HATCH,
-                zorder=3,
-                label="reverse-worded items (13)" if (y == yb[0] and margin == "add") else None)
-        # label only values beyond the noise band; the in-band clutter is
-        # in the shipped figure data, not on the page
-        for yy, val in ((y + bw / 2, r.fwd_median_dz), (y - bw / 2, r.rev_median_dz)):
+                edgecolor=fs.NEG_EDGE, linewidth=0.9, hatch=fs.NEG_HATCH, zorder=3)
+        for val, dy in ((r.fwd_median_dz, +bw / 2), (r.rev_median_dz, -bw / 2)):
             if abs(val) <= 0.060:
                 continue
-            ax.annotate(f"{val:+.2f}", (val, yy), textcoords="offset points",
+            ax.annotate(f"{val:+.2f}", (val, y + dy), textcoords="offset points",
                         xytext=(4 if val >= 0 else -4, 0),
                         ha="left" if val >= 0 else "right", va="center",
                         fontsize=8, bbox=fs.BOX)
     ax.set_yticks(yb)
     ax.set_yticklabels([BLOCK_LABEL[b] for b in ORDER] if margin == "add" else [],
                        fontsize=8.5)
-    ax.set_ylim(-0.7, len(ORDER) - 0.3)
-    ax.set_title(ttl, loc="left", fontsize=fs.SZ_LABEL)
-    ax.set_xlim(*xlim)
+    ax.set_ylim(-0.55, len(ORDER) - 0.45)
+    ax.set_title(ttl, loc="left", fontsize=fs.SZ_LABEL, pad=13)
+    ax.annotate(sub, xy=(0.0, 1.012), xycoords="axes fraction", ha="left",
+                va="bottom", fontsize=8.5, color=fs.MUTE)
+    ax.set_xlim(-0.58, 0.86)          # one scale for both panels
     fs.grid(ax, axis="x")
-fig.text(0.645, 0.083, "median change per block ($r_{bc}$, Fisher $z$)",
+fig.text(0.64, 0.135, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",
          ha="center", fontsize=fs.SZ_DENSE)
-axAdd.legend(loc="upper center", bbox_to_anchor=(1.08, -0.175), ncol=2,
-             fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
+h_f = plt.Rectangle((0, 0), 1, 1, facecolor=fs.FWD_SHADE, edgecolor=fs.INK,
+                    label="forward-worded items (29)")
+h_r = plt.Rectangle((0, 0), 1, 1, facecolor=fs.NEG_FILL, edgecolor=fs.NEG_EDGE,
+                    hatch=fs.NEG_HATCH, label="reverse-worded items (13)")
+axAdd.legend(handles=[h_f, h_r], loc="upper center", bbox_to_anchor=(1.05, -0.20),
+             ncol=2, fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
 
 fs.save(fig, a.figdir, a.name)
 ordered.rename("country_label_dz").to_csv(
