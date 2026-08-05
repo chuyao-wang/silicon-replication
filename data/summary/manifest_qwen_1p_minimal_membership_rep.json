@@ -54,7 +54,7 @@
   "n_respondents": 20550,
   "n_countries": 30,
   "sampling_seed": 888,
-  "gen_seed": null,
+  "gen_seed": 889,
   "temperature": 0.7,
   "max_model_len": 1024,
   "missing_rule": "range",
@@ -65,5 +65,5 @@
   "eduyrs_guard": false,
   "vllm_version": "0.15.0",
   "git": "n/a",
-  "timestamp": "2026-08-04T17:17:10"
+  "timestamp": "2026-08-05T17:08:26"
 }
