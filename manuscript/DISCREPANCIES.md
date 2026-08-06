@@ -1120,3 +1120,30 @@ counters: no em dashes, no prose semicolons, no compound en dashes, no
 
 Numeric tokens: two section pointers out, one in. cloud_verify_revise42.py
 traces 34/34.
+
+### revise60: paragraph structure (6 Aug 2026)
+
+A read down the topic sentences alone, section by section, holds the
+argument from the first line to the last, so nothing was added and nothing
+was cut. What the read did show was fragmentation: eight paragraphs of 40 to
+70 words carrying one step of a point the paragraph beside them was already
+making. Each pair is now one paragraph, keeping the stronger topic sentence:
+
+  3.2  the crossed design + the two prompt conditions
+  3.4  the whole-profile logic + the block as the unit
+  3.4  the two margins + the probes that settle what they leave open
+  4.1  the RQ1 finding + the choice of reference condition
+  4.2  the shared explanation for the inversions + the 2 x 2 that tests it
+  4.3  how far apart the two levels sit + what moves the individual one
+  4.3  individual recovery by country + its item-versus-country spread
+  5.1  what the label contributes + why identifiability does not explain it
+
+Paragraph lengths across the chapter now run 41 to 183 words, with the short
+ones deliberate: one robustness check each in 4.4, the section verdict at
+the end of 4.2, and the first two limitations in 5.4.
+
+One repetition surfaced by a merge: 4.3 said scale anchoring moves both
+levels and then that the scale manipulation also moves this level. The
+second sentence is now the pointer inside the first.
+
+Numbers: IDENTICAL.
