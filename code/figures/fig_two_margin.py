@@ -54,7 +54,7 @@ BLOCK_LABEL = {
     "country label": "country label",
     "NUTS region code": "NUTS region code",
     "political identity": "political identity",
-    "ascriptive": "ascriptive base\n(gender, age, birth year)",
+    "ascriptive": "base\n(gender, age, birth year)",
     "education, activity, income": "education, activity,\nincome",
     "union, internet use": "union membership,\ninternet use",
     "household": "household composition",

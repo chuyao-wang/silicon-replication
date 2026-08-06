@@ -1305,3 +1305,36 @@ reads: the unit is the block because single variables often repeat one
 another; age and birth year encode the same fact, so dropping one leaves its
 twin in place and the contrast measures the repetition; where a block holds
 no such pair, its variables are also tested one at a time.
+
+### revise66: the words that read as jargon (7 Aug 2026)
+
+"Ascriptive base" is sociology's term for what a person is born with, and
+the block it named is gender, age and birth year. The chapter calls that
+profile the sparse base everywhere else, so the block is now the base, with
+its three variables in the gloss beside it. Figure 4's label and its note
+follow: "The base has no add margin, because every other block is added to
+it."
+
+Four more, found by reading for borrowed words rather than plain ones:
+
+  with-against-without   is not English. 3.4 already says "with and without
+                         one block", and the later sentence now matches it.
+  identifying estimate   is econometrics shorthand. "One paired contrast
+                         answers it" says the same thing and is shorter.
+  interpretive band      named the band by what a reader does with it. It is
+                         the band an effect has to clear.
+  headline results       is a newspaper word, in the discussion, in the
+                         appendix and in a Table A5 cell. Main, primary and
+                         reported value.
+
+Three smaller ones: "serves as the reference" is "is the reference"; "the
+ceiling sits against an achieved 0.028" is "the ceiling is 0.210 against an
+achieved 0.028"; "the profile keeps carrying a compositional share of its
+own" says what the share is, country information.
+
+KEPT ON PURPOSE. Estimand is the term of art in the validity literature 5.3
+argues with, and the chapter uses it four times in that argument. Arm,
+probe, backstory, block, margin and group-level prior are all defined where
+they first appear, and each is doing work no plainer word does.
+
+Numbers: IDENTICAL.
