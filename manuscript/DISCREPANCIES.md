@@ -1816,3 +1816,41 @@ KEPT ON PURPOSE, both of which look like the same fault:
   with the reading it supports.
 
 NUMBERS: IDENTICAL.
+
+### revise77: the discussion opens on the experiment that unifies it
+(8 Aug 2026)
+
+THE ORDER THE OPENING PARAGRAPH ALREADY ASKED FOR. Section 5 opens by saying
+the three findings look unrelated, that the scale experiment shows they are
+not, and that two of the three share a cause in the measurement instrument.
+The first subsection was then the third result, the country label. The
+paragraph set up one order and the headings ran another.
+
+    was   5.1 the country label  5.2 the instrument  5.3 the two levels
+    is    5.1 the instrument     5.2 the country label  5.3 the two levels
+
+Three reasons, in order of weight:
+
+  1. The 2 x 2 is the only randomized manipulation in the chapter. Its
+     triple difference is +0.42 with an interval that excludes zero, and it
+     holds the model, the respondents and the items fixed while it moves.
+  2. It conditions how everything else is read. If the numeric scale
+     mismeasures reverse-coded items, the item inversions of 4.1 and the
+     negative half of the label effect in 4.2 are artifacts of the
+     instrument. A reader needs that before the label numbers.
+  3. It is what the opening paragraph builds to.
+
+The opening paragraph's last two sentences swap with it, so the sentence
+about the instrument sits against the section about the instrument.
+
+ONE PARAGRAPH RETARGETED. The label section closed on "The result separates
+matching a group-level pattern from simulating a population's internal
+structure", which is 5.3's axis one section early. Its own material is about
+two literatures, so it now says what the label result means for those two
+and leaves the levels to 5.3.
+
+LENGTHS AFTER THE SWAP: 5.1 389, 5.2 389, 5.3 486, 5.4 443.
+
+NUMBERS: one token, a section pointer.
+
+    5.3's "Section 5.2 shows it moves both levels at once" -> "Section 5.1"
