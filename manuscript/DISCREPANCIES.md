@@ -1272,3 +1272,36 @@ is a design decision with its own justification underneath it, and it is not
 a step in how a block is observed.
 
 Numbers: IDENTICAL.
+
+### revise65: 4.2 leads with the falsification arm, and 3.4's block-unit
+paragraph is rewritten (7 Aug 2026)
+
+ORDER. Section 4.2 opened on the identifying contrast and reached the
+swapped label four paragraphs later. It now opens on the swap, the sharpest
+evidence that the model reads the country name at all, and then asks how
+much the name contributes and whether anything else in the profile helps.
+The section runs: the cue is read, the cue carries the signal, the format
+decides its direction. Two transitions carry it: the swap paragraph takes
+the "Addressing RQ2" tag, and the block paragraph opens "How much the name
+contributes is the next question". The sentence that gathers the two margins
+and the falsification arm stays where both have been seen.
+
+FIGURE NUMBERS follow the text. The swapped-label figure is Figure 3 and the
+block figure is Figure 4; the 2 x 2 stays Figure 5. FIGURE_MAP rows 3 and 4
+exchange their files, so the file names now disagree with the figure numbers
+for both (fig5_swap_country.pdf is Figure 3, fig4_backstory_ladder.pdf is
+Figure 4). The map is the authority and build_docx.py reads it; the docx was
+checked by md5 against figpng to confirm each caption carries its own image.
+Figure 3's note no longer points forward at Figure 4 for the forward and
+reverse split; it states the split itself.
+
+Numeric token: one "3" removed with that forward reference. Nothing else
+moved.
+
+3.4, THE BLOCK UNIT. "The unit is the block, not the single variable" and
+"Dropping one of a pair measures duplication, not information" both stated
+the point by negation, and "tested singly" was opaque. The paragraph now
+reads: the unit is the block because single variables often repeat one
+another; age and birth year encode the same fact, so dropping one leaves its
+twin in place and the contrast measures the repetition; where a block holds
+no such pair, its variables are also tested one at a time.

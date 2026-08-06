@@ -1,8 +1,8 @@
 manuscript_figure,file,producer,note
 1,fig1_pipeline.pdf,code/figures/fig_pipeline.py,
 2,fig2_recovery.pdf,code/figures/fig2_recovery.py,"two panels since 6 Aug 2026: the by-condition swarm and the per-item aggregate series that was Figure 3(a)"
-3,fig4_backstory_ladder.pdf,code/figures/fig_two_margin.py,"the file name says 4; it is manuscript Figure 3 since 6 Aug 2026, the two-margin block figure"
-4,fig5_swap_country.pdf,code/figures/fig_swap.py,"the file name says 5; it is manuscript Figure 4 since 6 Aug 2026, the swapped-label falsification arm"
+3,fig5_swap_country.pdf,code/figures/fig_swap.py,"the file name says 5; it is manuscript Figure 3 since 6 Aug 2026, when 4.2 was reordered to open on the swapped-label arm"
+4,fig4_backstory_ladder.pdf,code/figures/fig_two_margin.py,"the two-margin block figure; manuscript Figure 4 since 6 Aug 2026"
 5,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,"manuscript Figure 5 since 6 Aug 2026"
 6,fig6_individual_levels.pdf,code/figures/fig2_recovery.py,"new 6 Aug 2026: the individual level in two panels, by condition and per item, from the same producer as Figure 2"
 7,fig7_crosslevel_ranks.pdf,code/figures/fig_crosslevel.py,
