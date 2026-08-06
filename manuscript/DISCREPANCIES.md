@@ -1896,3 +1896,53 @@ inside the merged contributions paragraph the user asked to leave alone, so
 it stays. Cutting it is a one-line change.
 
 NUMBERS: IDENTICAL.
+
+### revise79: the label leads again, 5.3's title names its claim, and the
+### figure and table apparatus is formatted as one thing
+(8 Aug 2026)
+
+I WAS WRONG IN revise77. I put the instrument section first on the argument
+that the 2 x 2 is the only randomized manipulation and that it conditions how
+everything else is read. Both are true and neither settles the order. What
+settles it is that the rest of the chapter presents the label first,
+everywhere:
+
+  the title         "Captures Country-Level Assumptions"
+  the abstract      the label step, -0.03 to 0.52, before the format
+  the introduction  "what supplies the cross-national signal, and what
+                    decides its direction", in that order
+  RQ2               "Which part of the prompt produces the aggregate signal,
+                    and why does the model rank countries backwards?"
+  4.2's heading     "The country label carries the signal, the response
+                    format its direction"
+  5.4               "What it finds is a group-level prior"
+
+Only section 5 ran the other way. There is also a rhetorical cost I did not
+weigh: opening the discussion on the instrument tells a reader first that
+part of what looked like model failure was our own measurement, which buries
+the claim the chapter is named for.
+
+    5.1 the country label   5.2 the instrument   5.3 what it licenses
+
+The opening paragraph's last two sentences swap back, and 5.2's paragraphs
+return to their revise77 order, closing on the pooled-metric prescription
+that leads into 5.3. Its middle paragraph refers back to the prior now
+instead of forward to it.
+
+5.3'S TITLE. "Aggregate recovery supports one narrow claim" named no claim.
+
+    is  5.3 Aggregate recovery supports rank comparison, not individual or
+        distributional inference
+
+which is the abstract's own pair of closing sentences.
+
+THE FIGURE AND TABLE APPARATUS, in build_docx.py. Every caption rendered at
+caption size and every Note rendered as body prose, so a note was
+typographically indistinguishable from the paragraph beside it. All 34
+caption and note paragraphs now share the caption style, the figure or table
+number is bold and the word Note is italic, which is the APA emphasis. This
+is a builder change, not a manuscript change; paper_current.md is untouched
+by it.
+
+NUMBERS: one token, a section pointer. 5.3's "Section 5.1 shows it moves both
+levels at once" -> "Section 5.2".
