@@ -2141,3 +2141,56 @@ line with no full stop"; a colon now rules a line out. That line is what
 comment 27 on the v54 build asked about.
 
 NUMBERS: IDENTICAL.
+
+### revise84: the APA numeral rule finished, and three small things
+(9 Aug 2026)
+
+CHECKED THE WHOLE CHAPTER against every rule this session set. Style
+counters at zero. Every figure and table has a Note. No paragraph over 180
+words. No variable code in the body. No sentence opening on a lowercase
+symbol. A count of repeated eight-word runs turns up nothing that is not a
+defined item name or a deliberate loop. Four things were left.
+
+THE APA NUMERAL RULE WAS HALF APPLIED. revise68 converted the counts written
+both ways and left the ones that were only ever words. The rule is numerals
+for ten and above. Thirteen instances remain nowhere in the chapter now, and
+the six that would have started a sentence with a numeral are recast:
+
+  3.4      "ten named blocks"                -> "10 named blocks"
+  3.4      "twelve of the thirteen"          -> "12 of the 13"
+  4.1      "Eleven items have negative rbc"  -> "The model reverses the
+                                                cross-national ordering of
+                                                11 items"
+  4.1      "Ten of the eleven inversions"    -> "Of the 11 inversions, 10"
+  Fig 4    "the thirteen whose numeric"      -> "the 13 whose numeric"
+  4.3      "Eleven of the 42 items are"      -> "At this level 11 of the 42"
+  4.4      "Sixteen checks leave"            -> "The 16 checks leave"
+  App F    "Eleven of 42 items have"         -> "Of the 42 items, 11 have"
+  App I    "each of the ten variants"        -> "each of the 10 variants"
+  App I    "Eight of the ten reach"          -> "Eight of them reach"
+  App J    "Eleven of 42 items show"         -> "Of the 42 items, 11 show"
+  Table A5 "Ten leave-one-out control sets"  -> "10 leave-one-out control"
+  Table A5 "from eight to nine ... twelve to eleven" -> "8 to 9 ... 12 to 11"
+
+ONE ABBREVIATION. The chapter writes out the International Organization for
+Standardization at first use, so 4.1 writes out gross domestic product.
+
+ONE SENTENCE OF 49 WORDS, the third limitation, split in two.
+
+ONE APPENDIX TITLE. Appendix E holds the aggregate per-item series and
+Appendix J the individual one, so E says aggregate.
+
+NUMBERS: nine added tokens, every one a count that the same sentence
+previously spelled as a word. Nothing is new and no value changed.
+
+    added '10' x2   the 10 named blocks (3.4), the 10 variants (Appendix I)
+    added '11' x3   the 11 inversions (4.1), 11 of 42 negative at the
+                    individual level (4.3), 11 with negative concordance
+                    (Appendix F). The Appendix J instance falls after the
+                    References heading and selfcheck does not see it.
+    added '12' x1   12 of the 13 reverse-coded items (3.4)
+    added '13' x2   the same, and Figure 4's note
+    added '16' x1   the 16 robustness checks (4.4)
+
+  Table A5's cells (10 control sets, 8 to 9, 12 to 11) also fall after the
+  References heading.
