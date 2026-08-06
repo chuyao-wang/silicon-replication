@@ -2084,3 +2084,60 @@ Counted in the built file: 17 titles, 17 notes, 34 in total, which is every
 figure and every table.
 
 NUMBERS: not applicable. paper_current.md is untouched.
+
+### revise83: the appendix gets lettered sections, and the last leftovers
+(9 Aug 2026)
+
+THE APPENDIX. "(Appendix, Parse failures)" told a reader what to look for
+and nothing about where. Fourteen lettered sections now, A to N, in the
+order the chapter calls on them. Four blocks that had no heading get one.
+
+    A  Survey items                          Table A1
+    B  Example prompt
+    C  Backstory leakage                     Table A2
+    D  Evaluation metrics
+    E  Per-item recovery                     Figures A1, A2
+    F  Concordance
+    G  The country-label contrast            Figure A3
+    H  Block ablations
+    I  Country identifiability
+    J  Individual-level diagnostics          Table A3, Figure A4, Table A4
+    K  Aggregate robustness checks           Table A5
+    L  Data-processing checks
+    M  Parse failures
+    N  Sensitivity to the extraction rule    Table A6
+
+Every body pointer takes its letter: Appendix B, D, F, H, I, M. The three
+table pointers stay as table pointers (Appendix Table A1, A2, A5, A6),
+because a table number is more precise than a section letter.
+
+The figures and tables keep their own numbering, A1 onward, running straight
+through the appendix rather than restarting inside each section. The
+appendix preamble now says so, because "Table A2" inside "Appendix C" would
+otherwise invite the wrong reading. THE MAC SIDE MAY PREFER section-relative
+labels (Table C1, Figure E1). That would touch FIGURE_MAP, the verification
+script and every cross-reference, so it is left as a decision, not made.
+
+FOUR LEFTOVERS, from a last count of repeated eight-word runs:
+
+  the discussion's opening paragraph and 5.1's topic sentence carried "the
+  aggregate signal, and richer profiles do not improve on it" in adjacent
+  paragraphs. The opening paragraph says it in its own words now.
+  5.2 and 4.1 both said "rises with the size of the true cross-national
+  differences".
+  4.1's handoff and 5.3 both said "a researcher who already holds such
+  data".
+  5.4's practical contribution closed on 5.3's last paragraph compressed:
+  "A validation licenses only the estimand it tested: aggregate rank
+  comparison after item-level validation, and no claim at the individual or
+  distributional level." 5.3 argues it with citations, so 5.4 lets it go.
+  THIS IS ONE SENTENCE OUT OF THE MERGED CONTRIBUTIONS PARAGRAPH, not a
+  change to the merge, which stands.
+
+BUILD_DOXC, TWO FIXES. The appendix sections are set at the same heading
+level as 4.1 and 5.1, not one below. And "Scale: 0-10" in the example prompt
+was being set as a heading, because the appendix subheading rule was "short
+line with no full stop"; a colon now rules a line out. That line is what
+comment 27 on the v54 build asked about.
+
+NUMBERS: IDENTICAL.
