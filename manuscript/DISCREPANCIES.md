@@ -1995,3 +1995,66 @@ NUMBERS: three tokens, none a claim.
 
     removed '42' x1     5.2, "eleven of the 42 items" -> "the reversed items"
     added '4.1', '4.3'  the two pointers that replace the moved statistics
+
+### revise81: topic sentences that state something, across the whole text
+(8 Aug 2026)
+
+Read every topic sentence in sections 1 to 4 against the standard the
+discussion was held to in revise80. Sections 3.1 to 3.5 pass: a methods
+topic sentence describes what was done, and these do. Seven elsewhere did
+not, and two supporting sentences moved with them.
+
+  1     "Previous evaluations suggest some promise" -> "Early evaluations
+        found that model responses track human ones across several domains."
+        "The evidence of limitations concerns both response distributions
+        and the representation of groups and countries" -> "Later work found
+        compressed distributions and misrepresented groups." The two
+        paragraphs now pair.
+  2.2   "A second, artifactual source of apparent cross-national difference
+        is the response format, meaning how the answer scale is presented"
+        is a definition in a claim's clothes -> "The response format can
+        create cross-national differences by itself", with the definition
+        after it.
+  2.3   "Whether richer conditioning rescues individual recovery is debated"
+        withheld the answer the paragraph reaches three sentences later ->
+        "Richer conditioning rescues individual recovery only when it is far
+        richer than a demographic profile." The "Both sides agree" sentence
+        goes, because the topic sentence now carries it.
+  4.1   a topic sentence named a panel. The finding leads and the pointer
+        follows.
+  4.2   "How much the name contributes is the next question" -> "Removing
+        the country sentence moves recovery more than removing anything else
+        does."
+  4.3   "Distributional recovery is also limited" -> "Dispersion fails the
+        pre-declared band in both directions", and the trailing "showing
+        that dispersion can fail in either direction" goes with it.
+
+ONE DIRECTION READ BACKWARDS. MAC SIDE, PLEASE CONFIRM THE WORDING, NOT THE
+NUMBER. 4.2's removal paragraph read "The country sentence is removed from
+an otherwise identical rich profile ... The paired item-level correlation
+rises by a median 0.135 on forward-coded items". In that order the sentence
+says removal raises forward items. Three other statements of the same
+contrast say the opposite:
+
+  Appendix, Block ablations   "+0.135 on forward items and -0.176 on reverse
+                              items" as the country label's effect
+  Figure A3's note            the change is measured "when the country
+                              sentence is present"
+  4.2, later                  the add margin is +0.73 forward, -0.44 reverse
+
+So the sentence now reads "With the country present the paired item-level
+correlation is higher by a median 0.135 on forward-coded items ... and lower
+by 0.176 on reverse-coded items". No number moved. If the shipped
+per-item contrast is signed the other way, this wording is what has to
+change, not the values.
+
+HEDGES CHECKED ACROSS 1 TO 4 and left as they are. Every "may" and "could"
+states a hypothesis before its test (2.2's stereotype reading, 4.2's
+scale-direction reading), a design limitation the chapter owns (English-only
+prompts, generic party coding), or a definition (the demographic ceiling is
+"the most any demographic profile could recover"). A scan found no
+"highlight", "underscore", "leverage", "robust", "framework", "nuanced",
+"notably", "importantly", "in order to", "utilize" or "facilitate" anywhere
+in the body.
+
+NUMBERS: IDENTICAL.
