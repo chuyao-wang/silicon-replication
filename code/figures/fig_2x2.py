@@ -147,11 +147,11 @@ def main():
     # with a plain-language annotation; the per-item movement is the evidence
     # beneath it. The triple-difference estimates live in the text and Table
     # A5.
-    fig = plt.figure(figsize=(5.1, 8.6))
+    fig = plt.figure(figsize=(6.75, 8.6))
     # Panel (a) taller (reviewer, v29), and repositioned after drawing so it
     # spans the full page width instead of inheriting the left margin that
     # panel (b)'s long item labels force on the shared gridspec column.
-    gs = fig.add_gridspec(2, 1, height_ratios=[1.22, 1.85], hspace=0.30)
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.02, 2.10], hspace=0.38)
     axB = fig.add_subplot(gs[0, 0])
     axA = fig.add_subplot(gs[1, 0])
 
@@ -180,7 +180,7 @@ def main():
     axA.set_ylim(-0.9, len(order) - 0.1)
     axA.axhline(len(rev12) - 0.5, color=MUTE, linewidth=0.7, linestyle=(0, (4, 3)))
     axA.set_xlabel("country-label effect, Fisher $z$  ($z(r_{\\rm with}) - z(r_{\\rm without})$)")
-    axA.set_title("(b)  the same movement, item by item", loc="left")
+    axA.set_title("(b)  the same movement, item by item", loc="left", pad=22)
     xl = max(abs(E[["numeric", "anchored"]].to_numpy()).max() * 1.14, 0.95)
     axA.set_xlim(-xl, xl)
     axA.text(-xl * 0.96, len(rev12) - 0.5 + 0.45, "forward-coded items",
@@ -192,10 +192,11 @@ def main():
     from matplotlib.lines import Line2D
     axA.legend(handles=[
         Line2D([], [], marker="o", color="none", markerfacecolor="#ffffff",
-               markeredgecolor=INK, markersize=5.4, label="numeric scale"),
+               markeredgecolor=INK, markersize=5.4, label="numbers only"),
         Line2D([], [], marker="o", color="none", markerfacecolor=INK,
-               markeredgecolor=INK, markersize=5.4, label="verbally anchored scale"),
-    ], loc="upper left", fontsize=SZ_LEG, handletextpad=0.5)
+               markeredgecolor=INK, markersize=5.4, label="numbers with verbal endpoints"),
+    ], loc="lower right", bbox_to_anchor=(1.0, 1.005), ncol=2,
+       fontsize=SZ_LEG, handletextpad=0.5, frameon=False)
 
     # ------------------------------------------------------- panel (b)
     xs = [0, 1]
@@ -223,12 +224,14 @@ def main():
         axB.text(x + 0.20, (lo + hi) / 2, f"gap\n{gap:+.3f}", fontsize=SZ_ANNOT,
                  color=MUTE, va="center", ha="left",
                  bbox=dict(facecolor="#ffffff", edgecolor="none", pad=1.4))
-    axB.annotate("with verbal anchors, the label helps\nreverse-worded items too",
-                 xy=(1.0, 0.24), xytext=(0.52, -0.38), fontsize=SZ_DENSE,
-                 color=INK, ha="left", va="center",
-                 arrowprops=dict(arrowstyle="-|>", linewidth=0.9, color=INK))
+    # v42 review: the leader line ran diagonally across the panel and read
+    # as a plotted series. The sentence now sits in empty space and names
+    # the column it is about.
+    axB.text(0.62, -0.30, "under the anchored scale the label\nhelps reverse-worded items too",
+             fontsize=SZ_DENSE, color=INK, ha="left", va="center",
+             bbox=dict(facecolor="#ffffff", edgecolor="none", pad=1.6))
     axB.set_xticks(xs)
-    axB.set_xticklabels(["numeric scale", "verbally\nanchored scale"])
+    axB.set_xticklabels(["numbers only", "numbers with\nverbal endpoints"])
     axB.set_xlim(-0.35, 1.75)
     axB.set_ylabel("mean country-label effect, Fisher $z$")
     axB.set_title("(a)  the country-label effect, by scale format", loc="left")
@@ -242,10 +245,24 @@ def main():
     # panels share the same printed width and (a) no longer wastes the label
     # gutter (reviewer, v29: "figure 6a bigger, ylabel from the page's left").
     fig.canvas.draw()
-    bbA = axA.get_tightbbox(fig.canvas.get_renderer()) \
-             .transformed(fig.transFigure.inverted())
+    R = fig.canvas.get_renderer()
+    M = 0.015                      # printed left edge, in figure coordinates
+
+    def tb(ax):
+        return ax.get_tightbbox(R).transformed(fig.transFigure.inverted())
+
+    # 1. pull the item panel in until its labels sit inside the canvas, so the
+    #    tight bounding box stops expanding to the left and the two panels can
+    #    be aligned in the saved figure and not only on the canvas.
+    pa = axA.get_position()
+    d = M - tb(axA).x0
+    axA.set_position([pa.x0 + d, pa.y0, pa.width - d, pa.height])
+    fig.canvas.draw()
+    # 2. the four-cell panel starts at the same printed column, its y-axis
+    #    label flush with the item labels above it (v42 review).
     pa, pb = axA.get_position(), axB.get_position()
-    axB.set_position([bbA.x0 + 0.055, pb.y0, pa.x1 - bbA.x0 - 0.055, pb.height])
+    d = M - tb(axB).x0
+    axB.set_position([pb.x0 + d, pb.y0, pa.x1 - (pb.x0 + d), pb.height])
 
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(a.figdir, f"{a.name}.{ext}"))

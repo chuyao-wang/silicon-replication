@@ -969,3 +969,59 @@ in-figure type is 9.05 to 10.00 pt against a 12 pt body. Tables: cells go
 from 9 pt to 10 pt, and column widths are now proportional to the text each
 column carries instead of equal, which was wasting the page on Table A5.
 Both changes are in build_docx.py.
+
+### revise57: one figure per level, and the renumbering that follows
+(6 Aug 2026)
+
+FIGURES 2 AND 3 ARE RECUT INTO TWO FIGURES, ONE PER LEVEL [25], [52].
+Figure 2 is the aggregate level: panel (a) every item in every condition,
+panel (b) the same 42 items under Qwen 1P, ranked, which was Figure 3(a).
+Figure 6 is the individual level in the same two cuts: panel (a) every
+condition against the demographic ceiling, which was the panel split out as
+Figure 8 in revise55, panel (b) the per-item series that was Figure 3(b). It
+sits in the first half of 4.3, where RQ3 is answered. The two per-item
+panels keep one y scale and each note says so, which preserves what the old
+Figure 3 did in one frame: the aggregate series spans 1.64 correlation units
+against the individual series' 0.30.
+
+RENUMBERING: block figure 4 -> 3, swap 5 -> 4, the 2 x 2 6 -> 5, the new
+individual figure is 6, cross-level ranks stay 7. Seven main figures, four
+appendix figures, eleven PNGs; selfcheck expects eleven again. FIGURE_MAP
+rewritten; file names no longer match figure numbers for Figures 3 and 4 and
+the map is the authority. code/figures/fig3_levels.py is marked RETIRED and
+dropped from the map; fig2_recovery.py now produces both new figures.
+
+FIGURE FIXES ASKED FOR IN THE COMMENTS.
+[12] Figure 2(a): the median value now prints to the right of its own median
+     bar instead of over the swarm; the note says why the Llama 3P swarm is
+     grey (it loses 24% of scheduled responses).
+[14] Figure 2(a): the legend moves into the headroom above r = 1, where no
+     item can plot, and the panel is taller.
+[24] Figure 2(b): the extreme labels sit above their own points, with no
+     leader line.
+[27] Figure 3 (blocks): 4.4 in tall to 5.6, so the bars and their values have
+     more room at the same type size.
+[29] Figure 4 (swap): the row labels are shorter, "a wrong name, scored
+     against the named country" and "... against the true country".
+[30] Figure 5(a): the diagonal leader line read as a plotted series and is
+     gone; the sentence sits in empty space and names the column it is
+     about. No other figure now uses a diagonal leader.
+[31] Figure 5(b) is taller, and both panels are flush to the same printed
+     left edge, computed from the tight bounding box after drawing.
+[32] Figure 5's note says the panel shows every one of the 22 items in the
+     batch and glosses a verbally anchored scale; the axis labels read
+     "numbers only" and "numbers with verbal endpoints".
+[13] Notes now carry what the picture cannot: the grey arm, the noise band's
+     meaning in Figure 3, the shared scale in Figures 2 and 6, and new notes
+     under Appendix Figures A1 and A3.
+
+WORDING. [26] 4.2's title and RQ2 stop saying "sets its sign" and say what
+the format decides: whether the country ordering comes out right or
+inverted. [28] the swap paragraph opens "The falsification arm shows the
+model uses the name it is given."
+
+Numeric tokens: figure numbers only (2, 6 in, 8 and the old 3-and-4 pointers
+out), plus one 24% and one 0.210 reused in the new notes, and 22 and 42 in
+the same notes. No claim number changed; cloud_verify_revise42.py traces
+34/34. In-figure type now renders between 9.90 and 10.00 pt for all seven
+main figures; the appendix item lists A1 and A3 remain at 9.0 and 9.2.

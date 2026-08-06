@@ -1,13 +1,12 @@
 manuscript_figure,file,producer,note
 1,fig1_pipeline.pdf,code/figures/fig_pipeline.py,
-2,fig2_recovery.pdf,code/figures/fig2_recovery.py,
-3,fig3_levels_shared_scale.pdf,code/figures/fig3_levels.py,"two panels since 6 Aug 2026; the country-profile strip that was panel (c) is cut, its ranking is Figure 7"
-4,fig4_backstory_ladder.pdf,code/figures/fig_two_margin.py,"the file name says 4; since 5 Aug 2026 it is the two-margin block figure, backstory blocks only. fig_ladder.py is retired; fig_two_margin.py ships in the replication package and reproduces the shipped figure byte for byte"
-5,fig5_swap_country.pdf,code/figures/fig_swap.py,"the swapped-label falsification arm, new 5 Aug 2026"
-6,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,
+2,fig2_recovery.pdf,code/figures/fig2_recovery.py,"two panels since 6 Aug 2026: the by-condition swarm and the per-item aggregate series that was Figure 3(a)"
+3,fig4_backstory_ladder.pdf,code/figures/fig_two_margin.py,"the file name says 4; it is manuscript Figure 3 since 6 Aug 2026, the two-margin block figure"
+4,fig5_swap_country.pdf,code/figures/fig_swap.py,"the file name says 5; it is manuscript Figure 4 since 6 Aug 2026, the swapped-label falsification arm"
+5,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,"manuscript Figure 5 since 6 Aug 2026"
+6,fig6_individual_levels.pdf,code/figures/fig2_recovery.py,"new 6 Aug 2026: the individual level in two panels, by condition and per item, from the same producer as Figure 2"
 7,fig7_crosslevel_ranks.pdf,code/figures/fig_crosslevel.py,
-8,fig8_individual_by_condition.pdf,code/figures/fig2_recovery.py,"the individual-level panel of Figure 2 until 6 Aug 2026; split out so that 4.1 does not answer RQ3, and placed in 4.4"
 A1,figA1_item_country_recovery.pdf,code/figures/fig_appendix.py,
 A2,figA2_best_worst_scatter.pdf,code/figures/fig_appendix.py,
 A3,figA3_item_individual_recovery.pdf,code/figures/fig_appendix.py,
-A4,figA4_country_item_contrast.pdf,code/figures/figA4_country_item.py,"the per-item country-label contrast, moved out of Figure 4 on 5 Aug 2026"
+A4,figA4_country_item_contrast.pdf,code/figures/figA4_country_item.py,"the per-item country-label contrast, moved out of the block figure on 5 Aug 2026"

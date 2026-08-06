@@ -135,8 +135,8 @@ if a.margins:
     for k, r in piv.items():
         assert abs(ship.loc[k, "fwd_median_dz"] - r.fwd_median_dz) < 1e-5, k
 
-fig, (axAdd, axRem) = plt.subplots(1, 2, figsize=(6.3, 4.4))
-fig.subplots_adjust(left=0.29, right=0.985, top=0.885, bottom=0.255, wspace=0.08)
+fig, (axAdd, axRem) = plt.subplots(1, 2, figsize=(6.3, 5.6))
+fig.subplots_adjust(left=0.29, right=0.985, top=0.905, bottom=0.205, wspace=0.08)
 
 # The per-item panel that used to sit above these two is Appendix Figure A4
 # (code/figures/figA4_country_item.py); its data still ships from here.
@@ -177,13 +177,13 @@ for ax, margin, ttl, sub in (
                 va="bottom", fontsize=9, color=fs.MUTE)
     ax.set_xlim(-0.58, 0.86)          # one scale for both panels
     fs.grid(ax, axis="x")
-fig.text(0.64, 0.135, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",
+fig.text(0.64, 0.105, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",
          ha="center", fontsize=fs.SZ_DENSE)
 h_f = plt.Rectangle((0, 0), 1, 1, facecolor=fs.FWD_SHADE, edgecolor=fs.INK,
                     label="forward-worded items (29)")
 h_r = plt.Rectangle((0, 0), 1, 1, facecolor=fs.NEG_FILL, edgecolor=fs.NEG_EDGE,
                     hatch=fs.NEG_HATCH, label="reverse-worded items (13)")
-axAdd.legend(handles=[h_f, h_r], loc="upper center", bbox_to_anchor=(1.05, -0.20),
+axAdd.legend(handles=[h_f, h_r], loc="upper center", bbox_to_anchor=(1.05, -0.155),
              ncol=2, fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
 
 fs.save(fig, a.figdir, a.name)

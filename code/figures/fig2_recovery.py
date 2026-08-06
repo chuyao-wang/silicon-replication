@@ -104,7 +104,7 @@ def main() -> None:
     ap.add_argument("--figdir", default="figures")
     ap.add_argument("--name", default="fig2_recovery")
     ap.add_argument("--name-individual", dest="name_individual",
-                    default="fig8_individual_by_condition")
+                    default="fig6_individual_levels")
     a = ap.parse_args()
 
     dirt = pd.read_csv(os.path.join(a.data, "item_direction_table.csv")).set_index("variable")
@@ -116,18 +116,63 @@ def main() -> None:
 
     pooled = pd.read_csv(os.path.join(a.data, "pooled_vs_item.csv")).set_index("condition")
 
-    # (a) across the top, (b) the individual level below (reviewer, v32:
-    # the threshold-count panel is cut; its counts live in the text and in
-    # this figure's data csv, and 4.1 was carrying too many panels).
-    # v41 review: the two panels become two figures. The aggregate panel
-    # answers RQ1 in 4.1; the individual panel showed the RQ3 result three
-    # sections before it is discussed, so it moves to 4.4 as Figure 8.
-    fig = plt.figure(figsize=(6.3, 4.3))
-    axA = fig.add_subplot(1, 1, 1)
-    fig.subplots_adjust(bottom=0.105, top=0.925, left=0.105, right=0.985)
-    figI = plt.figure(figsize=(6.3, 3.5))
-    axC = figI.add_subplot(1, 1, 1)
-    figI.subplots_adjust(bottom=0.130, top=0.910, left=0.105, right=0.985)
+    # v42 review: each level gets one figure with two panels. Figure 2 is
+    # the aggregate level, by condition and then item by item; Figure 6 is
+    # the individual level in the same two cuts, in 4.3 where RQ3 is
+    # answered. The two per-item panels keep one y scale, so the spread of
+    # the aggregate series against the individual one is still readable
+    # across the two figures.
+    lev = pd.read_csv(os.path.join(a.data, "cross_level_agreement.csv"))
+    lev = lev.rename(columns={lev.columns[0]: "variable"}).set_index("variable")
+    lev["reverse"] = dirt["direction"].reindex(lev.index).eq("reverse")
+    lev = lev.sort_values("r_bc", ascending=False)
+    span_bc = float(lev.r_bc.max() - lev.r_bc.min())
+    span_pw = float(lev.r_pooled_within.max() - lev.r_pooled_within.min())
+    xs_item = np.arange(len(lev))
+    YLIM = (-1.06, 1.12)
+
+    def item_panel(ax, col, title, label_extremes, ylab):
+        fs.grid(ax)
+        ax.axhline(0, color=fs.INK, linewidth=0.9, zorder=2)
+        for mask, shade, mark, lab in (
+                (~lev.reverse.values, fs.FWD_SHADE, fs.FWD_MARK, "forward (n=29)"),
+                (lev.reverse.values, fs.REV_SHADE, fs.REV_MARK, "reverse (n=13)")):
+            ax.scatter(xs_item[mask], lev.loc[mask, col], s=26, marker=mark,
+                       facecolors="none", edgecolors=shade, linewidths=1.0,
+                       zorder=4, label=lab)
+            ax.vlines(xs_item[mask], 0, lev.loc[mask, col], color=shade,
+                      linewidth=0.8, zorder=3)
+        ax.set_ylim(*YLIM)
+        ax.set_xlim(-0.8, len(lev) - 0.2)
+        ax.set_xticks([])
+        ax.set_ylabel(ylab)
+        ax.set_title(title, loc="left")
+        if label_extremes:
+            # labels sit above their own point, so no leader line can be
+            # mistaken for a plotted series (v42 review)
+            top = lev[col].iloc[0]
+            ax.annotate(f"{fs.VLABEL.get(lev.index[0], lev.index[0])}  {top:+.2f}",
+                        xy=(0, top), xytext=(0, 8), textcoords="offset points",
+                        fontsize=fs.SZ_ANNOT, ha="left", va="bottom", bbox=fs.BOX)
+            bot = lev[col].iloc[-1]
+            ax.annotate(f"{fs.VLABEL.get(lev.index[-1], lev.index[-1])}  {bot:+.2f}",
+                        xy=(len(lev) - 1, bot), xytext=(0, -9),
+                        textcoords="offset points", fontsize=fs.SZ_ANNOT,
+                        ha="right", va="top", bbox=fs.BOX)
+        ax.legend(loc="lower left", fontsize=fs.SZ_LEG, handlelength=1.4,
+                  ncol=2, framealpha=1.0, facecolor=fs.PAPER, edgecolor="none")
+
+    fig = plt.figure(figsize=(6.3, 7.4))
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.0, 0.92], hspace=0.34)
+    axA = fig.add_subplot(gs[0, 0])
+    axB = fig.add_subplot(gs[1, 0])
+    fig.subplots_adjust(bottom=0.075, top=0.965, left=0.105, right=0.985)
+
+    figI = plt.figure(figsize=(6.3, 6.4))
+    gsI = figI.add_gridspec(2, 1, height_ratios=[0.82, 1.0], hspace=0.30)
+    axC = figI.add_subplot(gsI[0, 0])
+    axD = figI.add_subplot(gsI[1, 0])
+    figI.subplots_adjust(bottom=0.085, top=0.955, left=0.105, right=0.985)
 
     xs = np.arange(len(CONDITIONS))
     labels = [lab for _, lab, _ in CONDITIONS]
@@ -137,8 +182,6 @@ def main() -> None:
     fs.grid(axA)
     for i, (tag, _, ok) in enumerate(CONDITIONS):
         v = R[tag]
-        # one marker for every item (reviewer, v29): the direction split is
-        # Figure 3's job, and carrying it here twice cluttered the swarm.
         y = v.to_numpy(dtype=float)
         jitter = rng.uniform(-0.17, 0.17, size=len(y))
         axA.scatter(i + jitter, y, s=17, marker=fs.FWD_MARK,
@@ -149,40 +192,46 @@ def main() -> None:
         axA.plot([i - 0.30, i + 0.30], [med, med],
                  color=fs.INK if ok else fs.EXCL_SHADE, linewidth=2.4, zorder=5,
                  solid_capstyle="butt")
-        # PATCH U: nine points above the median bar is the densest part of the
-        # swarm, so the label needs an opaque background or the markers are
-        # drawn through the digits and "+0.443" reads as a smear.
-        axA.annotate(f"{med:+.3f}", (i, med), textcoords="offset points",
-                     xytext=(0, 9), ha="center", fontsize=fs.SZ_ANNOT,
+        # the value sits to the right of its own median bar, clear of the
+        # swarm it used to be printed over (v42 review)
+        axA.annotate(f"{med:+.3f}", (i + 0.32, med), textcoords="offset points",
+                     xytext=(2, 0), ha="left", va="center", fontsize=fs.SZ_ANNOT,
                      fontweight="bold", zorder=6, bbox=fs.BOX,
                      color=fs.INK if ok else fs.MUTE)
     axA.set_xticks(xs)
     axA.set_xticklabels(labels, fontsize=fs.SZ_DENSE)
-    # Headroom for the two-line pooled-r counterexample label. The ticks stay
-    # inside [-1, 1] so the axis cannot be read as allowing r > 1.
-    axA.set_ylim(-1.0, 1.18)
+    axA.set_xlim(-0.55, len(CONDITIONS) - 0.18)
+    # headroom above r = 1 for the legend and the pooled label, so neither
+    # can sit over a plotted point
+    axA.set_ylim(-1.0, 1.62)
     axA.set_yticks(np.arange(-1.0, 1.001, 0.25))
     axA.set_ylabel(r"between-country correlation  $r_{bc}$")
-    axA.set_title("every item, every condition", loc="left")
+    axA.set_title("(a)  every item, every condition", loc="left")
 
-    # The pooled correlation, once, as a labelled counterexample.
     pr = float(pooled.loc["qwen_1p", "r_pooled"])
     axA.axhline(pr, color=fs.MUTE, linewidth=1.0, linestyle=":", zorder=2)
-    axA.annotate(
-        f"pooled $r$ = {pr:.3f}, a counterexample (Section 4.1)",
-        xy=(0.02, pr), xytext=(0.02, 0.985), textcoords="axes fraction",
-        fontsize=fs.SZ_DENSE, color=fs.MUTE, va="top", ha="left",
-        bbox=fs.BOX)   # opaque: it sits over the top of the qwen_1p swarm
+    axA.annotate(f"pooled $r$ = {pr:.3f}, a counterexample (Section 4.1)",
+                 xy=(0.02, 0.995), xycoords="axes fraction",
+                 fontsize=fs.SZ_DENSE, color=fs.MUTE, va="top", ha="left",
+                 bbox=fs.BOX)
 
     hitem = plt.Line2D([], [], linestyle="none", marker=fs.FWD_MARK,
                        markerfacecolor="none", markeredgecolor=fs.SERIES,
                        markersize=5.5, label="one item")
     hmed = plt.Line2D([], [], color=fs.INK, linewidth=2.4, label="median across items")
-    axA.legend(handles=[hmed, hitem], loc="lower left",
-               fontsize=fs.SZ_DENSE, handlelength=1.6, frameon=True,
-               facecolor=fs.PAPER, edgecolor="none", framealpha=1.0)
+    axA.legend(handles=[hmed, hitem], loc="upper left", ncol=2,
+               bbox_to_anchor=(0.02, 0.90), fontsize=fs.SZ_DENSE,
+               handlelength=1.6, frameon=True, facecolor=fs.PAPER,
+               edgecolor="none", framealpha=1.0)
 
-    # ----------------------------------------------------------- panel (c)
+    # ----------------------------------------------------------- panel (b)
+    item_panel(axB, "r_bc", f"(b)  the same items, Qwen 1P, ranked "
+                            f"(range {span_bc:.2f})", True,
+               r"between-country correlation  $r_{bc}$")
+    axB.set_xlabel("42 items, ordered by aggregate recovery "
+                   "(per-item labels: Appendix Figure A1)")
+
+    # ------------------------------------------- the individual-level figure
     fs.grid(axC)
     axC.axhline(0, color=fs.INK, linewidth=0.9, zorder=1)
     axC.axhline(CEILING, color=fs.INK, linewidth=1.1, linestyle="--", zorder=2)
@@ -196,8 +245,6 @@ def main() -> None:
         axC.plot([i - 0.09, i + 0.09], [lo, lo], color=col, linewidth=1.2, zorder=3)
         axC.plot([i - 0.09, i + 0.09], [hi, hi], color=col, linewidth=1.2, zorder=3)
         axC.scatter([i], [med], s=52, marker="D", color=col, zorder=4)
-        # Value only: at half width the ceiling percentages collide, and the
-        # text reports them (13.5% and 38% of the ceiling in Section 4.4).
         axC.annotate(f"{med:.3f}",
                      (i, hi), textcoords="offset points", xytext=(0, 5),
                      ha="center", va="bottom", fontsize=fs.SZ_DENSE, bbox=fs.BOX,
@@ -207,7 +254,14 @@ def main() -> None:
     axC.set_xlim(-0.60, len(CONDITIONS) - 0.40)
     axC.set_ylim(-0.025, 0.255)
     axC.set_ylabel(r"within-country correlation  $r_{wc}$")
-    axC.set_title("individual-level recovery, the same conditions", loc="left")
+    axC.set_title("(a)  every condition, against the ceiling", loc="left")
+
+    item_panel(axD, "r_pooled_within",
+               f"(b)  the same items, on the scale of Figure 2(b) "
+               f"(range {span_pw:.2f})", False,
+               r"within-country correlation  $r_{pw}$")
+    axD.set_xlabel("42 items, ordered by aggregate recovery "
+                   "(per-item labels: Appendix Figure A3)")
 
     fs.save(fig, a.figdir, a.name)
     fs.save(figI, a.figdir, a.name_individual)

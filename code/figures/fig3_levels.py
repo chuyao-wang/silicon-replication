@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""
+"""RETIRED 6 Aug 2026. Its two panels are now the second panel of
+manuscript Figure 2 and of Figure 6, both produced by fig2_recovery.py, so
+that each level has one figure. Kept for provenance; not in FIGURE_MAP.
+
+
 fig3_levels.py -- Figure 3, rebuilt on a shared scale.
 
     python3 fig3_levels.py --data handoff_upload --figdir figures

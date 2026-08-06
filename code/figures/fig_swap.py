@@ -20,11 +20,11 @@ none_f,none_r = med("qwen_1p_full_nocountry")
 lab_f,lab_r   = sc[~sc.reverse].r_label.median(), sc[sc.reverse].r_label.median()
 tru_f,tru_r   = sc[~sc.reverse].r_true.median(), sc[sc.reverse].r_true.median()
 
-ROWS = [("the true country name",            true_f, true_r),
-        ("a wrong name, compared with\nthat wrong country's people",  lab_f, lab_r),
-        ("a wrong name, compared with\nthe respondents' own people",  tru_f, tru_r)]
-fig, ax = plt.subplots(figsize=(6.3, 3.15))
-fig.subplots_adjust(left=0.335, right=0.955, top=0.845, bottom=0.32)
+ROWS = [("the true name",                              true_f, true_r),
+        ("a wrong name, scored\nagainst the named country",  lab_f, lab_r),
+        ("a wrong name, scored\nagainst the true country",   tru_f, tru_r)]
+fig, ax = plt.subplots(figsize=(6.3, 3.35))
+fig.subplots_adjust(left=0.30, right=0.955, top=0.855, bottom=0.30)
 ys = np.arange(len(ROWS))[::-1]
 ax.axvline(0, color=fs.INK, linewidth=0.8, zorder=1)
 ax.axvline(none_f, color=fs.MUTE, linewidth=1.0, linestyle=(0,(5,3)), zorder=1)
