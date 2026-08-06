@@ -1173,3 +1173,46 @@ lists the items. Nothing else moved.
 
 Numbers: IDENTICAL. Paragraph lengths across the chapter run 41 to 188
 words.
+
+### revise62: the eight topic sentences tightened, and a sentence sweep
+(6 Aug 2026)
+
+THE EIGHT, as they now stand:
+
+  3.2  The experiment is a 2 (model) x 2 (prompt) crossing, with everything
+       else fixed.
+  3.4  The with-against-without logic runs over the whole profile, block by
+       block.
+  3.4  Every block is observed at two margins, and three probes settle what
+       they leave open.
+  4.1  Addressing RQ1, aggregate recovery is moderate, uneven across items,
+       and not captured by any single measure.
+  4.2  One explanation covers both the inversions of Section 4.1 and the
+       negative label effect above, and a 2 x 2 arm tests it (Figure 5).
+  4.3  The two levels sit far apart, and only anchoring moves the lower one.
+  4.3  Individual recovery is uniformly weak across countries and varies
+       more by item than by country.
+  5.1  The country label carries the aggregate signal, and identifiability
+       does not explain it.
+
+HEDGES THE EVIDENCE DOES NOT NEED. The abstract and 5.1 said the model
+"appears to" use the country as a prior. The chapter rules out
+identifiability, rules out calibrated knowledge, and shows the arm follows
+the name it is given, so both now say it uses one. "Relatively few
+countries" is few countries. "Highly uneven" is uneven.
+
+SAID TWICE. 5.2 gave eleven of forty-two inverted items and then called them
+a substantial minority. 4.1 gave 0.69 three times in one paragraph and 0.52
+twice. 4.3 gave 1,260 twice in three sentences. 5.1 pointed at Section 4.2
+twice. 5.2 had two "therefore" inferences in consecutive sentences. Each
+keeps one.
+
+TWO LONG LIST SENTENCES SPLIT. The introduction's "three things are new
+here" ran to 51 words with two lists inside it and is four sentences now, in
+the order Section 5.4 uses. 5.3's "recent evaluations point the same way"
+ran to 50 words and is three.
+
+Numeric tokens removed, all of them second instances of a number stated in
+the same paragraph or a pointer given twice: 22, 0.52, 0.69, 1,260, 4.2.
+Nothing new was added. cloud_verify_revise42.py traces 34/34. Body 9,513
+words.
