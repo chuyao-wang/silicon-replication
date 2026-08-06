@@ -1254,3 +1254,21 @@ the front and cut to one clause. The three sentences revise61 folded into
 merged openings come back as those openings.
 
 Numbers: IDENTICAL. Body 9,495 words.
+
+### revise64: 3.4, the margins and the probes (6 Aug 2026)
+
+Two of the three paragraphs merge, one does not.
+
+The probes are defined by the margins. The country-only arm, the twin age
+arms and the one-at-a-time additions exist to settle readings the two
+margins leave open, and that dependency is what made the 4.2 merge work and
+what the six undone merges lacked. The two are one paragraph now, opening on
+a sentence that needs no "and" to cover it: "Every block is observed at the
+two margins that bound its contribution." The probes arrive inside it as
+"Three probes settle what they leave open."
+
+The unit stays on its own. "The unit is the block, not the single variable"
+is a design decision with its own justification underneath it, and it is not
+a step in how a block is observed.
+
+Numbers: IDENTICAL.
