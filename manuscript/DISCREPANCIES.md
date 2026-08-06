@@ -816,3 +816,114 @@ interval; uncertainty is reported where it exists, in the sampling error
 inside each country mean and in the run-to-run variation of Section 4.4. No
 confidence intervals were added to Figures 4 or 5, by decision: the item set
 is fixed and the bars are not estimates of a population quantity.
+
+### revise53: consistency pass over revise51 and revise52 (5 Aug 2026)
+
+A read-through for things the two structural passes left behind. Eight
+manuscript edits, no new argument and no new claim number.
+
+THE SWAP CLAIM, three leftovers. revise52 corrected Section 4.2 but the old
+transfer reading survived in the abstract ("moves recovery toward that name"),
+in the Figure 5 title ("Recovery follows the country the prompt names"), and
+in one clause of 5.1 ("mislabeled backstories follow the label"). All three
+now state what the paired test supports: a wrong name costs the country the
+respondents came from. The in-figure title of Figure 5 said the same thing
+and was regenerated ("a wrong name costs the country the respondents came
+from"); figpng/fig5_swap_country.png is new.
+
+TWO STALE POINTERS. The Figure 2 note sent the anchored arm to Section 4.3,
+which no longer exists (now 4.2), and Section 3.2 sent individual recovery to
+4.4, which is now robustness (now 4.3). Numeric tokens: 4.3 and 4.2 exchange
+once, 4.4 becomes 4.3, and one "which Section 5.4 bounds" repetition is cut
+from 4.2, where the same pointer is made four paragraphs above.
+
+4.2's OPENING SENTENCE announced the figure and the order of the section.
+4.1 and 4.3 open by naming their question and stating the finding; 4.2 now
+does the same ("Addressing RQ2, the identifying estimate is one paired
+contrast: ...").
+
+FIGURE PRODUCERS, for the Mac side. Three repairs so the package rebuilds
+what the manuscript prints:
+
+- code/figures/fig_two_margin.py was still the three-panel version (per-item
+  panel plus two block panels on different x scales). It now draws the two
+  block panels on one shared scale, with the titles the manuscript describes,
+  and reproduces figpng/fig4_backstory_ladder.png byte for byte.
+- fig_swap.py and figA4_country_item.py existed only in cloud_analysis/ with
+  hard-coded sandbox paths, although FIGURE_MAP names them under
+  code/figures/. They now resolve their data directory relative to
+  themselves, and all three ship in the replication package.
+- results/figures in the package carried a stale Figure 4 and no Figure 5 or
+  A4 at all. All three regenerated there; FIGURE_MAP refreshed.
+
+One orphan is left alone: results/figures/fig5_country_profile_vs_error.*
+predates the renumbering and is not in FIGURE_MAP. Its content is now Figure
+3(c). Delete it on the Mac if the manifest wants a clean count.
+
+### revise54: the thirteen comments on the v39-to-v40 redline, plus a
+topic-sentence and figure-typography pass (6 Aug 2026)
+
+QUESTIONS AND CITATIONS. RQ1 said "domains" and "item to item" in one
+sentence; the unit of analysis is the item everywhere in the results, so the
+breadth claim keeps the battery and drops the domain wording [4]. The
+compositional account in the introduction gains the citation it was missing,
+Argyle et al. (2023), the study whose design assumes it [5]. RQ2's sign
+clause repeated the sentence above it, so the motivation sentence loses the
+clause and the question keeps it [6]. RQ3 stood before the paragraph that
+motivates it, which left that paragraph's colon leading into Section 3; RQ3
+now follows the colon [7]. Three in-text citations with three authors become
+et al. per APA 7: Curtin, Diener, Eggers [10].
+
+FIGURE 3 LOSES PANEL (c) [14]. It put 30 countries on a 0-1 scale beneath
+two panels that put 42 items on a shared correlation scale, which is the
+fault the shared scale exists to fix, and Figure 7 already ranks the same 30
+countries by the same quantity. The producer is edited in the package
+(code/figures/fig3_levels.py, now figsize 6.3 x 5.6), the caption drops "30
+country profiles", the note drops the panel (c) sentence, and 4.1 points at
+Figure 7. Numeric tokens removed from the caption and note: 30, 0.69, 0.91.
+All three remain in the 4.1 prose, which is where they are traced from.
+
+FIGURE 2 KEEPS BOTH PANELS [11]. Panel (b) is individual-level, but the
+figure is the model-prompt comparison from which the reference condition is
+chosen at both levels, and splitting it would renumber five figures to move
+one panel. 4.1 now says panel (b) is read in Section 4.3.
+
+FIGURE TYPOGRAPHY [19]. Measured, not guessed. Every figure is placed at
+min(natural width, 6.3 in) with a 7.4 in height cap, so 10 pt in-figure type
+renders at 10 pt x that scale. Before: 8.25 to 10.00 pt. The 2 x 2 was the
+worst at 0.825, because text outside its axes inflates the tight bounding
+box; its figsize is now 5.1 x 8.6 and it renders at 0.912. Figure 3 rises to
+0.994 with panel (c) gone. Bar value labels in Figures 4 and 5 go from 8 and
+8.5 pt to 9. Appendix Figure A4 was tried at 9 pt and reverted: the layout
+check found its item labels outside the canvas. Current range 9.05 to 10.00
+pt against a 12 pt body and 10 pt captions; the two lowest are the 42-item
+appendix lists A1 and A3.
+
+REFERENCE ITALICS [36]. Implemented in build_docx.py, not in the markdown,
+so no manuscript token changes. Journal name and volume for articles, title
+for books, reports and preprints, proceedings name for conference papers,
+with bracketed descriptors ([Data set]) left roman. All 47 entries were
+checked by printing the italic span for each.
+
+DISCUSSION [27], [33], [34], [35]. Four topic sentences in 5.1 and 5.2 now
+state the finding instead of announcing the paragraph. The replicate-arm
+mechanism is cut from 5.1 (the 95% stays), as is a citation pair that
+repeats in 5.3. Contributions are split by kind, one paragraph each:
+empirical, methodological, practical. No theoretical contribution is
+claimed, because the chapter imports its theory (ecological inference)
+rather than adding to it. Limitations three to five become one paragraph.
+Future work now maps onto the limitations one for one and drops the
+full-profile country ablation, which this chapter runs.
+
+SECTION 4.4's OPENING SENTENCE. It announced the table and asserted a count
+("Two change something") that neither the section nor Table A5 supported.
+It now states the result: one of sixteen checks changes a conclusion, and
+that one is stated with the two that set the terms for reading the others.
+The closing sentence drops its count for the same reason. This closes the
+item left for the Mac in the revise53 handoff.
+
+New numeric tokens: 2023 (the Argyle citation), 4.3 and 7 (pointers), 2 x2
+(the 2 x 2 in the contributions paragraph), 5 (Table A5 without its comma).
+Removed: 0.69, 0.91 and 30 from the Figure 3 caption and note, 2025 x2 (the
+cut citation pair), 3 and 5, in the rewritten sentences. No claim number
+changed; cloud_verify_revise42.py still traces 34/34.

@@ -1,0 +1,23 @@
+,numeric,anchored,reverse,excluded,label
+actrolga,0.05219,0.135982,False,False,Active role in political group
+aesfdrk,-0.176138,0.162917,True,False,Safety after dark
+cptppola,0.235271,0.169635,False,False,Confident participating in politics
+freehms,-0.863658,0.717372,True,False,Gays and lesbians free to live
+gincdif,-0.275496,-0.132435,True,False,Govt should reduce income differences
+happy,0.247778,0.129742,False,False,How happy
+health,0.010239,0.091808,True,False,Subjective general health
+hincfel,-0.027504,0.330135,True,False,Feeling about household income
+hmsacld,-0.607639,0.856551,True,False,Same-sex couples' right to adopt
+hmsfmlsh,-0.272587,-0.300543,True,True,Ashamed if close family gay
+imdfetn,-0.228925,0.124443,True,False,Allow immigrants of different race
+impcntr,-0.110802,0.219158,True,False,"Allow immigrants, poorer countries"
+imsmetn,-0.135285,-0.054051,True,False,Allow immigrants of same race
+inprdsc,0.146885,0.20526,False,False,People to discuss intimate matters
+polintr,-0.001611,0.119379,True,False,Interest in politics
+psppipla,0.113808,0.189263,False,False,Political system allows a say
+psppsgva,0.133612,0.20277,False,False,Political system allows influence
+rlgatnd,-0.495594,1.321231,True,True,Religious attendance
+sclmeet,-0.205856,0.141025,False,False,Frequency of social meetings
+stfdem,0.241072,0.283882,False,False,Satisfaction with democracy
+stflife,0.170814,0.249748,False,False,Life satisfaction
+trstplc,0.391802,0.442207,False,False,Trust in the police

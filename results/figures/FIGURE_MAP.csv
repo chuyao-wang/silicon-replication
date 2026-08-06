@@ -1,7 +1,7 @@
 manuscript_figure,file,producer,note
 1,fig1_pipeline.pdf,code/figures/fig_pipeline.py,
 2,fig2_recovery.pdf,code/figures/fig2_recovery.py,
-3,fig3_levels_shared_scale.pdf,code/figures/fig3_levels.py,"panel (c) carries the country-profile strip that was manuscript Figure 4 until 2 Aug 2026"
+3,fig3_levels_shared_scale.pdf,code/figures/fig3_levels.py,"two panels since 6 Aug 2026; the country-profile strip that was panel (c) is cut, its ranking is Figure 7"
 4,fig4_backstory_ladder.pdf,code/figures/fig_two_margin.py,"the file name says 4; since 5 Aug 2026 it is the two-margin block figure, backstory blocks only. fig_ladder.py is retired; fig_two_margin.py ships in the replication package and reproduces the shipped figure byte for byte"
 5,fig5_swap_country.pdf,code/figures/fig_swap.py,"the swapped-label falsification arm, new 5 Aug 2026"
 6,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,

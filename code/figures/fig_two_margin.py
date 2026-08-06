@@ -167,14 +167,14 @@ for ax, margin, ttl, sub in (
             ax.annotate(f"{val:+.2f}", (val, y + dy), textcoords="offset points",
                         xytext=(4 if val >= 0 else -4, 0),
                         ha="left" if val >= 0 else "right", va="center",
-                        fontsize=8, bbox=fs.BOX)
+                        fontsize=9, bbox=fs.BOX)
     ax.set_yticks(yb)
     ax.set_yticklabels([BLOCK_LABEL[b] for b in ORDER] if margin == "add" else [],
-                       fontsize=8.5)
+                       fontsize=9)
     ax.set_ylim(-0.55, len(ORDER) - 0.45)
     ax.set_title(ttl, loc="left", fontsize=fs.SZ_LABEL, pad=13)
     ax.annotate(sub, xy=(0.0, 1.012), xycoords="axes fraction", ha="left",
-                va="bottom", fontsize=8.5, color=fs.MUTE)
+                va="bottom", fontsize=9, color=fs.MUTE)
     ax.set_xlim(-0.58, 0.86)          # one scale for both panels
     fs.grid(ax, axis="x")
 fig.text(0.64, 0.135, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",

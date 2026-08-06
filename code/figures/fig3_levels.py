@@ -96,13 +96,15 @@ def main() -> None:
 
     # v32 review: panel (d), the error strip, is cut with the rest of the
     # 4.1 slimming; the metric-dependence numbers stay in the prose.
-    fig = plt.figure(figsize=(6.3, 7.4))
-    outer = fig.add_gridspec(2, 1, height_ratios=[2.9, 0.82], hspace=0.26)
-    gsT = outer[0].subgridspec(2, 1, hspace=0.22)
+    # v40 review: the country strip that was panel (c) is cut. It carried a
+    # different unit (countries) on a different scale, which is the fault the
+    # shared item scale here is meant to fix, and the 30 countries are ranked
+    # in Figure 7. Its two numbers stay in the 4.1 prose.
+    fig = plt.figure(figsize=(6.3, 5.6))
+    gsT = fig.add_gridspec(2, 1, hspace=0.22)
     axA = fig.add_subplot(gsT[0])
     axB = fig.add_subplot(gsT[1], sharex=axA, sharey=axA)
-    axC = fig.add_subplot(outer[1])
-    fig.subplots_adjust(bottom=0.065, top=0.960, left=0.095, right=0.985)
+    fig.subplots_adjust(bottom=0.085, top=0.945, left=0.095, right=0.985)
 
     for ax, col, title in (
             (axA, "r_bc", f"(a)  aggregate $r_{{bc}}$, range {span_bc:.2f}"),
@@ -185,11 +187,6 @@ def main() -> None:
         ax.set_xlim(*xlim)
         ax.set_xlabel(xlabel, fontsize=fs.SZ_DENSE)
         ax.set_title(title, loc="left")
-
-    strip(axC, dc.profile_r, dc.cntry,
-          "country profile correlation, 42 item means",
-          "(c)  all 30 countries sit in a band of width 0.23",
-          (0.0, 1.0), "%.2f")
 
     fs.save(fig, a.figdir, a.name)
 

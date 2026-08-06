@@ -29,7 +29,7 @@ ys = np.arange(len(ROWS))[::-1]
 ax.axvline(0, color=fs.INK, linewidth=0.8, zorder=1)
 ax.axvline(none_f, color=fs.MUTE, linewidth=1.0, linestyle=(0,(5,3)), zorder=1)
 ax.annotate("no country name\nin the prompt at all", xy=(none_f, -0.52), ha="center",
-            va="bottom", fontsize=8.5, color=fs.MUTE, bbox=fs.BOX)
+            va="bottom", fontsize=9, color=fs.MUTE, bbox=fs.BOX)
 for y,(lbl,f_,r_) in zip(ys, ROWS):
     ax.plot([0,f_],[y+0.17,y+0.17], color=fs.FWD_SHADE, linewidth=1.8, zorder=2)
     ax.plot([f_],[y+0.17], marker=fs.FWD_MARK, markersize=5.6, color=fs.FWD_SHADE, zorder=3)

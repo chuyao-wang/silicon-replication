@@ -147,7 +147,7 @@ def main():
     # with a plain-language annotation; the per-item movement is the evidence
     # beneath it. The triple-difference estimates live in the text and Table
     # A5.
-    fig = plt.figure(figsize=(6.3, 8.6))
+    fig = plt.figure(figsize=(5.1, 8.6))
     # Panel (a) taller (reviewer, v29), and repositioned after drawing so it
     # spans the full page width instead of inheriting the left margin that
     # panel (b)'s long item labels force on the shared gridspec column.
