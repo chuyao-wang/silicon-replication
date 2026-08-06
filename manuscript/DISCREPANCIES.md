@@ -2403,3 +2403,45 @@ MEASURES
 TWO ITEMS STAND AGAINST THE LETTER BY THE USER'S DECISION, both recoverable
 in one line: the framing clause in RQ3, and the 400-respondent flattening
 sentence in 3.2.
+
+### revise87: the two items that stood against the supervisor's letter
+(9 Aug 2026)
+
+BOTH ARE CLOSED NOW, at the user's decision.
+
+THE FRAMING IS BACK IN RQ3. The letter asked that a manipulation important
+enough to be in the design be motivated in the literature review and
+reflected in the research questions. 2.3 motivates the first- against
+third-person contrast and states what a group-level prior predicts for it,
+4.3 reports it, 5.3 explains it, and RQ3 names it again:
+
+  RQ3. How much individual-level recovery is there, does first- versus
+  third-person framing change it, and does it track aggregate recovery
+  across countries?
+
+Two sentences follow it: 2.3 hands the contrast to RQ3 again rather than to
+"the individual-level results", and "RQ3 asks both together" is "all three".
+
+n = 685 ANSWERS THE QUESTION IT WAS ASKED. The letter asked whether the
+per-country sample was a computational constraint or whether there is
+evidence a larger sample would not move the estimates. The chapter stated
+that 685 is the number available in the smallest country sample and left the
+reader to draw the conclusion. It draws it now:
+
+  That is the number available in the smallest country sample, so it is the
+  largest subsample an equal-sized design can draw, and the size is set by
+  the data and not by a computational limit.
+
+The four pieces of evidence that follow it are unchanged: half-sample
+agreement at 0.98, country-mean reliability of 0.99 and 0.94 with an
+attenuation factor of 0.97, and 80% power at 0.11 in a single cell. The
+sentence about estimates flattening above roughly 400 respondents stays out,
+as the user asked; the claim above is the stronger answer, because it says a
+larger equal-sized sample does not exist rather than that it would not help.
+
+THIS DEPENDS ON THE SAME CLAIM THE MAC SIDE STILL OWES. If 685 is not the
+smallest country's n in ESS Round 11, both this sentence and the one revise69
+took from the Word file have to change together.
+
+NUMBERS: one token, a label. Added '3' x1, from the new "RQ3 tests it" in
+2.3.
