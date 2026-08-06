@@ -1518,3 +1518,48 @@ Table A3's lead-in now says "The largest domain mean in any condition is
 0.125". 0.125 is a cell of Table A3 (political efficacy, Qwen 3P), so it is
 already shipped; it is new only as a body token, and the appendix falls
 after the References heading, so selfcheck does not see it.
+
+### revise71: reading the whole chapter against this session's rules
+(7 Aug 2026)
+
+THREE WORD-FILE EDITS WERE MISSED IN revise69, all of them paragraph moves.
+revise69 did anchored text edits only, so the file kept its old shape while
+the commit message said the introduction had been reordered. Applied now:
+
+  1. the introduction's last two paragraphs run in the Word file's order,
+     the four tests first and the answer last.
+  2. 5.4's three contribution paragraphs are one paragraph, opening "The
+     three contributions are empirical, methodological, and practical."
+  3. 5.4's two limitation paragraphs are one paragraph.
+
+The merged contributions paragraph is 222 words, which is long for this
+chapter. It is merged because the Word file merges it. If it should go back
+to three paragraphs, the three topic sentences are still in place.
+
+ONE MOVE NOT FROM THE WORD FILE. 3.4's 2 x 2 paragraph sat between the
+paired-contrast paragraph and the block paragraph that opens "The same
+with-and-without logic", so "the same" reached back across an intervening
+paragraph about a different experiment. The 2 x 2 is last in 3.4 now, which
+also puts the methods in the order 4.2 reports them. "A final falsification
+arm" is "A falsification arm", because it is no longer last.
+
+KNOCK-ON WORDING FROM THE RQ2 REWRITE. RQ2 now asks why the model ranks
+countries backwards. Five other places still said "correct or inverted" or
+used "sign" for the same thing, including the sentence that sets RQ2 up.
+All five match now. "Sign" is kept in the one place it is precise, the 5
+opener's "reverses the sign of the country-label effect", where the effect
+itself changes sign.
+
+SMALLER THINGS: a straight apostrophe in the 4.1 heading (revise69 put it
+there); a sentence opening on the lowercase symbol rprof; "response-scale
+format" against "response format"; "silicon sampling literature" against
+"silicon-sampling literature"; three missing serial commas; two paragraphs
+in a row opening on "Figure 2(b)"; a duplicated closing sentence in 2.2;
+"To answer these gaps", which should be "address"; and the framing null,
+which left RQ3 last round and has now left 4.3's opening claim as well.
+
+NUMBERS: two tokens, neither a claim.
+
+    removed '2' x1   4.1, "Figure 2(b) shows that" -> "Panel (b) shows that"
+    removed '3' x1   4.3, the raw file name "(rq3_cell_summary.csv)" is out
+                     of the body. The file still ships in the package.
