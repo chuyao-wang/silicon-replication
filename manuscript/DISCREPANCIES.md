@@ -1662,3 +1662,53 @@ NUMBERS: two tokens, neither a claim.
                         is still cited in 2.1, so no reference is orphaned;
                         this was checked.
     added   '42'   x1   4.1, "ranks the same items" -> "ranks the 42 items"
+
+### revise74: results and discussion ordered by what matters
+(8 Aug 2026)
+
+THE RULE APPLIED: state the finding first and at length, then rule out the
+readings that do not survive, briefly. revise73 got 5.1 half right. It saw
+that the two rival-explanation paragraphs had to be adjacent, because one of
+them says "either", and put them ahead of a finding. Findings come first.
+
+5.1  was  label carries the signal -> identifiability fails -> cue use fails
+          -> no calibration -> not calibrated representation -> what it
+          separates
+     is   label carries the signal, and respondent detail is noise -> the
+          model orders without calibrating -> two readings do not survive
+          (ONE paragraph, compressed from two) -> so this is not calibrated
+          representation -> what it separates
+
+     Three sentences moved out of the identifiability paragraph into the
+     first: the group-level prior, the 95% replicate variance, and the
+     swapped label. Those are findings and they were sitting inside an
+     exclusion.
+
+5.2  led on what pooled metrics hide, which is a corollary. The section is
+     titled for the instrument, so the instrument leads and the metric
+     warning closes.
+
+4.3  had two ordering faults, both visible from back-pointers. "The two
+     levels sit far apart" ran second and ended on "scale anchoring moves
+     both levels together", three paragraphs before anchoring is introduced.
+     "The two levels do not share a geographic pattern either" then said
+     "either" to a paragraph five back. 4.3 now answers RQ3 in its own
+     order: how much recovery, where it is weak (country, then item), what
+     moves it, what it does to dispersion, then the two levels against each
+     other, three paragraphs running.
+
+4.1  carried the cross-level comparison, the aggregate series against the
+     individual one at a ratio of 5.5. That is 4.3's question and 4.1 is
+     about the aggregate level, so it moved into the paragraph that opens
+     4.3's cross-level block. It also honors the earlier instruction not to
+     preview limited individual recovery inside 4.1.
+
+4.2, 5.3 and 5.4 already run findings first, and 5.3's one exclusion
+paragraph sits directly after the claim it answers, which is where it
+belongs. Neither was touched.
+
+UNCHANGED, as instructed: the n = 685 sentence, and the 222-word merged
+contributions paragraph.
+
+NUMBERS: IDENTICAL. Nothing in this round is anything but a move, a merge
+or a compression of text already in the chapter.
