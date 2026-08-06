@@ -4,7 +4,8 @@ analyze_2x2.py — does disambiguating the scale direction rescue the country la
 
 Run after submit_anchored_contrast.sh completes.
 
-    python analyze_2x2.py
+    python analyze_2x2.py                 # Qwen, the reported 2x2
+    python analyze_2x2.py --model llama   # the replication
 
 THE 2x2
 -------
@@ -41,6 +42,7 @@ printed alongside as a descriptive companion.
 """
 from __future__ import annotations
 
+import argparse
 import os
 
 import numpy as np
@@ -57,11 +59,20 @@ CTRL = {"actrolga", "cptppola", "inprdsc", "psppipla", "psppsgva", "sclmeet"}
 PLACEBO = {"trstplc", "stflife", "happy", "stfdem"}
 NOISE_DOMINATED = {"hmsfmlsh", "rlgatnd"}   # pre-declared in the revision plan
 
+# The four cells, for whichever model is asked for. The numeric cells are the
+# 42-item runs; the item filter below subsets them to the same 22 items as the
+# anchored arms, so the contrast is like for like.
+_AP = argparse.ArgumentParser(description=__doc__)
+_AP.add_argument("--model", default="qwen", choices=["qwen", "llama"],
+                 help="which model's 2x2 to analyse (default qwen)")
+_A = _AP.parse_args()
+M = _A.model
+
 CELLS = {
-    ("with",    "numeric"):  "qwen_1p_full_noregion",
-    ("without", "numeric"):  "qwen_1p_full_nocountry",
-    ("with",    "anchored"): "qwen_1p_full_noregion_anchored",
-    ("without", "anchored"): "qwen_1p_full_nocountry_anchored",
+    ("with",    "numeric"):  f"{M}_1p_full_noregion",
+    ("without", "numeric"):  f"{M}_1p_full_nocountry",
+    ("with",    "anchored"): f"{M}_1p_full_noregion_anchored",
+    ("without", "anchored"): f"{M}_1p_full_nocountry_anchored",
 }
 
 

@@ -89,10 +89,13 @@ VLABEL = {
     "stflife": "Life satisfaction", "trstplc": "Trust in the police",
 }
 
-ARMS = {("numeric", "with"): "qwen_1p_full_noregion",
-        ("numeric", "without"): "qwen_1p_full_nocountry",
-        ("anchored", "with"): "qwen_1p_full_noregion_anchored",
-        ("anchored", "without"): "qwen_1p_full_nocountry_anchored"}
+def arms(model: str) -> dict:
+    """The four cells of the 2 x 2 for one model. The manuscript's Figure 5 is
+    qwen; llama is the replication (v76 review)."""
+    return {("numeric", "with"): f"{model}_1p_full_noregion",
+            ("numeric", "without"): f"{model}_1p_full_nocountry",
+            ("anchored", "with"): f"{model}_1p_full_noregion_anchored",
+            ("anchored", "without"): f"{model}_1p_full_nocountry_anchored"}
 PREDECLARED_EXCL = ("hmsfmlsh", "rlgatnd")
 FURTHER_EXCL = ("freehms", "hmsacld")
 
@@ -121,12 +124,15 @@ def main():
     ap.add_argument("--data", default="handoff_upload")
     ap.add_argument("--figdir", default="figures")
     ap.add_argument("--name", default="fig_2x2_country_by_scale")
+    ap.add_argument("--model", default="qwen", choices=["qwen", "llama"],
+                    help="which model's 2 x 2 to draw (default qwen)")
     a = ap.parse_args()
     os.makedirs(a.figdir, exist_ok=True)
 
     dirt = pd.read_csv(os.path.join(a.data, "item_direction_table.csv")).set_index("variable")
     rev_flag = dirt["direction"].eq("reverse")
-    items = sorted(r_bc("qwen_1p_anchored", a.data).index)
+    ARMS = arms(a.model)
+    items = sorted(r_bc(ARMS[("anchored", "with")], a.data).index)
     ce = {}
     for regime in ("numeric", "anchored"):
         w = r_bc(ARMS[(regime, "with")], a.data).reindex(items)
