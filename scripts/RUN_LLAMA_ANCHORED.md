@@ -1,10 +1,14 @@
 # Replicating the 2 x 2 in Llama — what to run, and where
 
-Two new generation arms. Everything else already exists. Set one variable
-first, on the Mac, so nothing below hard-codes the cluster:
+Two new generation arms. Everything else already exists.
+
+Set one variable first, on the Mac, so nothing below hard-codes the cluster.
+Type the alias itself, with no angle brackets: `<` and `>` are redirection in
+the shell and the line will not parse.
 
 ```bash
-export CLUSTER=<your ssh host alias>      # e.g. the one in ~/.ssh/config
+export CLUSTER=my_cluster_alias           # the name you already type after ssh
+ssh "$CLUSTER" true && echo "alias works"
 ```
 
 ---
@@ -33,9 +37,22 @@ same 22 items. The only differences from `submit_anchored_contrast.sh` are
 
 ## 1. Mac: send the submission script up
 
+Two files go up: the submission script, and the updated `analyze_2x2.py`,
+which is the one that takes `--model`. The copy already on the cluster does
+not.
+
 ```bash
 cd ~/silicon_pkg/silicon_chapter          # or wherever this package lives
 scp scripts/submit_anchored_contrast_llama.sh "$CLUSTER":~/Winston_Code/
+scp scripts/analyze_2x2.py                  "$CLUSTER":~/Winston_Code/
+```
+
+If this package is not the checkout that has them, take them from wherever
+you saved them, for example `~/Downloads`:
+
+```bash
+scp ~/Downloads/submit_anchored_contrast_llama.sh "$CLUSTER":~/Winston_Code/
+scp ~/Downloads/analyze_2x2.py                    "$CLUSTER":~/Winston_Code/
 ```
 
 ## 2. Cluster: submit
