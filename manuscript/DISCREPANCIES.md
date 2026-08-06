@@ -1608,3 +1608,57 @@ chapter:
 
 NUMBERS: body IDENTICAL. The two appendix changes fall after the References
 heading, where selfcheck does not look, and neither changes a value.
+
+### revise73: the topic-sentence chain, and what six-word runs turned up
+(8 Aug 2026)
+
+TWO PARAGRAPHS WERE OUT OF PLACE, and in both the give-away is a
+back-pointing word.
+
+  5.1  "Sensible cue use does not explain the pattern either" sat two
+       paragraphs after the rival explanation it says "either" to, with the
+       calibration paragraph between them. The two rivals are adjacent now.
+       5.1 runs: the label carries the signal -> rival one fails -> rival
+       two fails -> the model does not calibrate -> so this is not
+       calibrated representation -> what that separates.
+
+  4.2  "The added information hurts even where it is directly relevant" is
+       the escalation of "The blocks that describe the respondent subtract",
+       and a paragraph about the label sat between them. 4.2 runs: the model
+       reads the name -> how much it contributes -> no other block comes
+       near it -> respondent detail subtracts -> it subtracts even where it
+       is relevant -> the label needs no demographics -> it replicates ->
+       the format decides the direction -> summary.
+
+THREE TOPIC SENTENCES stated nothing. Two named a figure ("Figure 2(b) ranks
+the same items under Qwen 1P", "Figure 4 gives every block's effect at both
+margins") and one repeated the paragraph three above it ("The country label
+alone accounts for most of the aggregate recovery"). All three now open on
+the result, with the pointer inside the paragraph.
+
+SEVEN REPEATS CUT OR COMPRESSED, found by counting six-word runs:
+
+  4.1 and Figure 2's note both said "the pooled correlation is drawn once,
+  as a labeled counterexample". The note keeps it.
+  Figure 3's note re-argued the comparison the body had just made.
+  5.1 restated 2.2's Terracciano finding and carried a group-versus-
+  individual sentence that is 5.3's job (Cao et al., 2025, still cited in
+  2.1).
+  5.3 repeated 2.3's clause on sociodemographic prompting word for word.
+  5.4 lifted four phrases whole from 3.4 and the introduction, and gave the
+  three-part list of what the study evaluates for the third time. It now
+  gives the short form.
+
+LEFT ALONE ON PURPOSE: 2.1 states that list as the gap and the introduction
+states it as the claim. Those two are the loop the chapter opens and closes,
+and 5.4's short form closes it without repeating it whole.
+
+UNCHANGED, as instructed: the n = 685 sentence from the Word file, still to
+be checked on the Mac, and the 222-word merged contributions paragraph.
+
+NUMBERS: two tokens, neither a claim.
+
+    removed '2025' x1   the Cao et al. (2025) citation leaves 5.1. The work
+                        is still cited in 2.1, so no reference is orphaned;
+                        this was checked.
+    added   '42'   x1   4.1, "ranks the same items" -> "ranks the 42 items"
