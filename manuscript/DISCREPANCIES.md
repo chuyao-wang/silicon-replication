@@ -2491,3 +2491,58 @@ NUMBERS: four tokens, none a value.
     added '10' x2      3.4, the balance of the 22-item batch. Both counts
                        already appear in 4.2.
     removed '4.1', added '5.1'   the pointer in the shortened 5.2 paragraph
+
+### revise89: the discussion's register, and two calibrations
+(9 Aug 2026)
+
+THE SHORT SENTENCES IN SECTION 5. Six stretches ran three or four clipped
+assertions in a row, which reads as insistence rather than argument in a
+methods journal. Each clipped sentence joins the sentence it belongs to.
+TOPIC SENTENCES STAY SHORT, because a short topic sentence is a claim and
+not a drumbeat: "Two other readings do not survive", "Five limitations
+define the scope of these conclusions", "Each limitation names its next
+step".
+
+  5     "The scale experiment shows they are not" and "One manipulation does
+        all three" join their neighbors, four sentences into two.
+  5.1   "It is used as noise" joins the margins sentence.
+  5.1   "The model does neither" joins the sentence that says what
+        calibration would look like.
+  5.1   "Identifiability is not the mechanism" takes its own reason.
+  5.3   "It is evidence for a different claim" folds into the sentence
+        before it, and "Recent evaluations point the same way" into the one
+        after. This also removes a "not ... " construction the style rules
+        watch.
+  5.4   "This design has one replicate pair" joins the repeated-runs
+        sentence.
+
+TWO CALIBRATIONS.
+
+  4.2's opening claim rests on a paired difference of -0.096 whose interval
+  reaches -0.003, and the arm it is compared against is not free of country
+  information: a classifier recovers the country from that arm's harmonized
+  categories well above chance. 5.4 said so and 4.2 did not. It does now, in
+  one clause, so a reader weighs the claim where it is made. The claim
+  itself is unchanged, and so are both intervals.
+
+  The introduction's answer paragraph gave the mechanism and not the
+  adequacy. "A regional average that uses no model at all recovers the same
+  country means better" now sits in it, so the answer a prospective user
+  needs is not first met at the end of 4.1.
+
+NOT DONE HERE, AND WHY.
+
+  A SECOND MODEL FOR THE ANCHORING ARM is the single highest-value thing
+  left, and it cannot be done from this repo: generation runs on the
+  cluster. The chapter carries it as limitation four with a named next step.
+  The Mac side should run the Llama anchored arm on the same 22-item batch
+  before submission; the pipeline exists and the marginal cost is one arm.
+
+  A SUBSECTION OR A SUBTITLE FOR THE COMPARATOR RESULT. The reader who
+  raised it is right that the title claims a mechanism and not an adequacy
+  standard. Both are structural decisions the user has settled: three
+  results sections matching three questions, and a title the user chose. The
+  intro sentence above raises the result's prominence at no structural cost.
+  If the subtitle is reopened, the comparator belongs in it.
+
+NUMBERS: one token, a pointer. Added '5.4' x1 in 4.2.
