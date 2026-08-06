@@ -2058,3 +2058,29 @@ prompts, generic party coding), or a definition (the demographic ceiling is
 in the body.
 
 NUMBERS: IDENTICAL.
+
+### revise82 (build_docx.py only): figure and table titles centered at 12pt,
+### and no style called Caption
+(8 Aug 2026)
+
+MANUSCRIPT TEXT UNCHANGED. Every title keeps its wording. This round is the
+builder.
+
+  the titles   "Figure 3. A wrong country name costs the country the
+               respondents came from, Qwen 1P." and the 16 others are
+               centered on their own line at 12pt, with the number still
+               bold.
+  the notes    all 17 stay justified at 10pt with the word Note in italic,
+               so a note is still visibly smaller than the title above it
+               and than body prose.
+
+NO STYLE IS CALLED CAPTION ANY MORE. The style the titles and notes used was
+named "Caption", and Word maps that name onto its own built-in Caption style
+and repaints it from the document theme, which is why the formatting set
+here did not survive into the Word file. The two styles are now FigTitle and
+FigNote, names Word has no template for, so what is written is what shows.
+
+Counted in the built file: 17 titles, 17 notes, 34 in total, which is every
+figure and every table.
+
+NUMBERS: not applicable. paper_current.md is untouched.
