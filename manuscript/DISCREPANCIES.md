@@ -1147,3 +1147,29 @@ levels and then that the scale manipulation also moves this level. The
 second sentence is now the pointer inside the first.
 
 Numbers: IDENTICAL.
+
+### revise61: the topic sentences of the merged paragraphs (6 Aug 2026)
+
+Merging can leave a paragraph headed by a sentence that covers only its
+first half, and six of the eight merges did. Each topic sentence is now
+written to cover what its paragraph holds:
+
+  3.2  the crossed design, with everything else held fixed
+  3.4  the whole-profile logic, one block at a time
+  3.4  two margins, and the three probes that settle what they leave open
+  4.1  moderate and item-dependent, and no single aggregate measure catches it
+  4.3  the levels sit far apart, and only the scale manipulation moves the
+       lower one
+  4.3  uniformly weak by country, and more variable by item than by country
+  5.1  the largest incremental source, and not by making the country
+       identifiable
+  4.2  the shared explanation, and the 2 x 2 that tests it
+
+Three sentences the new topic sentences absorbed are deleted from further
+down their paragraphs, and two transitions are repaired where the deletion
+left a jump: 5.1's identifiability sentence now names the mechanism it
+refers back to, and 4.3 says the spread across items is wider before it
+lists the items. Nothing else moved.
+
+Numbers: IDENTICAL. Paragraph lengths across the chapter run 41 to 188
+words.
