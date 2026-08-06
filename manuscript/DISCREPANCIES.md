@@ -1216,3 +1216,41 @@ Numeric tokens removed, all of them second instances of a number stated in
 the same paragraph or a pointer given twice: 22, 0.52, 0.69, 1,260, 4.2.
 Nothing new was added. cloud_verify_revise42.py traces 34/34. Body 9,513
 words.
+
+### revise63: seven of the eight merges are undone (6 Aug 2026)
+
+The test a merge has to pass is whether its two halves make one claim. Where
+they do not, the merged paragraph needs a topic sentence with an "and" in
+it, and that "and" is the paragraph reporting that it holds two points.
+Seven of revise60's eight merges failed the test and are two paragraphs
+again, each opening on one thing:
+
+  3.2  The experiment is a 2 (model) x 2 (prompt) crossing.
+       Two prompt conditions are tested.
+  3.4  The with-against-without logic runs over the whole profile.
+       The unit is the block, not the single variable.
+  3.4  Every block is observed at two margins.
+       Three probes settle what the margins leave open.
+  4.1  Addressing RQ1, aggregate recovery is moderate, uneven across items,
+       and not captured by any single measure.
+       Qwen 1P performs best and serves as the reference for the focused
+       analyses below.
+  4.3  The two levels sit far apart.
+       Anchoring is the one manipulation that moves this level (Section 4.2).
+  4.3  Individual recovery is uniformly weak in every country.
+       Recovery varies more by item than by country.
+  5.1  The country label carries the aggregate signal, and richer profiles do
+       not improve on it (Section 4.2).
+       Identifiability does not explain the label's contribution.
+
+The eighth stays merged, in 4.2: an explanation and the experiment that
+tests it are one movement, and the hypothesis alone was a fifty-word
+paragraph a reader could not hold.
+
+Length is not the criterion here and the short paragraphs are the point:
+40 to 55 words each for the seven new ones. Nothing was added. Every new
+opening sentence is a sentence the merged paragraph already held, moved to
+the front and cut to one clause. The three sentences revise61 folded into
+merged openings come back as those openings.
+
+Numbers: IDENTICAL. Body 9,495 words.
