@@ -68,7 +68,7 @@ CONDITIONS = [
     ("qwen_1p", "Qwen\n1P", True),
     ("qwen_3p", "Qwen\n3P", True),
     ("llama_1p", "Llama\n1P", True),
-    ("llama_3p", "Llama\n3P", False),
+    ("llama_3p", "Llama\n3P \u2020", False),
     ("qwen_1p_anchored", "Qwen 1P\nanchored", True),
 ]
 
@@ -185,19 +185,16 @@ def main() -> None:
         y = v.to_numpy(dtype=float)
         jitter = rng.uniform(-0.17, 0.17, size=len(y))
         axA.scatter(i + jitter, y, s=17, marker=fs.FWD_MARK,
-                    facecolors="none",
-                    edgecolors=fs.SERIES if ok else fs.EXCL_SHADE,
+                    facecolors="none", edgecolors=fs.SERIES,
                     linewidths=0.8, zorder=3)
         med = float(np.median(v))
         axA.plot([i - 0.30, i + 0.30], [med, med],
-                 color=fs.INK if ok else fs.EXCL_SHADE, linewidth=2.4, zorder=5,
-                 solid_capstyle="butt")
+                 color=fs.INK, linewidth=2.4, zorder=5, solid_capstyle="butt")
         # the value sits to the right of its own median bar, clear of the
         # swarm it used to be printed over (v42 review)
         axA.annotate(f"{med:+.3f}", (i + 0.32, med), textcoords="offset points",
                      xytext=(2, 0), ha="left", va="center", fontsize=fs.SZ_ANNOT,
-                     fontweight="bold", zorder=6, bbox=fs.BOX,
-                     color=fs.INK if ok else fs.MUTE)
+                     fontweight="bold", zorder=6, bbox=fs.BOX, color=fs.INK)
     axA.set_xticks(xs)
     axA.set_xticklabels(labels, fontsize=fs.SZ_DENSE)
     axA.set_xlim(-0.55, len(CONDITIONS) - 0.18)
@@ -240,7 +237,7 @@ def main() -> None:
                  xytext=(2, 5), ha="left", fontsize=fs.SZ_DENSE)
     for i, (tag, _, ok) in enumerate(CONDITIONS):
         med, lo, hi = boot_median(W[tag], rng)
-        col = fs.INK if ok else fs.EXCL_SHADE
+        col = fs.INK
         axC.plot([i, i], [lo, hi], color=col, linewidth=1.2, zorder=3)
         axC.plot([i - 0.09, i + 0.09], [lo, lo], color=col, linewidth=1.2, zorder=3)
         axC.plot([i - 0.09, i + 0.09], [hi, hi], color=col, linewidth=1.2, zorder=3)
@@ -248,7 +245,7 @@ def main() -> None:
         axC.annotate(f"{med:.3f}",
                      (i, hi), textcoords="offset points", xytext=(0, 5),
                      ha="center", va="bottom", fontsize=fs.SZ_DENSE, bbox=fs.BOX,
-                     color=fs.INK if ok else fs.MUTE)
+                     color=fs.INK)
     axC.set_xticks(xs)
     axC.set_xticklabels(labels, fontsize=fs.SZ_DENSE)
     axC.set_xlim(-0.60, len(CONDITIONS) - 0.40)
@@ -259,7 +256,7 @@ def main() -> None:
     item_panel(axD, "r_pooled_within",
                f"(b)  the same items, on the scale of Figure 2(b) "
                f"(range {span_pw:.2f})", False,
-               r"within-country correlation  $r_{pw}$")
+               "pooled within-country correlation")
     axD.set_xlabel("42 items, ordered by aggregate recovery "
                    "(per-item labels: Appendix Figure A3)")
 

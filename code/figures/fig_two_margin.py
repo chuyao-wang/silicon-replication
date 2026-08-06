@@ -136,7 +136,7 @@ if a.margins:
         assert abs(ship.loc[k, "fwd_median_dz"] - r.fwd_median_dz) < 1e-5, k
 
 fig, (axAdd, axRem) = plt.subplots(1, 2, figsize=(6.3, 5.6))
-fig.subplots_adjust(left=0.29, right=0.985, top=0.905, bottom=0.205, wspace=0.08)
+fig.subplots_adjust(left=0.265, right=0.99, top=0.905, bottom=0.205, wspace=0.07)
 
 # The per-item panel that used to sit above these two is Appendix Figure A4
 # (code/figures/figA4_country_item.py); its data still ships from here.
@@ -175,7 +175,8 @@ for ax, margin, ttl, sub in (
     ax.set_title(ttl, loc="left", fontsize=fs.SZ_LABEL, pad=13)
     ax.annotate(sub, xy=(0.0, 1.012), xycoords="axes fraction", ha="left",
                 va="bottom", fontsize=9, color=fs.MUTE)
-    ax.set_xlim(-0.58, 0.86)          # one scale for both panels
+    ax.set_xlim(-0.80, 0.90)          # one scale for both panels; the
+    # left end has room for the country label's value (v44 review)
     fs.grid(ax, axis="x")
 fig.text(0.64, 0.105, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",
          ha="center", fontsize=fs.SZ_DENSE)

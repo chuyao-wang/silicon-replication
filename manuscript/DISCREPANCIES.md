@@ -1063,3 +1063,60 @@ its options carry no direction), six forward-coded controls, and four
 placebo items. The figure's data file has 22 rows, twelve of them
 reverse-coded and two flagged as pre-declared exclusions, so the note's
 claim that every item in the batch is shown is correct.
+
+### revise59: the ten comments on v44, and a systematic re-screen
+(6 Aug 2026)
+
+[0] THE FOURTH CONDITION IS DRAWN LIKE THE OTHER THREE. Greying the Llama 3P
+swarm made a design equal look like a lesser series. It now plots in the
+same shade, its axis label carries a dagger, and the note says why: the arm
+loses 24% of its scheduled responses to a parse failure, which is why the
+chapter does not read it substantively. Figures 2(a) and 6(a) both change.
+
+[1] RESPONSE FORMAT STAYS, and its first use in 2.2 now says what it means:
+how the answer scale is presented, numbers alone or numbers whose endpoints
+are named in words. Response order is a different and established effect,
+the order the options are listed in, which this design does not vary, so
+renaming would misdescribe the experiment.
+
+[3] [4] ABBREVIATIONS WRITTEN OUT: SD three times, CI once, OLS once, the
+HPC cluster and its GPU, and the SE column head in Table A4. LLM and ESS
+keep their abbreviations, both defined at first use.
+
+[6] TWO OF THE FIVE CORRELATION SYMBOLS GO. The main text now carries rbc,
+rwc and rprof. The pooled within-country correlation and the pooled
+correlation are named in words where they appear, and the appendix's rind,
+which no section defined, is named in words as well. Figure 6(b)'s axis
+label follows.
+
+[5] A BARE r IS ITALIC in the Word build, as the subscripted ones are
+(build_docx.py, for "r = 0.84" and "a median r of 0.55").
+
+[2] FIGURE 3's plotting area is wider, so the country label's -0.44 no
+longer prints over the axis. The panels keep one scale.
+
+[7] 5.1 loses one restatement of Section 4.2's numbers and one paragraph
+opening that repeated the paragraph above it. 5.2 gains the consequence the
+instrument finding carries for practice: a validation has to report the
+response format it used, because the same model and items give a different
+sign under another one. 5.3's "third constraint" sentence now says which
+three and what follows from it.
+
+[8] The contributions state their claims in one sentence each.
+
+[9] FIVE LIMITATIONS, ONE SENTENCE EACH. The sixth, that generation is
+unseeded and each arm is one run, is cut: Section 4.4 measures that
+variation and every effect read in the chapter exceeds it, so it is a
+reported quantity and not a limit on the conclusions. Repeated runs stay in
+future work.
+
+RE-SCREEN ACROSS THE ROUNDS. Figures 1 to 7 and A1 to A4 run in order and
+every one now has a Note under its caption (Figure A2's caption was carrying
+its own note and is split). Every Section pointer resolves to a heading that
+exists. Direction terms are reverse-coded and forward-coded everywhere, 42
+outcomes are items and the 20 backstory predictors are variables. Style
+counters: no em dashes, no prose semicolons, no compound en dashes, no
+"rather than", no British spellings.
+
+Numeric tokens: two section pointers out, one in. cloud_verify_revise42.py
+traces 34/34.
