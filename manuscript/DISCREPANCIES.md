@@ -1379,3 +1379,71 @@ individual recovery down by domain. Figure 6(b) is per item; only Table A3
 is by domain.
 
 Numbers: IDENTICAL, in both the revise67 pass and the appendix fix.
+
+### revise68: the second full read, word by word
+(7 Aug 2026)
+
+A BROKEN TABLE. Table A6 opened a `[TABLE]` block and never closed it: six
+opens, five closes. `build_docx.py` tolerates it, because it stops at the
+end of the file, but nothing else would. Closed.
+
+TWO MISSING UNITS. Parse failures said "none falls within two% of that
+maximum", with the numeral spelled out in front of the sign. Country
+identifiability said "reaches 28.72%, replicated at 28.99 in an independent
+run", with no unit on the replicate. Both are 2% and 28.99%.
+
+A TERM THAT SPLIT IN TWO. revise67 removed the undefined Cb from 3.5 and
+called Lin's second factor a bias term. The Concordance appendix, which does
+define it, calls it an accuracy term. 3.5 now matches the appendix.
+
+AN ENUMERATION. The five limitations in 5.4 ran First, Second, Third,
+Fourth, Finally. The fifth is Fifth.
+
+ONE QUANTITY, ONE SPELLING. The chapter writes its counts as numerals almost
+everywhere and as words in six places. The numerals win, which is also APA
+for anything of ten and above:
+
+    5.2   "eleven of the forty-two items"      -> "eleven of the 42 items"
+    4.3   "survives at thirty countries"       -> "survives across 30 countries"
+    3.2   "across all forty-one arms"          -> "across all 41 arms"
+    app.  "the fifteen arms landed"            -> "the 15 arms landed"
+    app.  "Table A6 reports all fifteen arms"  -> "all 15 arms"
+    app.  "Table A5 lists all sixteen checks"  -> "all 16 checks"
+
+Sentence-initial words stay words: "Eleven items have negative rbc", "Ten of
+the eleven inversions", "Sixteen checks leave the conclusions where they
+stand".
+
+TWO SENTENCES THAT STARTED WRONG. 4.3 opened a sentence on the lowercase
+symbol rwc. Figures A1 and A3 were the only two captions in the chapter
+written as two sentences; both are now one, joined on a colon, like every
+other caption.
+
+ONE REPETITION. "Table A5 reports every robustness check with the quantity
+it moves" is the third copy of that sentence: 4.4 and the appendix section
+above it both say it already. The paragraph now starts on what is new.
+
+ONE PUNCTUATION. "(freehms -0.82)" against "(euftf, -0.23)" two sentences
+later. Both take the comma.
+
+APOSTROPHES. 45 straight and 13 curly, mixed inside single paragraphs, plus
+two straight double-quote pairs. All curly. This is what shows in the Word
+file the user reads.
+
+NUMBERS: three added tokens, all counts already written as numerals
+elsewhere in the same chapter, all from the word-to-numeral fixes above.
+
+    added '30' x1   4.3, "across 30 countries" (was "thirty countries")
+    added '41' x1   3.2, "all 41 arms" (was "forty-one arms")
+    added '42' x1   5.2, "eleven of the 42 items" (was "the forty-two items")
+
+MAC SIDE: 30, 41 and 42 are the design constants and need no new source;
+`verify_manuscript.py` should trace them to the same rows it already traces
+the other instances to. The appendix tokens 2%, 28.99%, 15 and 16 fall after
+the References heading, so selfcheck does not see them; 2% and 28.99% are
+unit fixes on existing values, and 15 and 16 are the arm and check counts
+Tables A6 and A5 already carry in their titles.
+
+OPEN, NOT FIXED. The Terracciano et al. (2005) reference lists six authors
+and then "et al.". APA 7 wants the first 19 and the last of the 79. The full
+author list is not in this repo; the Mac side has the source.
