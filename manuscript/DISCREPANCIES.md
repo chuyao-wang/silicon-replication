@@ -1025,3 +1025,41 @@ out), plus one 24% and one 0.210 reused in the new notes, and 22 and 42 in
 the same notes. No claim number changed; cloud_verify_revise42.py traces
 34/34. In-figure type now renders between 9.90 and 10.00 pt for all seven
 main figures; the appendix item lists A1 and A3 remain at 9.0 and 9.2.
+
+### revise58: the style sweep, and a plainer name for the ceiling
+(6 Aug 2026)
+
+SEMICOLONS. All 45 prose semicolons are gone, most replaced by a full stop.
+Two uses are kept on purpose and `selfcheck.py` now excludes them from its
+count: the semicolons APA requires between references inside one
+parenthesis, and the semicolons that separate parallel values inside a Table
+A5 cell, where a full stop would read as the end of the entry.
+
+DASHES. There were no em dashes. The en dashes inside compounds are now
+hyphens: model-prompt, country-item, human-model, aggregate-individual,
+Qwen-Llama, test-retest, dose-response. En dashes inside number ranges stay,
+because 0.9-1.1 reads as a subtraction and the reference list follows the
+page-range style of the journals cited. Both counts are in selfcheck now.
+
+ONE WORD FOR DIRECTION. The text carried reverse-coded and reverse-worded
+for the same thirteen items, and forward-coded and forward-worded for the
+other twenty-nine. It is reverse-coded and forward-coded everywhere now,
+including the figure legends and the two appendix figure annotations.
+
+THE CEILING. "Demographic-explainable ceiling" was jargon. It is the
+demographic ceiling, defined once in 3.5 where it first appears: the most
+any demographic profile could recover at the individual level, whatever
+produces the answers. The label in Figure 6(a) follows.
+
+THE APPENDIX SENTENCE UNDER TABLE A5 still said two checks change something.
+It now matches Section 4.4: one changes a conclusion.
+
+NUMBERS: IDENTICAL. No numeric token moved in this pass.
+
+A COUNT THE COMMENT ASKED ABOUT. Figure 5(b) shows 22 items, not 42. The
+battery is 42 items; the anchoring experiment ran on a pre-declared 22-item
+batch, which is twelve of the thirteen reverse-coded items (vote excluded,
+its options carry no direction), six forward-coded controls, and four
+placebo items. The figure's data file has 22 rows, twelve of them
+reverse-coded and two flagged as pre-declared exclusions, so the note's
+claim that every item in the batch is shown is correct.

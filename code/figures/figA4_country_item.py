@@ -30,10 +30,10 @@ div=ys[len(fwd)-1]-0.5
 ax.axhline(div,color=fs.MUTE,linewidth=0.7,linestyle=(0,(4,3)))
 ax.set_yticks(ys); ax.set_yticklabels([fs.VLABEL.get(v,v) for v in ordered.index],fontsize=8)
 ax.set_ylim(-0.8,len(ordered)-0.2)
-ax.annotate(f"forward-worded items:\n{int((fwd>0).sum())} of {len(fwd)} improve",
+ax.annotate(f"forward-coded items:\n{int((fwd>0).sum())} of {len(fwd)} improve",
             xy=(0.025,0.990),xycoords="axes fraction",ha="left",va="top",
             fontsize=fs.SZ_DENSE,color=fs.MUTE,bbox=fs.BOX)
-ax.annotate(f"reverse-worded items:\n{int((rvs>0).sum())} of {len(rvs)} improves",
+ax.annotate(f"reverse-coded items:\n{int((rvs>0).sum())} of {len(rvs)} improves",
             xy=(0.980,(div+0.3)/len(ordered)),xycoords="axes fraction",ha="right",va="top",
             fontsize=fs.SZ_DENSE,color=fs.MUTE,bbox=fs.BOX)
 ax.set_xlabel("country-label effect per item ($r_{bc}$, Fisher $z$): with the label minus without",

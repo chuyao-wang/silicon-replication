@@ -227,7 +227,7 @@ def main():
     # v42 review: the leader line ran diagonally across the panel and read
     # as a plotted series. The sentence now sits in empty space and names
     # the column it is about.
-    axB.text(0.62, -0.30, "under the anchored scale the label\nhelps reverse-worded items too",
+    axB.text(0.62, -0.30, "under the anchored scale the label\nhelps reverse-coded items too",
              fontsize=SZ_DENSE, color=INK, ha="left", va="center",
              bbox=dict(facecolor="#ffffff", edgecolor="none", pad=1.6))
     axB.set_xticks(xs)

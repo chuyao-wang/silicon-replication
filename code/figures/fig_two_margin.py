@@ -180,9 +180,9 @@ for ax, margin, ttl, sub in (
 fig.text(0.64, 0.105, "effect on aggregate recovery ($r_{bc}$, Fisher $z$)",
          ha="center", fontsize=fs.SZ_DENSE)
 h_f = plt.Rectangle((0, 0), 1, 1, facecolor=fs.FWD_SHADE, edgecolor=fs.INK,
-                    label="forward-worded items (29)")
+                    label="forward-coded items (29)")
 h_r = plt.Rectangle((0, 0), 1, 1, facecolor=fs.NEG_FILL, edgecolor=fs.NEG_EDGE,
-                    hatch=fs.NEG_HATCH, label="reverse-worded items (13)")
+                    hatch=fs.NEG_HATCH, label="reverse-coded items (13)")
 axAdd.legend(handles=[h_f, h_r], loc="upper center", bbox_to_anchor=(1.05, -0.155),
              ncol=2, fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
 

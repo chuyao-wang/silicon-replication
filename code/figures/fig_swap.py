@@ -44,9 +44,9 @@ ax.set_xlabel("between-country correlation $r_{bc}$ (median item)", fontsize=fs.
 ax.set_title("a wrong name costs the country the respondents came from", loc="left")
 fs.grid(ax, axis="x")
 h_f = plt.Line2D([0],[0], color=fs.FWD_SHADE, marker=fs.FWD_MARK, markersize=5.6, linewidth=1.8,
-                 label="forward-worded items (29)")
+                 label="forward-coded items (29)")
 h_r = plt.Line2D([0],[0], color=fs.REV_SHADE, marker=fs.REV_MARK, markersize=4.8, linewidth=1.8,
-                 label="reverse-worded items (13)")
+                 label="reverse-coded items (13)")
 ax.legend(handles=[h_f,h_r], loc="upper center", bbox_to_anchor=(0.5,-0.36), ncol=2,
           fontsize=fs.SZ_DENSE, handlelength=1.8, frameon=False)
 fs.check_layout(fig)

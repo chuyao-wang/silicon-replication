@@ -235,7 +235,7 @@ def main() -> None:
     fs.grid(axC)
     axC.axhline(0, color=fs.INK, linewidth=0.9, zorder=1)
     axC.axhline(CEILING, color=fs.INK, linewidth=1.1, linestyle="--", zorder=2)
-    axC.annotate(f"demographic-explainable ceiling {CEILING:.3f}",
+    axC.annotate(f"demographic ceiling {CEILING:.3f}",
                  xy=(-0.5, CEILING), textcoords="offset points",
                  xytext=(2, 5), ha="left", fontsize=fs.SZ_DENSE)
     for i, (tag, _, ok) in enumerate(CONDITIONS):
