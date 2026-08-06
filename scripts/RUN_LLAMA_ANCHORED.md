@@ -69,7 +69,29 @@ It prints two job IDs. If `sbatch` rejects the partition, set it and rerun:
 PARTITION=<partition> bash submit_anchored_contrast_llama.sh
 ```
 
-## 3. Cluster: watch
+## 3. Watch — unattended, from the Mac
+
+Steps 3, 4 and 5 are one command. Run it on the Mac, in the package
+directory, and leave it:
+
+```bash
+nohup caffeinate -i bash scripts/watch_llama_anchored.sh \
+      > ~/llama_anchored_watch.out 2>&1 &
+```
+
+It checks `squeue` every ten minutes over a fresh ssh each time, so a dropped
+VPN costs one check and not the run. When both jobs leave the queue it
+verifies the four output files, runs `analyze_2x2.py --model llama`, copies
+everything down to `data/summary/`, and raises a macOS notification. If the
+jobs die without output it copies the tail of the error logs down instead.
+Everything it prints is also in `~/llama_anchored_watch.log`.
+
+`caffeinate -i` stops the Mac sleeping while it waits. Closing the lid still
+sleeps the machine; the watcher picks up where it left off on wake, because
+the cluster jobs do not depend on it. `INTERVAL=3600` makes it hourly.
+Stopping it (`pkill -f watch_llama_anchored`) does not touch the jobs.
+
+By hand instead:
 
 ```bash
 squeue --me
