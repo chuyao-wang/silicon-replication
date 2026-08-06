@@ -1854,3 +1854,45 @@ LENGTHS AFTER THE SWAP: 5.1 389, 5.2 389, 5.3 486, 5.4 443.
 NUMBERS: one token, a section pointer.
 
     5.3's "Section 5.2 shows it moves both levels at once" -> "Section 5.1"
+
+### revise78: the three discussion axes, tested against their contents
+(8 Aug 2026)
+
+The three subsections are meant to integrate above the results, not to
+mirror 4.1-4.3 or the research questions. Tested that way they are a
+measurement claim, a mechanism claim and an inference claim, in that order,
+and every finding in section 4 lands in exactly one of them. Two things did
+not hold.
+
+5.3'S TITLE COVERED THREE OF ITS FIVE PARAGRAPHS. "Aggregate and individual
+recovery are different validity claims" is what paragraphs one to three
+argue. Paragraph four asks whether the aggregate claim is worth anything
+against a predictor that uses no model, and paragraph five says what the
+claim licenses. Neither is about the two levels. The section is one
+question, what aggregate recovery is good for, and the answer is that it
+supports one narrow use.
+
+    was  5.3 Aggregate and individual recovery are different validity claims
+    is   5.3 Aggregate recovery supports one narrow claim
+
+The old title survives as the opening move of paragraph one: "Evidence for
+aggregate recovery is therefore not weak evidence for individual recovery.
+It is evidence for a different claim."
+
+5.1 CLOSED ON A PRESCRIPTION AND BURIED ITS BRIDGE. Its middle paragraph
+ends on the third of item-level variance that direction does not explain and
+on the reading that the model recovers what is publicly said about a
+country, which it names as fitting the group-level prior. That is the
+handoff to 5.2, and a paragraph about pooled metrics sat after it. The two
+swapped. 5.1 runs: the inversions are the instrument, pooled metrics hide
+that, and what the instrument does not explain points at the prior.
+
+NOT CHANGED, recorded so the next session can decide. 5.4's practical
+contribution ends "A validation licenses only the estimand it tested:
+aggregate rank comparison after item-level validation, and no claim at the
+individual or distributional level." 5.3's last paragraph argues exactly
+that, with citations, so the sentence is a compressed duplicate. It sits
+inside the merged contributions paragraph the user asked to leave alone, so
+it stays. Cutting it is a one-line change.
+
+NUMBERS: IDENTICAL.
