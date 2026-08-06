@@ -1946,3 +1946,52 @@ by it.
 
 NUMBERS: one token, a section pointer. 5.3's "Section 5.1 shows it moves both
 levels at once" -> "Section 5.2".
+
+### revise80: the discussion says what it found, not what it fears
+(8 Aug 2026)
+
+RESULTS DETAIL OUT OF SECTION 5. Two statistics were reported for the first
+time in the discussion and two more were restated there from section 4.
+
+  95% of within-country variance is generation noise. It appeared only in
+  5.1. It explains why individual recovery is near zero, so it now sits in
+  4.3 beside the other per-cell numbers, and 5.1 keeps the claim with a
+  pointer.
+  r = 0.46, p = 0.012 across 29 items. It appeared only in 5.2. It answers
+  what predicts recovery at the aggregate level, which is 4.1's question.
+  Moved to 4.1's direction paragraph, and 5.2 keeps the claim.
+  "Direction accounts for two thirds of the variance" restated 4.1's 66%,
+  and "eleven of the 42 items" restated 4.1's count. Both are qualitative
+  now.
+
+FOUR DEFENSIVE TURNS.
+
+  "One reading, offered after the fact, is that..." apologized before it
+  argued. The paragraph earns the reading: it makes a prediction and the
+  prediction holds. The disclosure now closes the paragraph, as a test
+  passed instead of a confession.
+  "the model may still support exploratory rank comparison" hedged a
+  sentence that already carries its conditions. It supports it.
+  "Country-conditioned differentiation is not equivalent to calibrated
+  representation" -> "A model can tell countries apart without representing
+  any of them".
+  "A coverage account cannot absorb these results" -> "The pattern is about
+  items, not about which countries are well represented".
+
+TWO PHRASES THAT READ AS SHORTHAND. "both bounding margins" is back to
+3.4's "both of the margins that bound it", and the chapter's last sentence
+no longer opens on "Beyond the limitations" or closes on "the
+estimand-specific criteria above".
+
+CHECKED AND LEFT: "may" and "could" in 5.1's third paragraph state the rival
+reading's own claim, so the hedge is correct there. "after the fact" in 5.4
+is the two-margin design's strength, not an apology. The quantified bounds
+in the limitations paragraph stay: a limitation without its bound is not a
+limitation. A scan for the usual tells found no "highlight", "underscore",
+"leverage", "robust", "framework", "nuanced", "notably" or "importantly"
+anywhere in section 5.
+
+NUMBERS: three tokens, none a claim.
+
+    removed '42' x1     5.2, "eleven of the 42 items" -> "the reversed items"
+    added '4.1', '4.3'  the two pointers that replace the moved statistics
