@@ -1767,3 +1767,52 @@ NUMBERS: two tokens, both section pointers, no claim.
                      refers to "Both comparators in Section 4.1". The
                      matching "Section 5.3" pointer moved into 4.1, so the
                      count of that token is unchanged.
+
+### revise76: the division of labor between sections 4 and 5
+(8 Aug 2026)
+
+MAPPED EVERY RESULTS PARAGRAPH onto the discussion paragraph that takes it
+up, and then the reverse. The division holds almost everywhere:
+
+  4.1 inversions and direction        -> 5.2
+  4.1 rank against calibration        -> 5.1 (the model does not calibrate)
+  4.1 pooled counterexample           -> 5.2 (what pooled metrics hide)
+  4.1 country profiles, error metric  -> 5.3 (the coverage account fails)
+  4.1 model-free comparators          -> 5.3 (adequacy), moved in revise75
+  4.2 falsification arm               -> 5.1 (the label steers)
+  4.2 blocks subtract                 -> 5.1 (sensible cue use fails)
+  4.2 the 2 x 2                       -> 5.2
+  4.3 near zero, by country, by item  -> 5.3
+  4.3 anchoring                       -> 5 opener, 5.2, 5.3
+  4.3 dispersion                      -> 5.3 (what it does not support)
+  4.3 the two levels                  -> 5.3
+  4.4 the parse-coverage exception    -> 5.4 limitation five
+
+THREE PLACES DID NOT HOLD.
+
+  The discussion's opening paragraph counted wrong. It says three findings,
+  says two share a cause in the instrument, then expands "the third" into
+  three clauses, the last of which is the cross-level dissociation. That is
+  a fourth thing and it is 5.3's. The clause is out.
+
+  4.2 reached into 5.2. Its closing sentence said the inversions "are a
+  property of the instrument", which is 5.2's title and its topic sentence.
+  4.2 keeps the verdict in RQ2's own terms, that the inversions follow from
+  the format and not from the model's country knowledge, and 5.2 keeps the
+  generalization, the measurement-equivalence framing and the prescription.
+
+  5.1 restated its own heading in a sentence.
+
+KEPT ON PURPOSE, both of which look like the same fault:
+
+  4.2 names the group-level prior. 2.2 states that reading as a prediction
+  before any result is seen, so the results section has to report the
+  verdict. Naming it in 4.2 and interpreting it in 5.1 is the right split.
+
+  5.2 reports r = 0.46 for the first time. This is NOT the comparator case
+  revise75 moved. The comparators were pre-declared in 3.5 and answer RQ1
+  directly. This correlation is explicitly post hoc, tests a reading raised
+  in the discussion itself, and answers no research question, so it belongs
+  with the reading it supports.
+
+NUMBERS: IDENTICAL.
