@@ -10,9 +10,9 @@ this package: the figures existed only as images in the document, and the counts
 only in the sentence that reported them. A reader holding the package could not
 regenerate them, which is the one thing a replication package has to allow.
 
-  A1  per-variable country-level recovery, all 42 items, ranked
+  A1  per-item country-level recovery, all 42 items, ranked
   A2  the country scatter for the best- and worst-recovered items, side by side
-  A3  per-variable individual-level recovery, the counterpart of A1
+  A3  per-item individual-level recovery, the counterpart of A1
 
 Each writes the values behind it to a _data.csv, so a caption can be checked
 without rerunning anything. rq3_cell_summary.csv carries the counts.
@@ -81,7 +81,7 @@ def main() -> None:
     ax.set_yticks(y)
     ax.set_yticklabels([fs.VLABEL.get(v, v) for v in A1.variable], fontsize=fs.SZ_DENSE)
     ax.set_xlabel(r"between-country correlation  $r_{bc}$")
-    ax.set_title("(A1)  per-variable country-level recovery, Qwen 1P", loc="left")
+    ax.set_title("(A1)  per-item country-level recovery, Qwen 1P", loc="left")
     ax.set_xlim(-1.0, 1.0)
     fig.subplots_adjust(left=0.30, right=0.98, top=0.96, bottom=0.06)
     fs.save(fig, a.figdir, "figA1_item_country_recovery")
@@ -109,7 +109,7 @@ def main() -> None:
     ax.set_yticks(y)
     ax.set_yticklabels([fs.VLABEL.get(v, v) for v in A3.variable], fontsize=fs.SZ_DENSE)
     ax.set_xlabel(r"mean within-country correlation  $r_{wc}$")
-    ax.set_title("(A3)  per-variable individual-level recovery, Qwen 1P", loc="left")
+    ax.set_title("(A3)  per-item individual-level recovery, Qwen 1P", loc="left")
     fig.subplots_adjust(left=0.30, right=0.98, top=0.96, bottom=0.06)
     fs.save(fig, a.figdir, "figA3_item_individual_recovery")
     A3.to_csv(os.path.join(a.figdir, "figA3_item_individual_recovery_data.csv"), index=False)

@@ -927,3 +927,45 @@ New numeric tokens: 2023 (the Argyle citation), 4.3 and 7 (pointers), 2 x2
 Removed: 0.69, 0.91 and 30 from the Figure 3 caption and note, 2025 x2 (the
 cut citation pair), 3 and 5, in the rewritten sentences. No claim number
 changed; cloud_verify_revise42.py still traces 34/34.
+
+### revise55 and revise56: Figure 2 split, a weaker verb in 4.4, and a
+figure and table typography pass (6 Aug 2026)
+
+RQ1 said "a broad attitudinal battery". It now says a wide range of
+attitudes.
+
+4.4's opening verb. "One of sixteen robustness checks changes a conclusion"
+claims more than happened: no conclusion in the chapter changed, one arm
+lost a claim it might have supported. It now reads "Sixteen checks leave the
+conclusions where they stand, with one exception: parse coverage in the
+Llama third-person arm." The closing sentence, which repeated it, is cut.
+
+FIGURE 2 SPLITS INTO FIGURES 2 AND 8. Panel (b) carried the individual-level
+result in 4.1, three sections before RQ3 is answered, so 4.1 announced the
+answer. The aggregate panel stays as Figure 2 in 4.1. The individual panel
+becomes Figure 8 in 4.4, where the question is whether a result holds across
+conditions, and 4.4 gains two sentences to carry it. Nothing renumbers,
+because the new figure is last. The producer (code/figures/fig2_recovery.py)
+now writes both files; FIGURE_MAP has a row 8; selfcheck expects 12 figures.
+New numeric tokens: 8 x5 (the figure number), 22 and 4.2 (the anchored arm's
+batch and its section, in the new note), 4.4 (the run-to-run pointer in the
+new limitation). Removed: 4.3, the pointer 4.1 no longer needs.
+
+RESULTS STRUCTURE. Kept at four sections: 4.1, 4.2 and 4.3 answer RQ1, RQ2
+and RQ3 one for one, and 4.4 is robustness, which answers no question and
+should not be folded into one that it does not belong to.
+
+5.4. A sixth limitation is added, the one that was missing: generation is
+unseeded and each arm is a single run, so item-level values carry the
+run-to-run variation. Future work gains the matching step. Four polish edits
+follow (revise56): one repetition, one defensive trailing clause, and two
+sentences whose grammar outran their content.
+
+FIGURES AND TABLES CHECKED. All twelve figures were rendered and read.
+Appendix Figures A1 and A3 said "per-variable" in their titles, which
+contradicts the terminology fixed in revise38 (42 outcomes are items, 20
+backstory predictors are variables); both now say per-item. Effective
+in-figure type is 9.05 to 10.00 pt against a 12 pt body. Tables: cells go
+from 9 pt to 10 pt, and column widths are now proportional to the text each
+column carries instead of equal, which was wasting the page on Table A5.
+Both changes are in build_docx.py.

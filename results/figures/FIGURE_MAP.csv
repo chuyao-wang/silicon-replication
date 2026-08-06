@@ -6,6 +6,7 @@ manuscript_figure,file,producer,note
 5,fig5_swap_country.pdf,code/figures/fig_swap.py,"the swapped-label falsification arm, new 5 Aug 2026"
 6,fig_2x2_country_by_scale.pdf,code/figures/fig_2x2.py,
 7,fig7_crosslevel_ranks.pdf,code/figures/fig_crosslevel.py,
+8,fig8_individual_by_condition.pdf,code/figures/fig2_recovery.py,"the individual-level panel of Figure 2 until 6 Aug 2026; split out so that 4.1 does not answer RQ3, and placed in 4.4"
 A1,figA1_item_country_recovery.pdf,code/figures/fig_appendix.py,
 A2,figA2_best_worst_scatter.pdf,code/figures/fig_appendix.py,
 A3,figA3_item_individual_recovery.pdf,code/figures/fig_appendix.py,

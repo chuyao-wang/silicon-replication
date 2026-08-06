@@ -103,6 +103,8 @@ def main() -> None:
     ap.add_argument("--data", default="handoff_upload")
     ap.add_argument("--figdir", default="figures")
     ap.add_argument("--name", default="fig2_recovery")
+    ap.add_argument("--name-individual", dest="name_individual",
+                    default="fig8_individual_by_condition")
     a = ap.parse_args()
 
     dirt = pd.read_csv(os.path.join(a.data, "item_direction_table.csv")).set_index("variable")
@@ -117,11 +119,15 @@ def main() -> None:
     # (a) across the top, (b) the individual level below (reviewer, v32:
     # the threshold-count panel is cut; its counts live in the text and in
     # this figure's data csv, and 4.1 was carrying too many panels).
-    fig = plt.figure(figsize=(6.3, 7.6))
-    gs = fig.add_gridspec(2, 1, height_ratios=[1.10, 0.90], hspace=0.28)
-    axA = fig.add_subplot(gs[0, 0])
-    axC = fig.add_subplot(gs[1, 0])
-    fig.subplots_adjust(bottom=0.060, top=0.960, left=0.105, right=0.985)
+    # v41 review: the two panels become two figures. The aggregate panel
+    # answers RQ1 in 4.1; the individual panel showed the RQ3 result three
+    # sections before it is discussed, so it moves to 4.4 as Figure 8.
+    fig = plt.figure(figsize=(6.3, 4.3))
+    axA = fig.add_subplot(1, 1, 1)
+    fig.subplots_adjust(bottom=0.105, top=0.925, left=0.105, right=0.985)
+    figI = plt.figure(figsize=(6.3, 3.5))
+    axC = figI.add_subplot(1, 1, 1)
+    figI.subplots_adjust(bottom=0.130, top=0.910, left=0.105, right=0.985)
 
     xs = np.arange(len(CONDITIONS))
     labels = [lab for _, lab, _ in CONDITIONS]
@@ -157,7 +163,7 @@ def main() -> None:
     axA.set_ylim(-1.0, 1.18)
     axA.set_yticks(np.arange(-1.0, 1.001, 0.25))
     axA.set_ylabel(r"between-country correlation  $r_{bc}$")
-    axA.set_title("(a)  every item, every condition", loc="left")
+    axA.set_title("every item, every condition", loc="left")
 
     # The pooled correlation, once, as a labelled counterexample.
     pr = float(pooled.loc["qwen_1p", "r_pooled"])
@@ -201,9 +207,10 @@ def main() -> None:
     axC.set_xlim(-0.60, len(CONDITIONS) - 0.40)
     axC.set_ylim(-0.025, 0.255)
     axC.set_ylabel(r"within-country correlation  $r_{wc}$")
-    axC.set_title("(b)  the same conditions, individual level", loc="left")
+    axC.set_title("individual-level recovery, the same conditions", loc="left")
 
     fs.save(fig, a.figdir, a.name)
+    fs.save(figI, a.figdir, a.name_individual)
 
     out = []
     for tag, lab, ok in CONDITIONS:
