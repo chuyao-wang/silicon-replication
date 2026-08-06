@@ -52,7 +52,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 BLOCK_LABEL = {
     "country label": "country label",
-    "NUTS region code": "NUTS region code",
+    "NUTS region code": "region code",
     "political identity": "political identity",
     "ascriptive": "base\n(gender, age, birth year)",
     "education, activity, income": "education, activity,\nincome",
@@ -184,8 +184,12 @@ h_f = plt.Rectangle((0, 0), 1, 1, facecolor=fs.FWD_SHADE, edgecolor=fs.INK,
                     label="forward-coded items (29)")
 h_r = plt.Rectangle((0, 0), 1, 1, facecolor=fs.NEG_FILL, edgecolor=fs.NEG_EDGE,
                     hatch=fs.NEG_HATCH, label="reverse-coded items (13)")
-axAdd.legend(handles=[h_f, h_r], loc="upper center", bbox_to_anchor=(1.05, -0.155),
-             ncol=2, fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
+# v54 review: the shaded band was drawn without ever being named on the
+# figure. It is the run-to-run noise floor, not a confidence interval.
+h_b = plt.Rectangle((0, 0), 1, 1, facecolor=fs.GRID, alpha=0.55, edgecolor="none",
+                    label="run-to-run noise (±0.060)")
+axAdd.legend(handles=[h_f, h_r, h_b], loc="upper center", bbox_to_anchor=(1.05, -0.155),
+             ncol=3, fontsize=fs.SZ_DENSE, handlelength=1.2, frameon=False)
 
 fs.save(fig, a.figdir, a.name)
 ordered.rename("country_label_dz").to_csv(

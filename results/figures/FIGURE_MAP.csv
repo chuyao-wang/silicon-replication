@@ -8,5 +8,5 @@ manuscript_figure,file,producer,note
 7,fig7_crosslevel_ranks.pdf,code/figures/fig_crosslevel.py,
 A1,figA1_item_country_recovery.pdf,code/figures/fig_appendix.py,
 A2,figA2_best_worst_scatter.pdf,code/figures/fig_appendix.py,
-A3,figA3_item_individual_recovery.pdf,code/figures/fig_appendix.py,
-A4,figA4_country_item_contrast.pdf,code/figures/figA4_country_item.py,"the per-item country-label contrast, moved out of the block figure on 5 Aug 2026"
+A3,figA4_country_item_contrast.pdf,code/figures/figA4_country_item.py,"the file name says A4; it is manuscript Figure A3 since 7 Aug 2026, when the appendix was reordered into the order the body calls on it"
+A4,figA3_item_individual_recovery.pdf,code/figures/fig_appendix.py,"the file name says A3; it is manuscript Figure A4 since 7 Aug 2026"

@@ -151,7 +151,10 @@ def main():
     # Panel (a) taller (reviewer, v29), and repositioned after drawing so it
     # spans the full page width instead of inheriting the left margin that
     # panel (b)'s long item labels force on the shared gridspec column.
-    gs = fig.add_gridspec(2, 1, height_ratios=[1.02, 2.10], hspace=0.38)
+    # v54 review: panel (a) was short enough that its legend sat on the
+    # reverse-coded point and its lower interval. It is taller now and the
+    # legend is out of the data region.
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.55, 2.10], hspace=0.34)
     axB = fig.add_subplot(gs[0, 0])
     axA = fig.add_subplot(gs[1, 0])
 
@@ -237,8 +240,8 @@ def main():
     axB.set_title("(a)  the country-label effect, by scale format", loc="left")
     axB.grid(axis="y", color=GRID, linewidth=0.7)
     axB.set_axisbelow(True)
-    axB.legend(loc="lower left", fontsize=SZ_LEG, frameon=True,
-               facecolor="#ffffff", edgecolor="none", framealpha=1.0)
+    axB.legend(loc="upper left", bbox_to_anchor=(0.0, 1.0), fontsize=SZ_LEG,
+               frameon=False, handlelength=2.2)
 
     # Reposition panel (a): its left edge (including its own y-axis label)
     # aligns with the leftmost extent of panel (b)'s item labels, so the two

@@ -1447,3 +1447,74 @@ Tables A6 and A5 already carry in their titles.
 OPEN, NOT FIXED. The Terracciano et al. (2005) reference lists six authors
 and then "et al.". APA 7 wants the first 19 and the last of the 79. The full
 author list is not in this repo; the Mac side has the source.
+
+### revise69 + revise70: the v54 Word round, 32 comments and the user's own edits
+(7 Aug 2026)
+
+THE USER'S EDITS were taken from the Word file as written, except where a
+verb or an article had to follow: "LLMs mainly treats" -> "treat", "LLMs'
+Cultural bias" -> lower case, and "The reverse-item set, and two exclusions"
+-> "and the two exclusions", because a two-item list takes no comma.
+
+ONE USER EDIT WAS NOT TAKEN. RQ2 was changed to "come from the composition
+of the respondent profile (such as its country label)", which puts the label
+inside the composition. The chapter's answer is that the two are different
+and the label wins, so the question cannot presuppose otherwise. Comment 6
+asked for a more general RQ2 in any case, and the general form keeps the
+contrast open: "What in the prompt produces the aggregate signal, and what
+decides whether the country ordering is correct or inverted?"
+
+FIGURES CHANGED (comments 20 and 21). Both producers were edited in the
+replication package and both reproduce from `data/summary`:
+
+  fig_two_margin.py   the shaded band is now named in the legend, "run-to-run
+                      noise (+/-0.060)". It is the noise floor, not a
+                      confidence interval, and the comment asked whether it
+                      was a 5% interval. The region block's label is "region
+                      code", as the body calls it, not "NUTS region code".
+  fig_2x2.py          panel (a) is half again as tall (height_ratios 1.02 ->
+                      1.55) and its legend moved out of the data region, so
+                      it no longer sits on the reverse-coded point and its
+                      lower interval.
+
+APPENDIX FIGURES RENUMBERED (comments 25 and 30). The appendix now runs in
+the order the body calls on it, and the two per-item appendix figures swap
+numbers so that physical order, numeric order and citation order agree:
+
+  Figure A3 = the country-label contrast item by item (was A4), cited in 4.2
+  Figure A4 = per-item individual recovery      (was A3), cited in 4.1, 4.3
+
+FIGURE_MAP.csv rows A3 and A4 now point at the other file, as rows 3 and 4
+already did. The PDF and PNG file names are unchanged.
+
+NUMBERS: eight tokens moved, and only one is a claim.
+
+    removed '400' x1    3.2, "Subsampled estimates flatten above roughly 400
+                        respondents per country" is deleted at the user's
+                        request (comment 10). The n = 685 justification is
+                        now the smallest country sample, which is what the
+                        Word file says. NOTHING ELSE cited the 400.
+    removed '0.028', '0.210', '0.29', '0.52', '95%' -> restored '95%'
+                        5.1 re-reported five Section 4 numbers. Four are
+                        stated elsewhere in the body (0.028 and 0.210 in 4.3,
+                        0.52 in the abstract and 4.2) or in the appendix
+                        (0.287 to 0.523, Country identifiability), so the
+                        discussion drops them. The 95% replicate variance
+                        decomposition was NOT stated anywhere else and was
+                        put back.
+    removed '1','2','3','4','6,' / added '4,','6'
+                        condition and figure labels only: the abstract's
+                        "A 2 x 2 experiment" sentence became a result
+                        sentence, Figure 5's caption dropped the "2 x 2"
+                        shorthand, "RQ3 tests both" was deleted, and
+                        "Figure 6," lost a comma.
+
+MAC SIDE, ONE NEW CLAIM TO CHECK: 3.2 now says 685 is "the number available
+in the smallest country sample". That sentence comes from the Word file, not
+from this session, and nothing in this repo can verify it. Confirm against
+the ESS Round 11 country counts before the next numbered build.
+
+Table A3's lead-in now says "The largest domain mean in any condition is
+0.125". 0.125 is a cell of Table A3 (political efficacy, Qwen 3P), so it is
+already shipped; it is new only as a body token, and the appendix falls
+after the References heading, so selfcheck does not see it.
