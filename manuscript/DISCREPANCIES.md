@@ -1712,3 +1712,58 @@ contributions paragraph.
 
 NUMBERS: IDENTICAL. Nothing in this round is anything but a move, a merge
 or a compression of text already in the chapter.
+
+### revise75: length against importance, and a fourth missed Word edit
+(8 Aug 2026)
+
+MEASURED FIRST, body prose by section, captions and RQ lines excluded.
+
+    before                          after
+    1 Introduction    721   8.6%    721   8.5%
+    2 Literature    1,357  16.1%  1,359  16.1%
+    3 Method        1,886  22.4%  1,886  22.3%
+    4 Results       2,566  30.5%  2,657  31.5%
+    5 Discussion    1,886  22.4%  1,823  21.6%
+
+    4.1  633 -> 724     5.1  408 -> 408
+    4.2  923 -> 923     5.2  389 -> 389
+    4.3  700 -> 700     5.3  549 -> 486
+    4.4  310 -> 310     5.4  443 -> 443
+
+Results at 31% and method at 22% are right for this chapter, and RQ2 is the
+longest results section, which is also right. Two things were not.
+
+RESULTS IN THE DISCUSSION. 5.3's adequacy paragraph reported the model-free
+comparators for the first time: median rbc 0.55 against the model's 0.44,
+normalized error 0.056 against 0.180, 41 of 42 items, and the GDP variant at
+0.62 and 0.052. Those are results, they answer the "how accurately" half of
+RQ1, and 3.5 already names them as the third reference point for the
+aggregate level. They are reported in 4.1 now. The interpretation stays in
+5.3 and runs on one short paragraph. 3.5's pointer follows them, and 4.1
+points forward to 5.3 for what a researcher should conclude.
+
+That also fixed the allocation inside the discussion. 5.1 carries the
+chapter's title claim and was the second-shortest subsection while 5.3 was
+the longest by 140 words. They are 408 and 486 now.
+
+A TOPIC SENTENCE THAT WAS HOUSEKEEPING. 4.1's second paragraph opened on
+which condition the chapter uses and buried RQ1's headline count in the
+middle. The count leads.
+
+A FOURTH MISSED WORD EDIT. The user split 2.1's third paragraph in the Word
+file and numbered the two expectations First and Second. revise69 did
+anchored text edits only, so the split never happened. At 165 words that
+paragraph was also the longest in the literature review and held the
+benchmark review, the gap and the two expectations together. It is two
+paragraphs now, 103 and 64 words.
+
+UNCHANGED, as instructed: the n = 685 sentence, and the 222-word merged
+contributions paragraph, which is still the longest paragraph in the
+chapter.
+
+NUMBERS: two tokens, both section pointers, no claim.
+
+    added '4.1' x2   3.5 now points at 4.1 for the comparators, and 5.3
+                     refers to "Both comparators in Section 4.1". The
+                     matching "Section 5.3" pointer moved into 4.1, so the
+                     count of that token is unchanged.
