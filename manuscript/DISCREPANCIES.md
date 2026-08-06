@@ -2445,3 +2445,49 @@ took from the Word file have to change together.
 
 NUMBERS: one token, a label. Added '3' x1, from the new "RQ3 tests it" in
 2.3.
+
+### revise88: four reader comments, and the heading bug
+(9 Aug 2026)
+
+THE HEADING BUG, first because it shipped. 5.3's heading is 91 characters
+and build_docx treated a numbered line as a heading only below 90, so 5.3
+was set as body text: out of the table of contents and out of Word's
+navigation pane, which made 5.2 look as though it ran straight into 5.4. The
+rule is now "number, capital, no closing full stop, under 130 characters",
+and every heading in the built file was checked: 5 at H1, 16 at H2 in the
+body, 14 at H2 in the appendix, none missed.
+
+THE ARM IS RENAMED. "Falsification arm" promises a decisive refutation, and
+the arm delivers one side of a two-sided prediction: a wrong name costs the
+respondents' own country (-0.096, interval excluding zero) and recovery does
+not transfer to the country named (+0.012, interval including zero). The
+chapter already said the arm "tests whether the model's sensitivity to the
+country cue is specific to the country named", which is a specificity test.
+It is the swapped-label arm now, in all five places, and 2.2 sets it up as a
+specificity prediction. BOTH HALVES OF THE PREDICTION STAY IN 2.2 and both
+results stay in 4.2: trimming the setup to the half that held would be
+fitting the prediction to the answer.
+
+THE 2 x 2 BATCH SAYS IT IS BALANCED. The chapter's strongest integrating
+claim rests on 22 items in one model, and a reader testing that claim needs
+to know the batch is not stacked. 3.4 now ends: "The reverse-item set and
+the two exclusions were fixed in advance, which leaves 10 forward-coded and
+10 reverse-coded items in the analysis." That is what 4.2's counts already
+imply (1 of 10, 10 of 10, 8 of 10) and what 3.4 never said. The single-model
+scope stays a limitation with a named next step in 5.4; nothing here
+pretends the replication has run.
+
+THE POST HOC PARAGRAPH IS SHORTER. It ran 166 words on a reading formed
+after the results and one correlation. About 120 now, keeping the
+descriptive literature it rests on and the prediction that holds, and losing
+the aside about the model-free comparators.
+
+THE COUNT IN THE INTRODUCTION. "Runs four tests" against three questions and
+three contributions made a reader stop to reconcile them. "Puts three
+questions to one design, in four steps."
+
+NUMBERS: four tokens, none a value.
+
+    added '10' x2      3.4, the balance of the 22-item batch. Both counts
+                       already appear in 4.2.
+    removed '4.1', added '5.1'   the pointer in the shortened 5.2 paragraph
