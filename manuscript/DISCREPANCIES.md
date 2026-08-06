@@ -1563,3 +1563,48 @@ NUMBERS: two tokens, neither a claim.
     removed '2' x1   4.1, "Figure 2(b) shows that" -> "Panel (b) shows that"
     removed '3' x1   4.3, the raw file name "(rq3_cell_summary.csv)" is out
                      of the body. The file still ships in the package.
+
+### revise72: what the appendix reorder left behind, and three repeats
+(7 Aug 2026)
+
+SIX CUTS IN THE APPENDIX. revise69's reorder and its new Notes left four
+lead-in paragraphs saying what the Note beside them says:
+
+  Figure A2   the lead-in named both items and what each shows; the Note
+              under the figure names them again.
+  Table A4    the lead-in gave the Bonferroni verdict; the Note that
+              revise69 made out of the old caption gives it again.
+  Table A3    "A table is the display because the object is 12 domains by
+              four conditions" answers a question about the manuscript
+              inside the manuscript. Out.
+  A3 benchmark  "The failure is not attributable to an absence of
+              demographic signal in the human data" is 4.3's sentence, one
+              section earlier, in the negative.
+
+TWO SYMBOL FIXES IN THE APPENDIX, neither a value change:
+
+  Concordance   "factors as r x Cb" and "the median item has r = 0.443" now
+                say rbc, which is what 3.5 and 4.1 call that quantity.
+  0.21 -> 0.210 the demographic ceiling at one precision. 3.5 and 4.3 both
+                say 0.210.
+
+THREE REPEATED PHRASES, found by counting eight-word runs across the whole
+chapter:
+
+  "recovery is judged against predictors that use no model at all" ran three
+  times, in the introduction, 3.5 and 5.4. 3.5 defines it and 5.4 uses it,
+  so the introduction now says "model-free comparators", the phrase its own
+  contributions sentence already uses.
+
+  5.2 re-listed which domains recover best, which 4.1 reports two sections
+  earlier. The discussion now states the split those domains make: the items
+  that recover are about the country, the ones that invert are about the
+  respondent.
+
+  "item-level country rankings, within-country individual recovery, and ..."
+  also runs three times, in 2.1 as the gap, in the introduction as the
+  claim, and in 5.4 as the payoff. LEFT AS IS: the three are the same list
+  on purpose, and varying the wording would break the loop 2.1 opens.
+
+NUMBERS: body IDENTICAL. The two appendix changes fall after the References
+heading, where selfcheck does not look, and neither changes a value.
