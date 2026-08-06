@@ -2248,3 +2248,56 @@ NUMBERS: three tokens, all pointers or a figure label.
 
     removed '4' x1     4.1, "Figures A1 and A4" -> "Figure A1"
     removed '5.3', added '4.1'   the stale Section pointer
+
+### revise86: 4.4 stops listing and starts saying, and the closing state
+(9 Aug 2026)
+
+FOUR THINGS MADE 4.4 READ AS SCATTERED.
+
+  a catalogue      the second sentence ran 52 words, six categories with
+                   parenthetical contents inside three of them. Table A5
+                   holds the contents; the sentence needs the categories.
+  scaffolding      "The exception is stated here, with the two checks that
+                   set the terms on which the others are read" announces the
+                   section instead of writing it.
+  a defensive turn "The direction coding survives the checks that could undo
+                   it" opens on the threat. It was fixed in advance and a
+                   second model reproduces it, and that is what it says now.
+  a knot           "are led by the two the dispersion screen already
+                   declares uninterpretable", three noun phrases in a row.
+
+The four paragraphs and their order stand.
+
+THE CHAPTER AS IT STANDS, counted:
+
+  body prose            9,388 words
+  paragraphs over 180w  none
+  sentences over 45w    4, each an enumerated list
+  figures               7 in the body, 4 in the appendix
+  tables                6, all in the appendix
+  Notes                 17, one under every figure and every table
+  appendix sections     14, A to N, in the order the body calls on them
+  style counters        all zero
+  numeric tokens        502, IDENTICAL to the previous commit
+
+FOUR THINGS THE MAC SIDE STILL OWES BEFORE A NUMBERED BUILD.
+
+  1  n = 685 "the number available in the smallest country sample". This
+     sentence came from the user's Word file, not from this session, and
+     nothing here can check it against ESS Round 11.
+  2  4.2's direction wording. "With the country present the paired
+     item-level correlation is higher by a median 0.135 on forward-coded
+     items ... and lower by 0.176 on reverse-coded items." Three other
+     statements of that contrast agree with this reading, but the shipped
+     per-item file should be checked for its sign.
+  3  Terracciano et al. (2005) lists six authors and then "et al.". APA 7
+     wants the first 19 of the 79 and the last. The full list is not in this
+     repo.
+  4  Nine numeric tokens added in revise84, every one a count the same
+     sentence had spelled as a word. verify_manuscript.py will see them as
+     new and they need tracing to the same rows as their neighbors.
+
+TWO DECISIONS, NOT DEFECTS, RECORDED IN revise83 AND revise85: whether the
+appendix figures and tables should be numbered by section (Table C1) rather
+than straight through, and whether to drop the leading zero on statistics
+that cannot exceed 1.
