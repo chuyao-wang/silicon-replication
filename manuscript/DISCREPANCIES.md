@@ -1298,10 +1298,13 @@ reverse split; it states the split itself.
 Numeric token: one "3" removed with that forward reference. Nothing else
 moved.
 
-3.4, THE BLOCK UNIT. "The unit is the block, not the single variable" and
-"Dropping one of a pair measures duplication, not information" both stated
-the point by negation, and "tested singly" was opaque. The paragraph now
-reads: the unit is the block because single variables often repeat one
+3.4, THE BLOCK UNIT. CORRECTION, 7 Aug 2026: this edit was NOT in the file
+after revise65. The first run of revise65 failed an assertion and the file
+was restored from git, which took this edit with it. It is applied in
+revise67. What follows is what the paragraph now reads, from revise67 on.
+"The unit is the block, not the single variable" and "Dropping one of a pair
+measures duplication, not information" both stated the point by negation,
+and "tested singly" was opaque. The paragraph now reads: the unit is the block because single variables often repeat one
 another; age and birth year encode the same fact, so dropping one leaves its
 twin in place and the contrast measures the repetition; where a block holds
 no such pair, its variables are also tested one at a time.
@@ -1338,3 +1341,41 @@ probe, backstory, block, margin and group-level prior are all defined where
 they first appear, and each is doing work no plainer word does.
 
 Numbers: IDENTICAL.
+
+### revise67: a full read, paragraph by paragraph and word by word
+(7 Aug 2026)
+
+A REPAIR FIRST. The 3.4 block-unit rewrite recorded under revise65 was not
+in the file. revise65's first run failed an anchor assertion, the file was
+restored from git, and that restore took the edit with it. It is in now, and
+the revise65 entry above carries the correction.
+
+TERMS THAT DRIFTED. The abstract and the introduction still said the
+response scale "sets the sign", which RQ2 and 4.2's title stopped saying two
+rounds ago. Both now say what decides whether the ordering comes out right
+or inverted. The introduction called the four gaps "limitations", the word
+5.4 uses for the limits of this study; they are gaps.
+
+WORDS DOING NO WORK: "two major open-weight models", "efficient batched
+inference", "genuine cross-national signal", "are, finally, close to
+independent", "uniformly weak in every country", and a sentence that said
+the worst-recovered country sits inside its own band.
+
+AN UNDEFINED SYMBOL. 3.5 factored Lin's coefficient as rbc x Cb and never
+defined Cb. It now factors into rbc and a bias term.
+
+ONE LEFTOVER. "Reverse-worded" survived in Figure 4's note because
+revise58's replacement was case-sensitive.
+
+SENTENCES THAT TURNED. The swap paragraph's "which is what a cue the model
+attends to should do, and what a cue it ignores could not" is three short
+sentences. 4.3's "better counted than correlated" is "counting is better
+than correlating". 4.3's bare "Range-normalized aggregate error yields
++0.07" says what was substituted for what. 5.1 no longer opens a sentence on
+"And". Two tails in 5.4 become their own sentences.
+
+ONE WRONG POINTER. The appendix said Figure 6(b) and Table A3 break
+individual recovery down by domain. Figure 6(b) is per item; only Table A3
+is by domain.
+
+Numbers: IDENTICAL, in both the revise67 pass and the appendix fix.
