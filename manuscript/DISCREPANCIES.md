@@ -2301,3 +2301,105 @@ TWO DECISIONS, NOT DEFECTS, RECORDED IN revise83 AND revise85: whether the
 appendix figures and tables should be numbered by section (Table C1) rather
 than straight through, and whether to drop the leading zero on statistics
 that cannot exceed 1.
+
+### The supervisor's letter, mapped to the chapter as it stands
+(9 Aug 2026)
+
+Every point in Patrick's letter against the current text. Answered means the
+chapter now does what the letter asked, in the place named.
+
+FRAMING
+  analyses-first feel        answered. Four research questions became three,
+                             each with one results section, and the
+                             introduction states the central question as
+                             "why does aggregate recovery occur where it
+                             does?" with RQ1 subordinate to it ("which fixes
+                             the pattern to be explained").
+  ex ante expectations       answered. 2.1 states two; 2.2 states the two
+                             competing enrichment curves, the falsification
+                             prediction and the format prediction; 2.3
+                             states the framing prediction and the two
+                             competing cross-country expectations.
+  backstory experiment       answered. Named in the introduction's four
+  introduced too late        tests and motivated in 2.2 with the two curves
+                             it distinguishes, four sections before 3.4.
+  first/third person         PARTLY, AND BY THE USER'S DECISION. Motivated in
+  not in the RQs             2.3 with a stated ex ante prediction, reported
+                             in 4.3 and explained in 5.3. It is no longer
+                             named in RQ3: the user judged it a secondary
+                             null and asked for it out. The letter asked for
+                             it to be reflected in the research questions.
+                             One clause restores it.
+
+METHOD
+  why n per country          answered in 3.2, four ways: the smallest country
+                             sample sets it, two random halves of the human
+                             sample agree at 0.98, country-mean reliability
+                             is 0.99 and 0.94 with attenuation 0.97, and a
+                             single cell has 80% power at 0.11. NOTE: the
+                             fifth, "subsampled estimates flatten above
+                             roughly 400 respondents", was the most direct
+                             answer and the user asked for it out.
+  why these variables        answered in 3.3: they are what any probability
+                             survey collects, the set was fixed for that
+                             scalability, and if they fail silicon sampling
+                             has little to offer the surveys it would
+                             replace.
+  richer profiles            answered in 3.3, 5.3 and 5.4's next steps.
+  cumulative ordering        answered by deleting the ladder. Every block is
+                             now observed at both bounding margins, and 4.2's
+                             identifying contrast is the full profile with
+                             and without the country sentence, which is what
+                             the letter asked for.
+
+RESULTS
+  Figure 2, pooled vs item   answered in 4.1's first paragraph, with the
+                             decomposition: 0.822 against 0.443, item means
+                             carrying 96.5% of the pooled covariance, and
+                             0.515 after centering. 5.2 gives what follows.
+  different y axes           answered. The two-margin figure states "The two
+                             panels share one scale", and Figure 6(b) is
+                             drawn on the scale of Figure 2(b).
+  negative correlations      answered, and tested rather than asserted. 4.1
+                             gives the direction share, 4.3 gives the same
+                             count at the individual level, and the 2 x 2
+                             removes the inversions experimentally.
+  why some items recover     answered in 5.2 as a post hoc reading, with the
+                             prediction it makes and the correlation that
+                             holds (4.1).
+  country profiles not shown answered. Figure 7's left panel ranks all 30
+                             countries by rprof and 4.1 points at it.
+  Figure 5 adds little       answered. The individual-level figure is drawn
+                             on the aggregate figure's scale so the 5.5-fold
+                             difference is visible, and 5.3 says what is new
+                             against the established dissociation: it
+                             survives across 30 countries and anchoring moves
+                             both levels together.
+  cross-level section        answered. It closes on the decision a reader
+                             faces: 232 of 435 country pairs reverse, so
+                             choosing between two countries on aggregate
+                             evidence is wrong more often than right.
+  robustness thin            answered. Sixteen checks, four paragraphs, Table
+                             A5, and Appendices K to N.
+
+DISCUSSION
+  restates the findings      answered. 5.1 mechanism, 5.2 instrument, 5.3
+                             what the evidence licenses, and revise80 moved
+                             the last results detail back into section 4.
+  country as a prior         answered at length. 5.1 is the section, with the
+                             flat-margins argument, the replicate variance,
+                             the swapped label, the calibration failure, two
+                             rival readings ruled out, and what the
+                             correspondence cannot distinguish.
+
+MEASURES
+  too many correlations      answered in 3.5: two primary, three diagnostic
+                             that appear only where a question needs them,
+                             two pooled quantities that carry no symbol.
+  what counts as good        answered in 3.5's three reference points, in
+                             4.1's pre-declared thresholds and model-free
+                             comparators, and in 5.3's adequacy paragraph.
+
+TWO ITEMS STAND AGAINST THE LETTER BY THE USER'S DECISION, both recoverable
+in one line: the framing clause in RQ3, and the 400-respondent flattening
+sentence in 3.2.
