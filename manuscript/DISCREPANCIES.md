@@ -2194,3 +2194,57 @@ previously spelled as a word. Nothing is new and no value changed.
 
   Table A5's cells (10 control sets, 8 to 9, 12 to 11) also fall after the
   References heading.
+
+### revise85: six checks this session had not run
+(9 Aug 2026)
+
+  citations against the reference list, both ways   45 entries, every one
+                                                    cited, every in-text name
+                                                    listed
+  narrative "&" against parenthetical "and"         none wrong
+  three-author citations spelled out                none; et al. from the
+                                                    first mention throughout
+  reference list alphabetical order                 correct
+  hyphenation of the compound modifiers             the only unhyphenated
+                                                    hits are "across national
+                                                    samples", where the words
+                                                    are not a compound
+  every Section pointer against its heading         ONE WAS STALE
+
+THE STALE POINTER. 5.2 called the descriptive literature on institutional
+trust and well-being "the same structure the model-free comparators exploit
+(Section 5.3)". revise75 moved the comparators to 4.1 and left 5.3 with
+their interpretation, so a reader sent to 5.3 found the conclusion and not
+the comparators. It points at 4.1 now.
+
+GDP KEEPS ITS ABBREVIATION, per the user. revise84's expansion is undone.
+
+TWO MORE FROM THE FIGURE AND TABLE AUDIT.
+
+  4.1 pointed at "Appendix Figures A1 and A4" for the labeled rankings. A4
+  is the individual-level series, which 4.3 already cites and 4.1 is not
+  about, and sending a reader there previews the individual result inside
+  4.1, which this session asked 4.1 not to do. It points at A1 alone now,
+  and the appendix figures are cited in their own order again.
+  Figure 4's note ended a sentence on "(later in this section)", a pointer
+  that names nothing.
+
+LEFT ALONE, RECORDED FOR THE MAC SIDE. First mention and figure number do
+not agree in two places. 4.1 names Figure 6 before Figures 3 to 5 exist,
+because Figures 2 and 6 are a declared matched pair, the aggregate level and
+the individual one in the same two cuts. Figure 5's note names Table A5
+before 4.3 names Tables A4 and A3. Renumbering to make first mention and
+number agree would touch FIGURE_MAP, the verification script and every
+cross-reference, for a convention many journals do not follow.
+
+ALSO LEFT: APA omits the leading zero on a statistic that cannot exceed 1,
+so ".443" rather than "0.443" for correlations and p values. The chapter
+keeps the leading zero everywhere, which is the convention in political
+methodology and in the shipped tables. Changing it would rewrite several
+hundred numeric tokens and break every trace in verify_manuscript.py, so it
+is a decision, not a fix.
+
+NUMBERS: three tokens, all pointers or a figure label.
+
+    removed '4' x1     4.1, "Figures A1 and A4" -> "Figure A1"
+    removed '5.3', added '4.1'   the stale Section pointer
