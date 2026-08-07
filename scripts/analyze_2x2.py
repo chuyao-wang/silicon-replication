@@ -272,14 +272,30 @@ for _r in _rows:
           f"{f'{_r["reverse_moved_up"]}/{_r["n_reverse"]}':>6s} "
           f"{_r['gap_numeric_z']:+9.4f} {_r['gap_anchored_z']:+9.4f} "
           f"{_r['gap_narrowed_pct']:8.0f}%  {_r['gap_verdict']}")
-print("""
-    The triple difference is positive and excludes zero in all three, so the
-    interaction itself is robust. The GAP is a separate claim and behaves
-    differently: it is eliminated under the pre-declared specification, slightly
-    overshoots under no exclusions, and under the most conservative specification
-    narrows by about 60% while REMAINING POSITIVE. Write it that way. Presenting
-    elimination as unconditional invites a reader to run the deletion we
-    pre-declared ourselves and find it does not hold there.""")
+# This paragraph used to be a hardcoded description of the Qwen pattern, and
+# it contradicted the per-specification verdict column right above it as soon
+# as the script was run on a second model. It is computed now.
+_n_excl = sum(1 for _r in _rows if _r["excludes_zero"])
+_verdicts = {_r["gap_verdict"] for _r in _rows}
+print()
+if _n_excl == len(_rows):
+    print("    The triple difference excludes zero in every "
+          "specification, so the interaction itself is robust.")
+else:
+    print(f"    The triple difference excludes zero in {_n_excl} of "
+          f"{len(_rows)} specifications, so the interaction is "
+          "specification-dependent. Say which.")
+if len(_verdicts) == 1:
+    print("    The GAP is a separate claim and lands the same way in "
+          f"every specification: {_verdicts.pop()}.")
+else:
+    print("    The GAP is a separate claim and does not follow the triple")
+    print("    difference. Per specification, from the column above:")
+    for _r in _rows:
+        print(f"      {_r['specification']:52s} {_r['gap_verdict']}")
+    print("    Report the gap with its specification attached. Presenting one")
+    print("    specification's verdict as unconditional invites a reader to")
+    print("    run another and find it does not hold there.")
 
 rev_anch_positive = eff["anchored"][rev].mean() > 0
 print()
