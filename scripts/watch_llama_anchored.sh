@@ -29,6 +29,9 @@ REMOTE=${REMOTE:-Winston_Code}                    # path under $HOME on the clus
 PKG=${PKG:-$HOME/silicon_pkg/silicon_chapter}     # the package on the Mac
 INTERVAL=${INTERVAL:-600}                         # seconds between checks
 LOG=${LOG:-$HOME/llama_anchored_watch.log}
+# A non-interactive ssh does not read .bashrc, so conda is never initialized and
+# bare `python` does not exist. Pick the interpreter on the remote side.
+PYSEL='PY=$HOME/miniconda3/bin/python; [ -x "$PY" ] || PY=$(command -v python3 || command -v python); [ -n "$PY" ] || { echo "no python on the cluster PATH" >&2; exit 127; }'
 
 TAGS="llama_1p_full_noregion_anchored llama_1p_full_nocountry_anchored"
 NAMES="anch_llama_noregion anch_llama_nocountry"
@@ -39,7 +42,13 @@ ping_user() {   # TITLE MESSAGE
     osascript -e "display notification \"$2\" with title \"$1\" sound name \"Glass\"" 2>/dev/null
     printf '\a'
 }
+# Quiet: for the squeue poll, where a banner on stderr is just noise.
 rsh()  { ssh -T -o BatchMode=yes -o ConnectTimeout=20 "$CLUSTER" "$@" 2>/dev/null; }
+# Loud: for anything whose failure must not be silent. The first version of this
+# script ran the two python steps through rsh(); the interpreter was missing and
+# the error went to /dev/null, so the log recorded two blank lines where the
+# result should have been.
+rshv() { ssh -T -o BatchMode=yes -o ConnectTimeout=20 "$CLUSTER" "$@" 2>&1; }
 
 say "watching $NAMES on $CLUSTER, every ${INTERVAL}s"
 say "log: $LOG"
@@ -92,7 +101,7 @@ fi
 
 # ------------------------------------------------------- 3. shape of the files
 say "all four files present; checking their shape"
-raw "$(rsh "cd ~/$REMOTE && python - <<'PY'
+raw "$(rshv "$PYSEL; cd ~/$REMOTE && \$PY - <<'PY'
 import json, pandas as pd
 for tag in ('llama_1p_full_noregion_anchored', 'llama_1p_full_nocountry_anchored'):
     m = json.load(open(f'results/manifest_{tag}.json'))
@@ -107,7 +116,7 @@ say "expected: items 22, n/country 685, seed 888, scale anchored, 660 rows"
 
 # ------------------------------------------------- 4. the number that matters
 say "running analyze_2x2.py --model llama"
-result=$(rsh "cd ~/$REMOTE && python analyze_2x2.py --model llama")
+result=$(rshv "$PYSEL; cd ~/$REMOTE && \$PY analyze_2x2.py --model llama")
 raw "$result"
 
 # --------------------------------------------------------- 5. pull everything
