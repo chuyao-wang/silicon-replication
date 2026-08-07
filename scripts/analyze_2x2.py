@@ -67,6 +67,11 @@ _AP.add_argument("--model", default="qwen", choices=["qwen", "llama"],
                  help="which model's 2x2 to analyse (default qwen)")
 _A = _AP.parse_args()
 M = _A.model
+# The default path keeps its historical filenames, so the shipped Qwen
+# tables and everything that reads them are untouched. A non-default model
+# writes beside them instead of over them: the first Llama run overwrote
+# the Qwen tables on the cluster, which is silent and easy to miss.
+SUF = "" if M == "qwen" else f"_{M}"
 
 CELLS = {
     ("with",    "numeric"):  f"{M}_1p_full_noregion",
@@ -163,7 +168,7 @@ for scale in ("numeric", "anchored"):
                          raw_mean=dr.mean(), raw_median=dr.median(),
                          n_improved=int((dz > 0).sum()),
                          wilcoxon_p=(w.pvalue if w else np.nan)))
-pd.DataFrame(rows).to_csv(os.path.join(OUT, "twoxtwo_country_effect.csv"), index=False)
+pd.DataFrame(rows).to_csv(os.path.join(OUT, f"twoxtwo_country_effect{SUF}.csv"), index=False)
 
 # ---- the decisive triple difference -------------------------------------
 print("\n" + "=" * 78)
@@ -259,7 +264,7 @@ for _lab, _rv in (("all reverse items in batch (n=12)", _r12),
                       gap_verdict=("eliminated (within noise)" if abs(_ga) < 0.06
                                    else "narrowed but SURVIVES" if _ga * _gn > 0
                                    else "overshot (sign flip)")))
-pd.DataFrame(_rows).to_csv(os.path.join(OUT, "twoxtwo_triple_difference.csv"), index=False)
+pd.DataFrame(_rows).to_csv(os.path.join(OUT, f"twoxtwo_triple_difference{SUF}.csv"), index=False)
 print("\n  three reverse-item specifications, each with its OWN gap:")
 print(f"    {'specification':52s} {'DiD3':>8s} {'up':>6s} {'gap num':>9s} {'gap anch':>9s} {'narrowed':>9s}")
 for _r in _rows:
@@ -306,7 +311,7 @@ for v in rev + fwd:
 pd.DataFrame({"country_effect_numeric_z": eff["numeric"][rev + fwd],
               "country_effect_anchored_z": eff["anchored"][rev + fwd],
               "change": (eff["anchored"] - eff["numeric"])[rev + fwd]}).to_csv(
-    os.path.join(OUT, "twoxtwo_per_item.csv"))
+    os.path.join(OUT, f"twoxtwo_per_item{SUF}.csv"))
 
 print("\n" + "=" * 78)
 print(f"Tables written to {os.path.abspath(OUT)}/")
