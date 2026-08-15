@@ -2,7 +2,7 @@
 
 Replication package for the cross-national evaluation of silicon sampling
 against European Social Survey Round 11: 30 countries, 42 items, 685
-respondents per country, 41 generation arms, 33,743,100 response attempts.
+respondents per country, 43 generation arms, 34,647,300 response attempts.
 
 Download the whole thing with the green **Code → Download ZIP** button, or
 `git clone https://github.com/chuyao-wang/silicon-replication.git`.
@@ -27,6 +27,9 @@ The ESS microdata. The European Social Survey requires users to register
 before downloading, and redistributing the file conflicts with those terms
 even though access is free. The run manifests record the edition
 (`10.21338/ess11e04_1`), so a user can confirm they hold the same file.
+The per-response files in `data/raw/` do carry each sampled respondent's
+human answer alongside the model answer, so every benchmark value the
+analyses use is included; only the ESS source file itself is excluded.
 
 ## Verifying
 
